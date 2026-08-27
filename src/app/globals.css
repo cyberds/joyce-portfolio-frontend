@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/*
+ * Colour + radius values are NOT defined here. They are injected as CSS custom
+ * properties from src/design/tokens.ts (see layout.tsx). This block only maps
+ * Tailwind's theme onto those variables.
+ */
+@theme inline {
+  --color-canvas: var(--c-canvas);
+  --color-canvas-deep: var(--c-canvas-deep);
+  --color-surface: var(--c-surface);
+  --color-grid: var(--c-grid);
+  --color-hairline: var(--c-hairline);
+  --color-ink: var(--c-ink);
+  --color-ink-muted: var(--c-ink-muted);
+  --color-ink-faint: var(--c-ink-faint);
+  --color-accent: var(--c-accent);
+  --color-accent-deep: var(--c-accent-deep);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-tangerine: var(--c-tangerine);
+  --color-lemon: var(--c-lemon);
+  --color-raspberry: var(--c-raspberry);
+  --color-apple: var(--c-apple);
+  --color-plum: var(--c-plum);
+  --color-deep: var(--c-deep);
+  --color-deep-soft: var(--c-deep-soft);
+  --color-deep-ink: var(--c-deep-ink);
+  --color-deep-muted: var(--c-deep-muted);
+
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+
+  --font-display: var(--font-display), "Century Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--c-canvas);
+  color: var(--c-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Surfaces -------------------------------------------------------- */
+
+/* The paper: warm wash plus the faint architectural grid behind everything. */
+.paper {
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 50% -10%, #ffffff 0%, transparent 60%),
+    linear-gradient(180deg, var(--c-canvas) 0%, var(--c-canvas-deep) 100%);
+}
+
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--c-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--c-grid) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(100% 65% at 50% 30%, #000 10%, transparent 80%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.glass {
+  background: var(--c-glass);
+  border: 1px solid var(--c-glass-line);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 24px 60px -34px var(--c-glass-shadow);
+  backdrop-filter: blur(20px) saturate(1.3);
+}
+
+.glass-strong {
+  background: var(--c-glass-strong);
+}
+
+/* Soft elliptical shadow that grounds a cut-out photograph on the paper. */
+.stand {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+  width: 78%;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(40, 30, 22, 0.22) 0%,
+    transparent 72%
+  );
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* ---- Type ------------------------------------------------------------ */
+
+.display {
+  font-family: var(--font-display), "Century Gothic", ui-sans-serif, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.08;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Hand-set underline for the one or two words that carry a sentence. */
+.marked {
+  background-image: linear-gradient(var(--c-accent-soft), var(--c-accent-soft));
+  background-repeat: no-repeat;
+  background-size: 100% 0.3em;
+  background-position: 0 0.82em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Nav flips to light-on-dark while the dark chapter is under it. */
+.nav-dark {
+  background: rgba(16, 13, 11, 0.55);
+  border-color: rgba(243, 239, 233, 0.14);
+  color: var(--c-deep-ink);
+}
+
+::selection {
+  background: var(--c-accent-soft);
+  color: var(--c-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
