@@ -49,10 +49,10 @@ export function Hero() {
             variants={rise}
             initial="hidden"
             animate="show"
+            style={{ fontWeight: "bolder" }}
             className="display mt-6 max-w-[16ch] text-balance text-[clamp(2.5rem,5vw,3.9rem)] text-ink"
           >
-            Your business is growing.
-            <br />
+            Your business is growing.{" "}
             Your workload{" "}
             <em className="italic">
               <span className="marked">doesn&rsquo;t have to</span>
@@ -114,7 +114,7 @@ export function Hero() {
               fill
               priority
               sizes="(max-width: 768px) 88vw, 26rem"
-              className="object-contain object-bottom drop-shadow-[0_40px_60px_rgba(40,30,22,0.18)]"
+              className="object-contain object-bottom"
             />
           </div>
 

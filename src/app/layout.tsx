@@ -13,7 +13,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={fontClassNames}>
+    <html lang="en" className={fontClassNames} suppressHydrationWarning>
       <head>
         <style
           id="brand-tokens"

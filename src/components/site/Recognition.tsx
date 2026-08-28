@@ -38,12 +38,6 @@ export function Recognition() {
       className="relative z-10 mx-auto w-[min(1200px,94vw)] py-28 md:py-40"
     >
       <div className="max-w-[42rem]">
-        <Reveal>
-          <p className="eyebrow flex items-center gap-3 text-ink-faint">
-            <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-            Sound familiar?
-          </p>
-        </Reveal>
         <Reveal delay={0.08}>
           <h2 className="display mt-6 text-[clamp(2.1rem,4.4vw,3.4rem)] text-ink">
             Does any of this sound like{" "}

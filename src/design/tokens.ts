@@ -36,11 +36,11 @@ export const colors = {
   apple: "#94cc96",
   plum: "#c18d9a",
 
-  // The dark chapter (the journey) — deep plum
-  deep: "#1b0f13",
-  deepSoft: "#2a191f",
-  deepInk: "#fdf8f2",
-  deepMuted: "#c18d9a",
+  // The dark chapter (the journey) — rich deep evergreen / forest
+  deep: "#0c231c",
+  deepSoft: "#133329",
+  deepInk: "#f5faf7",
+  deepMuted: "#8faea1",
 
   // Glass
   glass: "rgba(255,255,255,0.62)",
