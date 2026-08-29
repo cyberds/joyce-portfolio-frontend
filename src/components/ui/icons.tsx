@@ -78,3 +78,40 @@ export function BuildIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+/* --- Contact marks. The two brand glyphs are solid; the rest are line-drawn
+       on the same grid as everything above. ------------------------------ */
+
+export function LocationIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" width="16" height="16" className={className} {...base}>
+      <path d="M10 17.5s5.5-4.6 5.5-9a5.5 5.5 0 0 0-11 0c0 4.4 5.5 9 5.5 9Z" />
+      <circle cx="10" cy="8.5" r="2" />
+    </svg>
+  );
+}
+
+export function MailIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" width="16" height="16" className={className} {...base}>
+      <rect x="2.5" y="4.5" width="15" height="11" rx="2" />
+      <path d="m17 6-6.4 4.3a1.1 1.1 0 0 1-1.2 0L3 6" />
+    </svg>
+  );
+}
+
+export function LinkedInIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" width="16" height="16" className={className} fill="currentColor">
+      <path d="M4.6 7.4H2.2V17h2.4V7.4ZM3.4 3a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8ZM17.8 11.6c0-2.6-1.4-3.9-3.3-3.9-1.5 0-2.2.8-2.6 1.4V7.4H9.5c0 .7 0 9.6 0 9.6h2.4v-5.4c0-.3 0-.6.1-.8.2-.6.8-1.2 1.6-1.2 1.2 0 1.7.9 1.7 2.2V17h2.4v-5.4Z" />
+    </svg>
+  );
+}
+
+export function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" width="16" height="16" className={className} fill="currentColor">
+      <path d="M10 2.2a7.7 7.7 0 0 0-6.6 11.7L2.4 17.8l4-1a7.7 7.7 0 1 0 3.6-14.6Zm0 1.5a6.2 6.2 0 1 1-3.2 11.5l-.3-.2-2.3.6.6-2.3-.2-.3A6.2 6.2 0 0 1 10 3.7Zm-2.6 3c-.2 0-.4 0-.6.3-.2.2-.7.7-.7 1.7s.7 1.9.8 2c.1.2 1.4 2.2 3.5 3 1.7.7 2 .6 2.4.5.4 0 1.2-.5 1.4-1 .2-.5.2-.9.1-1l-.5-.3-1.3-.6c-.2-.1-.3-.1-.5.1l-.6.8c-.1.2-.2.2-.4.1a5 5 0 0 1-1.5-1 5.6 5.6 0 0 1-1-1.3c-.1-.2 0-.3.1-.4l.3-.4.2-.4v-.3l-.6-1.4c-.2-.4-.3-.3-.5-.3h-.4Z" />
+    </svg>
+  );
+}

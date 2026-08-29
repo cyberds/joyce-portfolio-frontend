@@ -483,7 +483,7 @@ export function JourneyChapter() {
         {/* Outro — arrives once the pipe has filled */}
         <div
           ref={outroRef}
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-12 pt-16"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-12 pt-0"
         >
           <JourneyOutro />
         </div>
@@ -495,7 +495,7 @@ export function JourneyChapter() {
 function JourneyHeading() {
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="inline-flex items-center gap-2 rounded-[var(--r-pill)] border border-stone-200 bg-stone-50 px-3.5 py-1 text-[11px] font-medium uppercase tracking-wider text-stone-600">
+      <div className="hidden inline-flex items-center gap-2 rounded-[var(--r-pill)] border border-stone-200 bg-stone-50 px-3.5 py-1 text-[11px] font-medium uppercase tracking-wider text-stone-600">
         <span className="size-1.5 rounded-full bg-accent" />
         Connected journey
       </div>
@@ -513,7 +513,7 @@ function JourneyHeading() {
 function JourneyOutro({ className = "" }: { className?: string }) {
   return (
     <p
-      className={`mx-auto max-w-2xl text-center text-sm leading-relaxed text-stone-800 sm:text-base ${className}`}
+      className={`mx-auto max-w-2xl text-center leading-relaxed text-stone-800 sm:text-base ${className}`}
     >
       No new team members. No twelve new subscriptions. Just the tools you
       already pay for,{" "}

@@ -40,7 +40,7 @@ export function MeetJoyce() {
   return (
     <section
       id="joyce"
-      className="relative z-10 mx-auto w-[min(1200px,94vw)] py-20 md:py-28"
+      className="relative z-10 mx-auto w-[min(1200px,94vw)] pt-2 pb-20 md:pb-28"
     >
       <div className="grid items-stretch gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         {/* Left Side: Joyce Photo */}

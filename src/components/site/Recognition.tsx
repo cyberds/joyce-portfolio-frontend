@@ -35,7 +35,7 @@ export function Recognition() {
   return (
     <section
       id="familiar"
-      className="relative z-10 mx-auto w-[min(1200px,94vw)] py-28 md:py-40"
+      className="relative z-10 mx-auto w-[min(1200px,94vw)] py-28"
     >
       <div className="max-w-[42rem]">
         <Reveal delay={0.08}>

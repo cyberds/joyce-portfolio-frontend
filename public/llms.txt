@@ -1,0 +1,135 @@
+# Joyce Wadawasina — AI & Business Automation Consultant
+> Simpler systems that give you back the time to run your business.
+
+## Overview
+- **Name**: Joyce Wadawasina
+- **Role**: AI & Business Automation Consultant, Operations Strategist
+- **Core Value Proposition**: Turning manual, repetitive, and fragmented business processes into unified automated workflows using the tools companies already pay for.
+- **Experience**: 10+ years across business operations, procurement and supply chain, project coordination, customer service, and marketing.
+- **Track Record**: 300+ businesses served, 11,000+ hours of business time saved.
+- **Contact**: 
+  - WhatsApp: https://wa.me/447436836888 (+44 7436 836888)
+  - Email: hello@joycewadawasina.com
+  - Booking: 20-minute discovery call
+
+---
+
+## Core Philosophy
+1. **"You don't need to arrive knowing what should be automated."**
+   Clients do not need technical vocabulary, a pre-written specification, or a tool wishlist. They just need to describe what is taking too long, what is frustrating, or what their team is manually repeating.
+2. **"Connecting what you already have."**
+   Most businesses do not need 12 new software subscriptions. They need their existing tools (email, calendars, CRM, spreadsheets, messaging) integrated into a continuous pipeline.
+3. **"Start with a sentence. Not a brief."**
+   Exploratory consultations begin with simple conversational diagnosis, identifying where human effort is wasted and where automation creates leverage.
+
+---
+
+## Core Services
+
+### 1. AI & Automation Consultancy
+- **Purpose**: End-to-end diagnostic of business bottlenecks and design of automated systems.
+- **What it covers**: Process mapping, workflow audit, identifying high-ROI automation targets, integration architecture, custom workflow builds.
+- **Ideal for**: Businesses that know they could operate faster and smarter, but don't know where to start or how to integrate their tools.
+
+### 2. AI Team Training & Enablement
+- **Purpose**: Helping non-technical teams confidently, safely, and productively use modern AI tools in their daily work.
+- **What it covers**: Practical workplace AI use cases, prompt engineering, document drafting, safe data handling, company-wide responsible AI policy.
+- **Ideal for**: Companies that bought AI licenses (like Microsoft Copilot, Claude, ChatGPT) but see low adoption or employee hesitation.
+
+### 3. Software Engineering & Custom Internal Tools
+- **Purpose**: Building dedicated web applications, customer portals, internal workflow dashboards, and cohesive digital branding.
+- **What it covers**: Custom full-stack web applications, API integrations, automated quoting/pricing calculators, client onboarding portals, database synchronization.
+- **Ideal for**: Companies that have outgrown fragile spreadsheet workarounds and need robust, bespoke software.
+
+---
+
+## The 6-Stage Connected Customer Pipeline
+
+1. **Stage 01: Capture (Instant Ingestion)**
+   - *Problem*: Inquiries land randomly across website forms, multiple inboxes, voicemail, and WhatsApp, sitting unnoticed for hours or days.
+   - *Solution*: A unified intake system that captures inquiries instantly from any source, transcribes voicemails, and logs them into a centralized queue.
+
+2. **Stage 02: Acknowledge (Tailored Instant Reply)**
+   - *Problem*: Generic auto-responders feel cold, or replies are delayed until staff find free time.
+   - *Solution*: A warm, bespoke response sent within 60 seconds matching the company's exact tone of voice with relevant next steps.
+
+3. **Stage 03: Booking (Frictionless Calendar Sync)**
+   - *Problem*: 6+ back-and-forth emails negotiating meeting slots.
+   - *Solution*: Live calendar availability presented directly in the initial reply, automatically booking the meeting into both parties' diaries with reminders.
+
+4. **Stage 04: Unified CRM (Zero Data Entry)**
+   - *Problem*: Customer notes and requirements scattered across WhatsApp threads, email chains, and post-it notes.
+   - *Solution*: All contact details, inquiry history, and requirements automatically populate a single customer record before the discovery call begins.
+
+5. **Stage 05: Automated Nurture (Clockwork Follow-up)**
+   - *Problem*: Unanswered quotes and follow-ups go cold because team members lack bandwidth to chase consistently.
+   - *Solution*: Scheduled, respectful follow-up sequences trigger automatically and pause immediately the instant a customer responds.
+
+6. **Stage 06: Clarity & Reporting (Actionable Insights)**
+   - *Problem*: Business owners have no visibility into inquiry volume, conversion rates, or team bottlenecks.
+   - *Solution*: Automated weekly KPI digests highlighting conversion metrics, overdue inquiries, and operational time saved.
+
+---
+
+## Featured Case Studies
+
+### Case Study 1: Riverside Dental Practice
+- **Industry**: Healthcare (Private dental practice, 3 sites)
+- **Challenge**: Inquiries landed across 3 websites, 2 inboxes, and an after-hours voicemail. Monday mornings were spent reconstructing lost weekend leads.
+- **Solution**: Single intake pipeline connected via Make, Twilio, Airtable, Cal.com, and Claude API.
+- **Key Metrics**:
+  - Median first response reduced from 7 hours to **48 seconds**.
+  - **3.1x** increase in inquiries converted to booked appointments.
+  - **9 hours** of reception time saved weekly.
+
+### Case Study 2: Halloway Joinery
+- **Industry**: Construction & Bespoke Trades (14 staff)
+- **Challenge**: Managing director spent full days manually reading complex PDF drawing packs and rebuilding pricing spreadsheets in the evenings.
+- **Solution**: Custom AI quote builder built with Next.js, Claude API, Postgres, and Xero that parses drawing schedules and computes pricing based on 15 years of company rates.
+- **Key Metrics**:
+  - Quote turnaround reduced from 1 day to **9 minutes**.
+  - **94%** of quote line items require zero edits.
+  - **2.4x** increase in quotes issued per week.
+
+### Case Study 3: Northgate Financial Planning
+- **Industry**: Financial Advisory & Wealth Management
+- **Challenge**: Client onboarding took 3 weeks of chasing 14 compliance documents across 4 systems.
+- **Solution**: Automated onboarding sequence via Zapier, DocuSign, Intelliflo, and Airtable that tracks document submission and generates compliance audit trails automatically.
+- **Key Metrics**:
+  - Median time to onboard reduced from 3 weeks to **3 days**.
+  - **100%** compliance audit readiness.
+  - **0** manual chase emails sent by advisers.
+
+### Case Study 4: Sable & Fern
+- **Industry**: Retail & E-commerce (Homeware)
+- **Challenge**: Selling across a physical shop, Shopify store, marketplace, and pop-up stalls led to inventory discrepancies and overselling.
+- **Solution**: Real-time multi-channel inventory synchronization using Shopify, Make, Square, and Google Sheets.
+- **Key Metrics**:
+  - **97%** reduction in oversell incidents.
+  - **6 hours** of weekly manual stock admin eliminated.
+  - Weekly financial close reduced to **12 minutes**.
+
+### Case Study 5: Brightpath Care Group
+- **Industry**: Health & Social Care (120 staff)
+- **Challenge**: AI licenses were purchased but went unused due to data privacy concerns and lack of practical job relevance.
+- **Solution**: Role-specific practical AI workshops using real care documentation, combined with a 1-page clear responsible AI policy.
+- **Key Metrics**:
+  - **78%** weekly active adoption at 90 days (up from near zero).
+  - **4.7 / 5** employee confidence score.
+  - **5 hours** saved per manager weekly on documentation.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+**Q: Do I need to know what tools I want before speaking with Joyce?**
+*A: No. Joyce's process begins with understanding your operational bottlenecks and daily frustrations. She determines the optimal technical architecture for you.*
+
+**Q: Will automation replace my team?**
+*A: No. Joyce designs systems that remove repetitive administrative drudgery so your team can focus on client relationships, high-value decision-making, and growth.*
+
+**Q: What technologies and tools does Joyce work with?**
+*A: Modern AI APIs (Claude, OpenAI), automation platforms (Make, Zapier, n8n), CRMs (HubSpot, Airtable, Salesforce), scheduling tools (Cal.com, Calendly), e-commerce (Shopify, Stripe), full-stack software (Next.js, React, Node.js, TypeScript, PostgreSQL, Vercel).*
+
+**Q: How do we get started?**
+*A: Start by sending a message on WhatsApp (https://wa.me/447436836888) or sending an email to hello@joycewadawasina.com to book a 20-minute introductory call.*

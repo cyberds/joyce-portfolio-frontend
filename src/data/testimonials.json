@@ -1,0 +1,67 @@
+{
+  "testimonials": [
+    {
+      "id": "kathy-mela",
+      "quote": "Joyce transformed my email strategy and elevated my business in just nine months! She has an intuitive talent for crafting emails that authentically capture my voice, making every message feel personal and professional.",
+      "name": "Kathy Mela",
+      "role": "Leadership Coach",
+      "location": "USA",
+      "photo": "/images/testimonials/kathy-mela.avif",
+      "featured": true
+    },
+    {
+      "id": "moses-osho",
+      "quote": "Joyce is a highly professional and collaborative team player with excellent communication skills.",
+      "name": "Moses Osho",
+      "role": "Project Manager, PMP Certified",
+      "location": null,
+      "photo": null,
+      "featured": false
+    },
+    {
+      "id": "abi-eghagara",
+      "quote": "When I first launched my business, I was overwhelmed with managing all the tasks on my own. That’s when I reached out to Joyce for help. Her expertise in copywriting and email automations completely transformed my business. She not only created engaging copy but also streamlined my client communications, bringing in quality leads and turning them into clients. Joyce’s support has significantly boosted my productivity and efficiency, allowing me to focus on growing my business. I highly recommend her services!",
+      "name": "Abi Eghagara",
+      "role": "Sales Coach & Data Expert",
+      "location": "UK",
+      "photo": "/images/testimonials/abi-eghagara.avif",
+      "featured": false
+    },
+    {
+      "id": "zhassulan-bakiyev",
+      "quote": "Joyce’s innovative thinking and strategic vision consistently drive positive results.",
+      "name": "Zhassulan Bakiyev",
+      "role": "Supply Chain Professional, Blockchain Researcher",
+      "location": null,
+      "photo": null,
+      "featured": false
+    },
+    {
+      "id": "nnaemeka-onyemaenu",
+      "quote": "Joyce is a detail-oriented and articulate professional who drives efficiency and achieves exceptional results.",
+      "name": "Nnaemeka Onyemaenu",
+      "role": "Logistics Manager",
+      "location": null,
+      "photo": null,
+      "featured": false
+    },
+    {
+      "id": "gregory-chusom",
+      "quote": "Having worked with Joyce on project assessments and development, her determination and professionalism made the project a success. Joyce is always willing to learn and improve. I guarantee her to be a very capable and highly driven professional who takes her work seriously.",
+      "name": "Gregory Chusom",
+      "role": "Operations Manager, Contractor",
+      "location": null,
+      "photo": "/images/testimonials/gregory-chusom.avif",
+      "featured": false
+    },
+    {
+      "id": "abiodun-eghaghara",
+      "quote": "Joyce consistently delivers high-quality work on time, demonstrating a strong work ethic and a commitment to efficiency.",
+      "name": "Abiodun Eghaghara",
+      "role": "Sales Coach & Data Expert",
+      "location": null,
+      "photo": null,
+      "featured": false
+    }
+  ]
+}

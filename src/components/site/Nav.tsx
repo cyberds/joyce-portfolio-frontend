@@ -10,7 +10,7 @@ const links = [
   { label: "Sound familiar?", href: "/#familiar" },
   { label: "How it works", href: "/#journey" },
   { label: "Case studies", href: "/#case-studies" },
-  { label: "About Joyce", href: "/#joyce" },
+  { label: "About Joyce", href: "/about" },
   { label: "What we help with", href: "/#help" },
 ];
 
@@ -78,8 +78,8 @@ export function Nav() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/#talk"
-            className={`rounded-[var(--r-pill)] px-4 py-2.5 text-[0.86rem] font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
+            href="https://wa.me/447436836888"
+            className={`rounded-[var(--r-pill)] px-4 py-2.5 !text-[10px] !md:text-[0.86rem] font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
               onDark ? "bg-deep-ink text-deep" : "bg-ink text-surface"
             }`}
           >

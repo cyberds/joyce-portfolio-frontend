@@ -6,6 +6,7 @@ import { CaseStudies } from "@/components/casestudies/CaseStudies";
 import { MeetJoyce } from "@/components/site/MeetJoyce";
 import { Services } from "@/components/site/Services";
 import { Close } from "@/components/site/Close";
+import { Testimonials } from "@/components/testimonials/Testimonials";
 import { Footer } from "@/components/site/Footer";
 
 /**
@@ -30,6 +31,7 @@ export default function Home() {
         <MeetJoyce />
         <Services />
         <Close />
+        <Testimonials />
         <Footer />
       </div>
     </main>

@@ -14,8 +14,8 @@ The page is written as a conversation, in the order one would actually go:
    connecting what you already have".
 3. **The journey** (`#journey`) — one enquiry followed through six stations
    while the pipeline fills underneath it.
-4. **Case studies** (`#case-studies`) — big-card carousel of demo videos, each
-   leading to its own write-up.
+4. **Case studies** (`#case-studies`) — autoplaying, endless carousel of demo
+   videos, each leading to its own write-up.
 5. **Meet Joyce** (`#joyce`) — the warm photograph and the promise that you
    don't need to arrive knowing what should be automated.
 6. **What we help with** (`#help`) — consultancy, team training, engineering and
@@ -87,12 +87,29 @@ visitors get the same six cards, simply stacked, with no pin at all.
 `src/data/caseStudies.json` is the single source. `src/lib/caseStudies.ts` types
 it and exposes `caseStudies` / `getCaseStudy`. Three things read it:
 
-- `components/casestudies/CaseStudies.tsx` — the landing-page carousel. Native
-  scroll-snap does the scrolling (real momentum, touch and trackpad for free);
-  the arrows just nudge it one card. The rail's gutter and `scroll-padding` are
-  both `calc((100% - min(1200px, 94vw)) / 2)` so cards line up with the page
-  grid, and `scroll-padding` is what stops snap pulling the first card flush
-  against the window.
+- `components/casestudies/CaseStudies.tsx` — the landing-page carousel:
+  autoplaying, and endless in both directions. Native scroll-snap still does the
+  scrolling (real momentum, touch and trackpad for free); the arrows just nudge
+  it one card. The rail's gutter and `scroll-padding` are both
+  `calc((100% - min(1200px, 94vw)) / 2)` so cards line up with the page grid,
+  and `scroll-padding` is what stops snap pulling the first card flush against
+  the window.
+
+  The loop is three identical copies of the list. The middle copy is what you
+  look at; when the scroll drifts off it, `recentre()` shifts by exactly one set
+  width, which lands on a pixel showing the same thing — no rewind, no seam. The
+  window is exactly `[w, 2w)`: snap-mandatory means a resting `scrollLeft` is a
+  whole number of cards, so that range lands on the middle set and no other.
+  That matters because the outer sets are clones marked `decorative` — kept
+  clickable, but out of the tab order and the accessibility tree, so the list is
+  announced once instead of three times, and coming to rest on one would strand
+  a keyboard user on a card they cannot reach.
+
+  Autoplay holds while you hover or focus the rail, while a demo video is
+  playing, while the section is off screen, while the tab is hidden, for nine
+  seconds after any deliberate interaction, and entirely under reduced motion.
+  There is also a pause button, because content that moves on its own has to be
+  stoppable.
 - `app/case-studies/page.tsx` — the index.
 - `app/case-studies/[slug]/page.tsx` — the write-up, statically generated per
   slug via `generateStaticParams`.
@@ -100,6 +117,23 @@ it and exposes `caseStudies` / `getCaseStudy`. Three things read it:
 Adding a study means adding one object to the JSON. Demo videos live in
 `public/videos/case-studies/` — see the README there for filenames; a missing
 file degrades to the study's accent gradient rather than a broken frame.
+
+## Testimonials
+
+`src/data/testimonials.json` is the single source, typed by
+`src/lib/testimonials.ts`. `components/testimonials/` renders it as a wall
+rather than another carousel — the case studies above already rotate, and social
+proof reads stronger all at once than one at a time.
+
+Layout is CSS multi-column, which balances the columns itself and reflows three
+→ two → one without a second copy of the markup, so quotes can be anything from
+one line to a full paragraph. Order in the JSON is the reading order; the
+`featured` entry comes first and gets the one dark card that anchors the wall.
+Anyone without a `photo` gets a monogram built from their initials.
+
+Note the featured card deliberately does *not* carry `.dark-zone`: that class
+tells the nav to flip to light-on-dark, which is only correct for a full-width
+dark band, not a third-width card.
 
 ## Develop
 

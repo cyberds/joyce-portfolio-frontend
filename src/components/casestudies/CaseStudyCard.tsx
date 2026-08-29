@@ -25,7 +25,22 @@ function PlayGlyph({ playing }: { playing: boolean }) {
  * the write-up. Deliberately almost wordless — the detail page carries the
  * client, the problem and the numbers.
  */
-export function CaseStudyCard({ study }: { study: CaseStudy }) {
+export function CaseStudyCard({
+  study,
+  onPlayingChange,
+  decorative = false,
+}: {
+  study: CaseStudy;
+  /** Lets the carousel hold its autoplay while a demo is actually playing. */
+  onPlayingChange?: (playing: boolean) => void;
+  /**
+   * One of the carousel's cloned copies. It stays clickable — it points at the
+   * same study — but leaves the tab order and the accessibility tree, so the
+   * list is announced once rather than three times.
+   */
+  decorative?: boolean;
+}) {
+  const tab = decorative ? -1 : undefined;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
   const [hasVideo, setHasVideo] = useState(true);
@@ -58,6 +73,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
 
   return (
     <article
+      aria-hidden={decorative || undefined}
       className="group relative flex h-full flex-col overflow-hidden rounded-[var(--r-lg)] bg-deep text-deep-ink shadow-[0_30px_80px_-50px_rgba(36,19,25,0.8)]"
       style={{ backgroundColor: "#140c10" }}
     >
@@ -81,8 +97,15 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
             loop
             playsInline
             preload="metadata"
-            onPlay={() => setPlaying(true)}
-            onPause={() => setPlaying(false)}
+            onPlay={() => {
+              setPlaying(true);
+              onPlayingChange?.(true);
+            }}
+            onPause={() => {
+              setPlaying(false);
+              onPlayingChange?.(false);
+            }}
+            onEnded={() => onPlayingChange?.(false)}
             onError={() => setHasVideo(false)}
           />
         ) : null}
@@ -96,6 +119,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
         <button
           type="button"
           onClick={toggle}
+          tabIndex={tab}
           aria-label={`${playing ? "Pause" : "Play"} the ${study.client} demo`}
           className="absolute bottom-4 left-4 flex items-center gap-2.5 rounded-[var(--r-pill)] border border-white/20 bg-black/45 py-2 pl-2 pr-4 text-[0.82rem] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-black/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
@@ -130,6 +154,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
 
         <Link
           href={`/case-studies/${study.slug}`}
+          tabIndex={tab}
           className="inline-flex w-fit items-center gap-2 rounded-[var(--r-pill)] bg-white px-5 py-3 text-[0.88rem] font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           View case study

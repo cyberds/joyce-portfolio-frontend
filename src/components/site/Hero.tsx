@@ -33,17 +33,6 @@ export function Hero() {
     >
       <div className="grid items-end gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-6">
         <motion.div style={{ y: copyY }} className="max-w-[34rem] pb-4 md:pb-16">
-          <motion.p
-            custom={0}
-            variants={rise}
-            initial="hidden"
-            animate="show"
-            className="eyebrow flex items-center gap-3 text-ink-faint"
-          >
-            <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-            AI &amp; automation, explained simply
-          </motion.p>
-
           <motion.h1
             custom={1}
             variants={rise}
