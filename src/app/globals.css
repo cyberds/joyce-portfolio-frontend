@@ -145,3 +145,13 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* Horizontal rails scroll by touch and trackpad; the bar itself is noise. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

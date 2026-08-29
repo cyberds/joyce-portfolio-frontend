@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { easeCurve } from "@/design/tokens";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 
 const links = [
-  { label: "Sound familiar?", href: "#familiar" },
-  { label: "How it works", href: "#journey" },
-  { label: "About Joyce", href: "#joyce" },
-  { label: "What we help with", href: "#help" },
+  { label: "Sound familiar?", href: "/#familiar" },
+  { label: "How it works", href: "/#journey" },
+  { label: "Case studies", href: "/#case-studies" },
+  { label: "About Joyce", href: "/#joyce" },
+  { label: "What we help with", href: "/#help" },
 ];
 
 export function Nav() {
@@ -50,17 +52,17 @@ export function Nav() {
           scrolled ? "glass" : "border-transparent"
         } ${onDark ? "nav-dark" : ""}`}
       >
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="flex items-center gap-2.5 rounded-[var(--r-pill)] py-1.5 pl-3 pr-4"
         >
           <span className="size-2 rounded-full bg-accent" aria-hidden />
           <span className="display text-[1.25rem] leading-none">Joyce Wadawasina</span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`rounded-[var(--r-pill)] px-3.5 py-2 text-[0.86rem] transition-colors ${
@@ -70,19 +72,19 @@ export function Nav() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href="#talk"
+          <Link
+            href="/#talk"
             className={`rounded-[var(--r-pill)] px-4 py-2.5 text-[0.86rem] font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
               onDark ? "bg-deep-ink text-deep" : "bg-ink text-surface"
             }`}
           >
             Talk to Joyce
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -107,14 +109,14 @@ export function Nav() {
           className="glass mx-auto mt-2 flex w-[min(1200px,94vw)] flex-col rounded-[var(--r-lg)] p-2 lg:hidden"
         >
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="rounded-[var(--r-md)] px-4 py-3 text-[0.95rem] text-ink-muted transition-colors hover:bg-surface hover:text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </motion.nav>
       ) : null}

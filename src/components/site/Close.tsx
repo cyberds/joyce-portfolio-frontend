@@ -29,10 +29,6 @@ export function Close() {
 
           <div className="relative grid items-end gap-10 p-9 md:grid-cols-[1.15fr_0.85fr] md:p-14 lg:p-16">
             <div className="max-w-[32rem] pb-4">
-              <p className="eyebrow flex items-center gap-3 text-deep-muted">
-                <span className="h-px w-8 bg-deep-muted/50" aria-hidden />
-                Where this starts
-              </p>
 
               <h2 className="display mt-6 text-[clamp(2.2rem,4.6vw,3.5rem)]">
                 Start with a sentence.
