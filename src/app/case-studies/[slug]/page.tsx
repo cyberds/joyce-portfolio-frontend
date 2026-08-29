@@ -43,7 +43,7 @@ export default async function CaseStudyPage({ params }: Params) {
       <Nav />
 
       <div className="paper">
-        <article className="relative z-10 mx-auto w-[min(1200px,94vw)] pt-36 md:pt-44">
+        <article className="relative z-10 mx-auto shell pt-36 md:pt-44">
           {/* ---- Title block ---- */}
           <Reveal>
             <Link
@@ -227,7 +227,7 @@ export default async function CaseStudyPage({ params }: Params) {
 
           {/* ---- Onward ---- */}
           <Reveal>
-            <div className="mt-28 flex flex-col gap-6 border-t border-hairline pt-10 sm:flex-row sm:items-end sm:justify-between">
+            <div className="mt-28 flex flex-col gap-6 border-t border-hairline py-10 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="eyebrow text-ink-faint">Next case study</p>
                 <Link

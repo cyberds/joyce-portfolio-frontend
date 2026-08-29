@@ -262,7 +262,7 @@ export function CaseStudies() {
       className="relative z-10 overflow-hidden py-24 md:py-32"
     >
       {/* Header */}
-      <div className="mx-auto flex w-[min(1200px,94vw)] flex-col gap-8 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex shell flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div className="max-w-[42rem]">
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-ink-faint">
@@ -343,10 +343,14 @@ export function CaseStudies() {
           hovering.current = false;
         }}
         style={{
-          paddingInline: "calc((100% - min(1200px, 94vw)) / 2)",
-          // Snap-start aligns a card to the scrollport edge, which would pull
-          // the first card flush against the window and cancel the gutter out.
-          scrollPaddingInline: "calc((100% - min(1200px, 94vw)) / 2)",
+          // Same gutter the `.shell` bands use, so the first card starts on the
+          // heading's left edge. Snap-start aligns a card to the scrollport
+          // edge, so the scroll padding has to match or snap would pull the
+          // first card flush against the window and cancel the gutter out.
+          paddingInline:
+            "max(var(--shell-gutter), calc((100% - var(--shell-max)) / 2))",
+          scrollPaddingInline:
+            "max(var(--shell-gutter), calc((100% - var(--shell-max)) / 2))",
         }}
       >
         {Array.from({ length: SETS }).flatMap((_, set) =>
@@ -369,7 +373,7 @@ export function CaseStudies() {
       </div>
 
       {/* Position indicator + the way to everything else */}
-      <div className="mx-auto mt-6 flex w-[min(1200px,94vw)] items-center justify-between gap-6">
+      <div className="mx-auto mt-6 flex shell items-center justify-between gap-6">
         <div className="flex items-center gap-2">
           {caseStudies.map((study, i) => (
             <button

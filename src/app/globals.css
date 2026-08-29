@@ -155,3 +155,32 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* ---- Page rhythm ------------------------------------------------------ */
+
+/*
+ * The horizontal shell every band on the page shares.
+ *
+ * The gutter is a scaling floor rather than a percentage of the viewport.
+ * `min(1200px, 94vw)` reads fine at 1920 (353px of air) but collapses to a
+ * 33px hairline at 1280, where the cap and the percentage cross over — the
+ * content ends up almost edge to edge on exactly the laptop width most people
+ * use. Subtracting a clamped gutter instead keeps real air at every size.
+ */
+:root {
+  --shell-max: 1200px;
+  --shell-gutter: clamp(1.25rem, 5vw, 5rem);
+}
+
+.shell {
+  width: min(var(--shell-max), calc(100% - 2 * var(--shell-gutter)));
+  margin-inline: auto;
+}
+
+/* Full-bleed rails line their first item up with the shell's left edge. */
+.shell-pad {
+  padding-inline: max(
+    var(--shell-gutter),
+    calc((100% - var(--shell-max)) / 2)
+  );
+}

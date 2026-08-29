@@ -18,7 +18,7 @@ export default function CaseStudiesIndex() {
       <Nav />
 
       <div className="paper">
-        <section className="relative z-10 mx-auto w-[min(1200px,94vw)] pt-36 md:pt-44">
+        <section className="relative z-10 mx-auto shell pt-36 md:pt-44">
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-ink-faint">
               <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
@@ -88,7 +88,7 @@ export default function CaseStudiesIndex() {
           </ul>
 
           <Reveal>
-            <div className="mt-24 flex flex-col gap-5 border-t border-hairline pt-10 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-24 flex flex-col gap-5 border-t border-hairline py-10 sm:flex-row sm:items-center sm:justify-between">
               <p className="display max-w-[26rem] text-[clamp(1.4rem,2.8vw,2rem)] leading-tight text-ink">
                 Yours would start with a sentence, not a brief.
               </p>

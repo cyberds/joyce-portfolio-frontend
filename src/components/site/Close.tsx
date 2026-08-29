@@ -179,10 +179,10 @@ export function Close() {
     <section
       ref={sectionRef}
       id="talk"
-      className="relative z-10 mx-auto w-[min(1200px,94vw)] pb-24 md:pb-32"
+      className="relative z-10 mx-auto shell pb-24 md:pb-32"
     >
       {/* Headroom for the part of her that stands above the card. */}
-      <div className="pt-16 xl:pt-[11rem]">
+      <div className="pt-1 xl:pt-[8rem]">
         <div
           ref={cardRef}
           className="dark-zone relative rounded-[var(--r-xl)] bg-deep text-deep-ink lg:min-h-[33rem]"
@@ -261,8 +261,8 @@ export function Close() {
                 shoulders stand clear of it. The overhang is a fixed length
                 rather than a percentage so it cannot drift when the copy
                 reflows and the card gets taller. Nothing above her clips. */}
-            <div className="relative mx-auto mt-12 aspect-[381/584] w-[min(16rem,76%)] lg:absolute lg:bottom-0 lg:right-[3%] lg:mx-0 lg:mt-0 lg:h-full lg:w-auto lg:max-w-[42%] xl:h-[calc(100%+8.5rem)] xl:max-w-[46%]">
-              <div ref={parallaxRef} className="relative h-full w-full">
+            <div className="hidden md:block relative mx-auto mt-12 aspect-[381/584] w-[min(16rem,76%)] lg:absolute lg:bottom-0 lg:right-[3%] lg:mx-0 lg:mt-0 lg:h-full lg:w-auto lg:max-w-[42%] xl:h-[calc(100%+8.5rem)] xl:max-w-[46%]">
+              <div ref={parallaxRef} className="relative h-full w-[400px] md:w-full">
                 <div className="relative h-full w-full">
                   {/* Halo behind her head, sold as depth rather than a glow. */}
                   <div
@@ -272,13 +272,13 @@ export function Close() {
                   />
                   <div
                     ref={revealRef}
-                    className="relative h-full w-full [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
+                    className="relative h-full w-full md:w-[600px] [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
                   >
                     <Image
                       src="/images/joyce-native-full.png"
                       alt="Joyce Wadawasina"
                       fill
-                      sizes="(max-width: 1023px) 68vw, 34vw"
+                      sizes="(max-width: 1023px) 78vw, 44vw"
                       className="object-contain object-bottom"
                       priority={false}
                     />

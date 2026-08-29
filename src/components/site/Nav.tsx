@@ -9,7 +9,7 @@ import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 const links = [
   { label: "Sound familiar?", href: "/#familiar" },
   { label: "How it works", href: "/#journey" },
-  { label: "Case studies", href: "/#case-studies" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "What we help with", href: "/#help" },
 ];
@@ -47,11 +47,15 @@ export function Nav() {
       transition={{ duration: 0.7, ease: easeCurve }}
       className="fixed inset-x-0 top-0 z-50"
     >
-      <div
-        className={`mx-auto mt-3 flex w-[min(1200px,94vw)] items-center justify-between rounded-[var(--r-pill)] border px-2 py-2 transition-all duration-500 ${
-          scrolled ? "glass" : "border-transparent"
-        } ${onDark ? "nav-dark" : ""}`}
-      >
+      {/* The shell owns the width; the pill owns the look. Keeping them on
+          separate elements means the bar's colour transition can never end up
+          animating its width when the viewport resizes. */}
+      <div className="shell mt-3">
+        <div
+          className={`flex w-full items-center justify-between rounded-[var(--r-pill)] border px-2 py-2 transition-colors duration-500 ${
+            scrolled ? "glass" : "border-transparent"
+          } ${onDark ? "nav-dark" : ""}`}
+        >
         <Link
           href="/"
           className="flex items-center gap-2.5 rounded-[var(--r-pill)] py-1.5 pl-3 pr-4"
@@ -98,6 +102,7 @@ export function Nav() {
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
+          </div>
         </div>
       </div>
 
@@ -106,7 +111,7 @@ export function Nav() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: easeCurve }}
-          className="glass mx-auto mt-2 flex w-[min(1200px,94vw)] flex-col rounded-[var(--r-lg)] p-2 lg:hidden"
+          className="glass mx-auto mt-2 flex shell flex-col rounded-[var(--r-lg)] p-2 lg:hidden"
         >
           {links.map((link) => (
             <Link

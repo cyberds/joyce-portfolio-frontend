@@ -90,7 +90,7 @@ export function Footer() {
       className="relative z-10 overflow-hidden border-t border-hairline bg-white/40"
     >
       {/* Top Grid */}
-      <div className="mx-auto grid w-[min(1200px,94vw)] gap-12 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid shell gap-12 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-[26rem]">
           <p className="text-[0.96rem] leading-[1.7] text-ink-muted">
             AI and automation, explained simply. Simpler systems that give you
@@ -168,7 +168,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Copyright Line */}
-      <div className="mx-auto flex w-[min(1200px,94vw)] flex-col gap-2 border-t border-hairline py-7 text-[0.78rem] text-ink-faint md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex shell flex-col gap-2 border-t border-hairline py-7 text-[0.78rem] text-ink-faint md:flex-row md:items-center md:justify-between">
         <p>
           &copy; {new Date().getFullYear()} Joyce Wadawasina. All rights
           reserved.

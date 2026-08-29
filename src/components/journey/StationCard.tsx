@@ -74,10 +74,21 @@ export function StationGlyph({
  * One station, written as what normally happens vs. what happens instead. The
  * width is capped in `vw` as well as `px` so it can never outgrow a phone.
  */
-export function StationCard({ station }: { station: Station }) {
+export function StationCard({
+  station,
+  fluid = false,
+}: {
+  station: Station;
+  /** Fill the container instead of taking a fixed width — the phone panel. */
+  fluid?: boolean;
+}) {
   return (
     <div
-      className="w-[min(320px,84vw)] rounded-[var(--r-md)] bg-white p-4 shadow-[0_2px_10px_-2px_rgba(36,19,25,0.07),0_18px_40px_-24px_rgba(36,19,25,0.22)] ring-1 ring-black/[0.05] sm:w-[min(340px,84vw)] sm:p-5"
+      className={`rounded-[var(--r-md)] bg-white shadow-[0_2px_10px_-2px_rgba(36,19,25,0.07),0_18px_40px_-24px_rgba(36,19,25,0.22)] ring-1 ring-black/[0.05] ${
+        fluid
+          ? "w-full p-4"
+          : "w-[min(320px,84vw)] p-4 sm:w-[min(340px,84vw)] sm:p-5"
+      }`}
       style={{ borderTop: `3px solid ${station.color}` }}
     >
       <div className="flex items-center justify-between gap-3 border-b border-stone-100 pb-2">

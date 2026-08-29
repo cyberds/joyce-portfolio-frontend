@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       <div className="paper">
         {/* ---- Who ---- */}
-        <section className="relative z-10 mx-auto w-[min(1200px,94vw)] pt-36 md:pt-44">
+        <section className="relative z-10 mx-auto shell pt-36 md:pt-44">
           <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <Reveal>
@@ -162,7 +162,7 @@ export default function AboutPage() {
         </section>
 
         {/* ---- The story ---- */}
-        <section className="relative z-10 mx-auto mt-28 w-[min(1200px,94vw)] md:mt-36">
+        <section className="relative z-10 mx-auto mt-28 shell md:mt-36">
           <div className="grid gap-14 lg:grid-cols-[0.3fr_0.7fr]">
             <Reveal>
               <div className="lg:sticky lg:top-28">
@@ -199,7 +199,7 @@ export default function AboutPage() {
         </section>
 
         {/* ---- What that looks like in practice ---- */}
-        <section className="relative z-10 mx-auto mt-28 w-[min(1200px,94vw)] md:mt-36">
+        <section className="relative z-10 mx-auto mt-28 shell md:mt-36">
           <div className="max-w-[44rem]">
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-ink-faint">
@@ -234,7 +234,7 @@ export default function AboutPage() {
         </section>
 
         {/* ---- The point of it ---- */}
-        <section className="relative z-10 mx-auto mt-28 w-[min(1200px,94vw)] md:mt-36">
+        <section className="relative z-10 mx-auto mt-28 shell md:mt-36">
           <Reveal>
             <div className="relative overflow-hidden rounded-[var(--r-xl)] bg-deep text-deep-ink">
               <div
@@ -277,7 +277,7 @@ export default function AboutPage() {
         </section>
 
         {/* ---- Onward ---- */}
-        <section className="relative z-10 mx-auto mt-24 w-[min(1200px,94vw)] pb-24 md:pb-32">
+        <section className="relative z-10 mx-auto mt-24 shell pb-24 md:pb-32">
           <Reveal>
             <div className="flex flex-col gap-6 border-t border-hairline pt-10 sm:flex-row sm:items-end sm:justify-between">
               <p className="display max-w-[26rem] text-[clamp(1.5rem,3vw,2.1rem)] leading-tight text-ink">

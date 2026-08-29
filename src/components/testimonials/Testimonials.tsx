@@ -57,7 +57,7 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative z-10 mx-auto w-[min(1200px,94vw)] pb-24 md:pb-32"
+      className="relative z-10 mx-auto shell pb-24 md:pb-32"
     >
       <div className="max-w-[44rem]">
         <Reveal>

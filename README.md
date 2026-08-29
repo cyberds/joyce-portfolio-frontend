@@ -43,6 +43,30 @@ The page is written as a conversation, in the order one would actually go:
 The palette is drawn from the photography: warm paper, warm near-black ink, and
 the red Joyce actually wears as the single accent.
 
+## Page rhythm
+
+Every band on the page — sections, the nav bar, the carousel rail — shares one
+horizontal shell, defined once in `globals.css`:
+
+```css
+--shell-max: 1200px;
+--shell-gutter: clamp(1.25rem, 5vw, 5rem);
+.shell { width: min(var(--shell-max), calc(100% - 2 * var(--shell-gutter))); }
+```
+
+The gutter is a scaling floor rather than a percentage of the viewport. The
+previous `min(1200px, 94vw)` looked fine at 1920 but collapsed to a 33px
+hairline at 1280, where the cap and the percentage cross over — content ended up
+almost edge to edge on exactly the laptop width most people use.
+
+Full-bleed rails use `.shell-pad`, which resolves to the same gutter, so the
+first card in the carousel starts on the heading's left edge.
+
+The nav keeps the shell on a wrapper and the pill styling on the child. They
+have to be separate elements: the pill carries a colour transition, and with
+`transition-all` on the same element the bar animates its *width* on every
+resize.
+
 ## The journey chapter
 
 `src/components/journey/`:

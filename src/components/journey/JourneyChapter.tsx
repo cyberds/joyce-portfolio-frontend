@@ -14,8 +14,19 @@ if (typeof window !== "undefined") {
 
 /** Timeline units spent moving between stations, split by distance travelled. */
 const TRAVEL_TOTAL = 6;
-/** Timeline units the camera holds still at a station so its card can be read. */
-const DWELL = 1.6;
+/**
+ * Timeline units the camera holds still at a station. The card is at full
+ * opacity for all of it, so this is literally the reading time.
+ */
+const DWELL = 2.2;
+
+/** How strongly the background picks up the active station's colour. */
+const TINT_STRENGTH = 0.085;
+
+function hexToRgb(hex: string) {
+  const n = parseInt(hex.replace("#", ""), 16);
+  return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+}
 
 export function JourneyChapter() {
   const isNarrow = useMediaQuery("(max-width: 767px)");
@@ -32,6 +43,7 @@ export function JourneyChapter() {
   const nodeRefs = useRef<(SVGGElement | null)[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dotRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const tintRef = useRef<HTMLDivElement>(null);
 
   const layout = useMemo(() => getJourneyLayout(isNarrow), [isNarrow]);
 
@@ -132,30 +144,36 @@ export function JourneyChapter() {
       // speed sweep is what leaves every card sliding off the top of the frame
       // before the reader reaches the end of the sentence.
       const marks = [0, ...stationLengths, totalLen];
+      // Travel time tracks distance, so the fluid keeps one apparent speed.
+      // segment 0 is the lead-in, segment i is the run out of station i-1, and
+      // the last is the tail after the final station.
+      const segment = marks
+        .slice(1)
+        .map((mark, i) =>
+          Math.max(0.3, TRAVEL_TOTAL * ((mark - marks[i]) / totalLen)),
+        );
+
       const stationTimes: number[] = [];
       let cursor = 0;
 
-      for (let i = 1; i < marks.length; i += 1) {
-        const span = marks[i] - marks[i - 1];
-        // Travel time tracks distance, so the fluid keeps one apparent speed.
-        const duration = Math.max(0.3, TRAVEL_TOTAL * (span / totalLen));
+      segment.forEach((duration, i) => {
         tl.to(
           head,
           {
-            len: marks[i],
+            len: marks[i + 1],
             duration,
-            ease: i === 1 ? "power1.in" : "power1.inOut",
+            ease: i === 0 ? "power1.in" : "power1.inOut",
             onUpdate: syncHead,
           },
           cursor,
         );
         cursor += duration;
 
-        if (i <= stations.length) {
+        if (i < stations.length) {
           stationTimes.push(cursor);
           cursor += DWELL;
         }
-      }
+      });
 
       tl.to(headRef.current, { autoAlpha: 1, duration: 0.25 }, 0);
 
@@ -176,12 +194,35 @@ export function JourneyChapter() {
       // --- per-station beats ---------------------------------------------
       const stageScale = () => stage.offsetWidth / layout.vbW;
 
+      // The background carries a whisper of whatever colour the fluid is
+      // currently running. Tweened as plain numbers on an object rather than as
+      // a CSS colour string, so the interpolation is predictable.
+      const tint = hexToRgb(stations[0].color);
+      const applyTint = () => {
+        tintRef.current?.style.setProperty(
+          "--journey-tint",
+          `rgb(${Math.round(tint.r)} ${Math.round(tint.g)} ${Math.round(tint.b)})`,
+        );
+      };
+      applyTint();
+
       stationTimes.forEach((time, i) => {
         const station = stations[i];
 
         tl.to(
           fluidPath,
           { stroke: station.color, duration: 0.5, ease: "power1.out" },
+          time,
+        );
+
+        tl.to(
+          tint,
+          {
+            ...hexToRgb(station.color),
+            duration: 0.7,
+            ease: "power1.out",
+            onUpdate: applyTint,
+          },
           time,
         );
 
@@ -244,35 +285,41 @@ export function JourneyChapter() {
         const card = cardRefs.current[i];
         if (card) {
           const off = layout.cardOffset[i];
-          // Offsets are authored in SVG user units, so convert to the stage's
-          // rendered pixels — the throw is then the same distance at any width.
+          // Wide layouts throw the card in from its side, in SVG units scaled
+          // to rendered pixels so the distance reads the same at any width.
+          // The phone panel rises from the bottom edge instead.
+          const from = layout.cardsFollowPipe
+            ? { x: off.x * stageScale(), y: off.y * stageScale() }
+            : { x: 0, y: 46 };
+
           tl.fromTo(
             card,
-            {
-              x: off.x * stageScale(),
-              y: off.y * stageScale(),
-              autoAlpha: 0,
-              scale: 0.9,
-            },
+            { ...from, autoAlpha: 0, scale: 0.94 },
             {
               x: 0,
               y: 0,
               autoAlpha: 1,
               scale: 1,
-              duration: DWELL * 0.6,
-              ease: "back.out(1.6)",
+              duration: Math.min(0.9, DWELL * 0.42),
+              ease: "back.out(1.5)",
             },
             time,
           );
 
-          // It leaves as the fluid does, so two cards never compete on screen.
-          if (i < stations.length - 1) {
-            tl.to(
-              card,
-              { autoAlpha: 0, scale: 0.95, duration: DWELL * 0.5 },
-              time + DWELL * 0.75,
-            );
-          }
+          // The card holds for the whole dwell and only starts leaving once the
+          // fluid moves off, so it is readable for every frame the camera is
+          // actually still. Fading it inside the dwell is what made cards feel
+          // like they vanished early.
+          tl.to(
+            card,
+            {
+              autoAlpha: 0,
+              scale: 0.97,
+              duration: segment[i + 1] * 0.6,
+              ease: "power1.in",
+            },
+            time + DWELL,
+          );
         }
       });
 
@@ -302,7 +349,7 @@ export function JourneyChapter() {
     return (
       <section
         id="journey"
-        className="relative border-y border-stone-200/80 bg-white text-stone-900"
+        className="relative border-y border-stone-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_38%,var(--c-canvas)_100%)] text-stone-900"
       >
         <div className="mx-auto w-[min(760px,92vw)] py-24 text-center">
           <JourneyHeading />
@@ -334,6 +381,25 @@ export function JourneyChapter() {
       suppressHydrationWarning
     >
       <div ref={pinRef} className="relative h-[100svh] w-full overflow-hidden">
+        {/* Background, in three restrained layers. It stays white — the wash
+            only leans towards the paper the rest of the site is printed on,
+            the grid is the same one `.paper` uses, and the tint is a few
+            percent of the colour the fluid is currently carrying. All of it
+            sits under white cards, which it separates rather than muddies. */}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_38%,var(--c-canvas)_100%)]" />
+          <div
+            ref={tintRef}
+            className="absolute inset-0"
+            style={{
+              opacity: TINT_STRENGTH,
+              background:
+                "radial-gradient(120% 72% at 50% 44%, var(--journey-tint, transparent) 0%, transparent 62%)",
+            }}
+          />
+          <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(to_right,var(--c-grid)_1px,transparent_1px),linear-gradient(to_bottom,var(--c-grid)_1px,transparent_1px)] [background-size:88px_88px] [mask-image:radial-gradient(110%_75%_at_50%_45%,#000_5%,transparent_78%)]" />
+        </div>
+
         {/* Camera frame. The stage is taller than this and slides behind it. */}
         <div ref={frameRef} className="absolute inset-0 overflow-hidden">
           <div
@@ -434,30 +500,54 @@ export function JourneyChapter() {
               })}
             </svg>
 
-            {/* Cards ride the same coordinate system as the SVG. */}
-            <div className="pointer-events-none absolute inset-0">
-              {stations.map((s, i) => {
-                const c = layout.cards[i];
-                return (
-                  <div
-                    key={s.id}
-                    ref={(el) => {
-                      cardRefs.current[i] = el;
-                    }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 will-change-transform"
-                    style={{
-                      left: `${(c.x / layout.vbW) * 100}%`,
-                      top: `${(c.y / layout.vbH) * 100}%`,
-                      visibility: "hidden",
-                    }}
-                  >
-                    <StationCard station={s} />
-                  </div>
-                );
-              })}
-            </div>
+            {/* Wide only: cards ride the same coordinate system as the SVG. */}
+            {layout.cardsFollowPipe ? (
+              <div className="pointer-events-none absolute inset-0">
+                {stations.map((s, i) => {
+                  const c = layout.cards[i];
+                  return (
+                    <div
+                      key={s.id}
+                      ref={(el) => {
+                        cardRefs.current[i] = el;
+                      }}
+                      className="absolute -translate-x-1/2 -translate-y-1/2 will-change-transform"
+                      style={{
+                        left: `${(c.x / layout.vbW) * 100}%`,
+                        top: `${(c.y / layout.vbH) * 100}%`,
+                        visibility: "hidden",
+                      }}
+                    >
+                      <StationCard station={s} />
+                    </div>
+                  );
+                })}
+              </div>
+            ) : null}
           </div>
         </div>
+
+        {/* Narrow only: the card is a panel pinned to the bottom of the frame,
+            outside the moving stage. Its position depends on the frame, not on
+            the pipeline, so a short screen can never crop it. */}
+        {layout.cardsFollowPipe ? null : (
+          <div className="pointer-events-none absolute inset-x-0 bottom-9 z-10 px-4">
+            <div className="relative mx-auto w-full max-w-[26rem]">
+              {stations.map((s, i) => (
+                <div
+                  key={s.id}
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
+                  className="absolute inset-x-0 bottom-0 will-change-transform"
+                  style={{ visibility: "hidden" }}
+                >
+                  <StationCard station={s} fluid />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Intro — an overlay, so it costs the camera no height */}
         <div
@@ -483,7 +573,7 @@ export function JourneyChapter() {
         {/* Outro — arrives once the pipe has filled */}
         <div
           ref={outroRef}
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-white via-white/95 to-transparent px-5 pb-12 pt-0"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-canvas via-canvas/95 to-transparent px-5 pb-12 pt-0"
         >
           <JourneyOutro />
         </div>

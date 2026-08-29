@@ -29,7 +29,7 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative z-10 mx-auto flex min-h-[100svh] w-[min(1200px,94vw)] flex-col justify-end pt-28 pb-8 md:pb-10"
+      className="relative z-10 mx-auto flex min-h-[100svh] shell flex-col justify-end pt-28 pb-8 md:pb-10"
     >
       <div className="grid items-end gap-10 md:grid-cols-[1.02fr_0.98fr] md:gap-6">
         <motion.div style={{ y: copyY }} className="max-w-[34rem] pb-4 md:pb-16">
