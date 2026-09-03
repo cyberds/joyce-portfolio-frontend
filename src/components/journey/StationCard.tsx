@@ -131,7 +131,7 @@ export function StationCard({
             className="size-1 rounded-full"
             style={{ backgroundColor: station.color }}
           />
-          With Joyce
+          With Automation
         </div>
         {station.after}
       </div>

@@ -51,7 +51,7 @@ export default async function CaseStudyPage({ params }: Params) {
               className="eyebrow inline-flex items-center gap-2 text-ink-faint transition-colors hover:text-ink"
             >
               <ArrowRightIcon className="rotate-180" />
-              All case studies
+              All Our Projects
             </Link>
           </Reveal>
 

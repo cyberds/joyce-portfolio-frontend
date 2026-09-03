@@ -267,7 +267,7 @@ export function CaseStudies() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-ink-faint">
               <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-              Case studies
+              Our Projects
             </p>
           </Reveal>
           <Reveal delay={0.06}>

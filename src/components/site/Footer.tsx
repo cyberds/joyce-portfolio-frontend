@@ -21,7 +21,7 @@ if (typeof window !== "undefined") {
 const siteLinks = [
   { label: "Sound familiar?", href: "/#familiar" },
   { label: "How it works", href: "/#journey" },
-  { label: "Case studies", href: "/case-studies" },
+  { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "What we help with", href: "/#help" },
 ];
@@ -157,7 +157,7 @@ export function Footer() {
       </div>
 
       {/* Huge Monumental Ultra-Bold Brand Name Banner */}
-      <div className="relative flex w-full select-none items-center justify-center overflow-hidden pb-12 pt-6">
+      <div className="hidden relative flex w-full select-none items-center justify-center overflow-hidden pb-12 pt-6">
         <h2
           ref={bigNameRef}
           className="w-full whitespace-nowrap text-center text-[clamp(1.2rem,10.2vw,13.5rem)] font-[900] leading-[0.78] tracking-tight text-ink/90 will-change-transform"

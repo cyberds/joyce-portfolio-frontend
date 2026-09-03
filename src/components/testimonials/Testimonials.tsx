@@ -68,8 +68,8 @@ export function Testimonials() {
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="display mt-6 text-[clamp(2.1rem,4.4vw,3.4rem)] text-ink">
-            The part I can&rsquo;t{" "}
-            <em className="italic">write myself</em>.
+            The People I&rsquo;ve{" "}
+            <em className="italic">Worked With</em>.
           </h2>
         </Reveal>
         <Reveal delay={0.12}>

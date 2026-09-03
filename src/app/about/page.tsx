@@ -259,7 +259,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <dl className="grid grid-cols-3 gap-6 self-end md:grid-cols-1 md:gap-8">
+                <dl className="hidden grid grid-cols-3 gap-6 self-end md:grid-cols-1 md:gap-8">
                   {numbers.map((item) => (
                     <div key={item.label}>
                       <dt className="display text-[clamp(1.6rem,2.6vw,2.1rem)] leading-none">

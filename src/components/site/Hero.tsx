@@ -59,7 +59,7 @@ export function Hero() {
             If you&rsquo;re spending too much time on admin, chasing emails,
             following up with clients or doing things you know shouldn&rsquo;t
             take this much effort — there may be a simpler way.{" "}
-            <span className="text-ink">I help you find it.</span>
+            <span className="text-ink">I can help you find it.</span>
           </motion.p>
 
           <motion.div
@@ -115,7 +115,7 @@ export function Hero() {
           >
             <figcaption className="eyebrow text-ink-faint">Usually first to reply</figcaption>
             <p className="mt-2 text-[0.9rem] leading-[1.55] text-ink">
-              &ldquo;Tell me what&rsquo;s taking too long. That&rsquo;s where we
+              &ldquo;Tell me what&rsquo;s taking up your time. That&rsquo;s where we
               start.&rdquo;
             </p>
           </motion.figure>

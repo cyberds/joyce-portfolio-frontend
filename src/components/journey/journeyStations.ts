@@ -35,7 +35,7 @@ export const stations: Station[] = [
     title: "They hear back straight away",
     before: "Normally you reply when you get a quiet ten minutes. Sometimes hours or days late.",
     after:
-      "A warm, bespoke reply goes out in your exact tone of voice with the next step attached while they are hot.",
+      "A warm, bespoke reply goes out in your exact tone of voice with the next step attached.",
     color: "#df0f57", // Raspberry Accent
     glowColor: "rgba(223, 15, 87, 0.4)",
     icon: "send",
@@ -59,7 +59,7 @@ export const stations: Station[] = [
     title: "Everything lands in one place",
     before: "Normally it's fragmented across WhatsApp threads, email tabs, and a scattered folder.",
     after:
-      "Their company info, interaction logs, and requirements sync into one unified dossier ready before your call.",
+      "Their company info, interaction logs, and requirements sync into one unified record ready before your call.",
     color: "#06b6d4", // Electric Cyan
     glowColor: "rgba(6, 182, 212, 0.4)",
     icon: "database",

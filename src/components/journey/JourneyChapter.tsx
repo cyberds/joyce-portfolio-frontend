@@ -587,7 +587,7 @@ function JourneyHeading() {
     <div className="mx-auto max-w-2xl">
       <div className="hidden inline-flex items-center gap-2 rounded-[var(--r-pill)] border border-stone-200 bg-stone-50 px-3.5 py-1 text-[11px] font-medium uppercase tracking-wider text-stone-600">
         <span className="size-1.5 rounded-full bg-accent" />
-        Connected journey
+        Example of a Connected journey
       </div>
       <h2 className="display mt-4 text-[clamp(1.7rem,3.4vw,2.7rem)] leading-tight text-stone-950">
         Let&rsquo;s follow one enquiry, from the moment it arrives.

@@ -148,7 +148,7 @@ export function MeetJoyce() {
           </div>
 
           {/* 3. Fixed Stats (Non-scrollable) */}
-          <div className="shrink-0 pt-4 border-t border-hairline mt-2">
+          <div className="hidden shrink-0 pt-4 border-t border-hairline mt-2">
             <Reveal delay={0.46}>
               <dl className="grid grid-cols-3 gap-4 sm:gap-6">
                 {grounding.map((item) => (

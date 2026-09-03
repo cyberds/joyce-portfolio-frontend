@@ -7,7 +7,7 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
-  title: "Case studies — Joyce Wadawasina",
+  title: "Our Projects — Joyce Wadawasina",
   description:
     "Automations built for real businesses: what the problem was, what we connected, and what actually changed.",
 };
@@ -22,7 +22,7 @@ export default function CaseStudiesIndex() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-ink-faint">
               <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-              Case studies
+              Our Projects
             </p>
           </Reveal>
           <Reveal delay={0.06}>
@@ -78,7 +78,7 @@ export default function CaseStudiesIndex() {
                       </h2>
                     </div>
                     <span className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-accent">
-                      View case study
+                      View Project
                       <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>

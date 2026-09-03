@@ -212,7 +212,7 @@ export function Close() {
               </h2>
 
               <p className="close-para mt-5 max-w-[30rem] text-[0.95rem] leading-[1.7] text-deep-muted">
-                You don&rsquo;t need a plan, a budget or the right vocabulary.
+                You don&rsquo;t need a plan, or the right vocabulary.
                 Tell me what&rsquo;s taking too long and we&rsquo;ll work out
                 together whether there&rsquo;s a simpler way. If there
                 isn&rsquo;t, I&rsquo;ll tell you that too.
@@ -248,7 +248,7 @@ export function Close() {
                     href="https://wa.me/447436836888"
                     className="block rounded-[var(--r-pill)] border border-deep-ink/20 px-6 py-3.5 text-[0.92rem] font-medium text-deep-ink transition-colors duration-300 hover:border-deep-ink/50"
                   >
-                    Book a 20-minute call
+                    Book a 30-minute call
                   </a>
                 </span>
               </div>

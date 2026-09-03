@@ -7,9 +7,9 @@ import { easeCurve } from "@/design/tokens";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 
 const links = [
-  { label: "Sound familiar?", href: "/#familiar" },
-  { label: "How it works", href: "/#journey" },
-  { label: "Case studies", href: "/case-studies" },
+  // { label: "Sound familiar?", href: "/#familiar" },
+  // { label: "How it works", href: "/#journey" },
+  { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "What we help with", href: "/#help" },
 ];
@@ -61,7 +61,7 @@ export function Nav() {
           className="flex items-center gap-2.5 rounded-[var(--r-pill)] py-1.5 pl-3 pr-4"
         >
           <span className="size-2 rounded-full bg-accent" aria-hidden />
-          <span className="display text-[1.25rem] leading-none">Joyce Wadawasina</span>
+          <span className="display text-[1.1rem] leading-none">Joyce Workflow Automation</span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

@@ -12,7 +12,7 @@ const areas = [
   {
     id: "consultancy",
     kicker: "Find a better way",
-    title: "AI & automation consultancy",
+    title: "Automation consultancy",
     icon: CompassIcon,
     body: "You may know your business could work more efficiently but have no idea where to begin. We look at what’s happening now, talk through the frustrating or repetitive parts, and identify where automation or AI could genuinely make things easier — one process, or opportunities across the whole business.",
     goodFor: "I know we could work smarter. I just don’t know where to start.",
