@@ -1,7 +1,7 @@
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Recognition } from "@/components/site/Recognition";
-import { JourneyChapter } from "@/components/journey/JourneyChapter";
+import { JourneySection } from "@/components/journey/JourneySection";
 import { CaseStudies } from "@/components/casestudies/CaseStudies";
 import { MeetJoyce } from "@/components/site/MeetJoyce";
 import { Services } from "@/components/site/Services";
@@ -24,7 +24,7 @@ export default function Home() {
         <Recognition />
       </div>
 
-      <JourneyChapter />
+      <JourneySection />
 
       <div className="paper">
         <CaseStudies />

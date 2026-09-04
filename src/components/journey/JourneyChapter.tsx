@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { stations } from "./journeyStations";
 import { getJourneyLayout } from "./journeyLayout";
 import { StationCard, StationGlyph } from "./StationCard";
+import { JourneyHeading, JourneyOutro } from "./JourneyCopy";
 import { useMediaQuery, usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 
 if (typeof window !== "undefined") {
@@ -28,7 +29,14 @@ function hexToRgb(hex: string) {
   return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
 }
 
-export function JourneyChapter() {
+/**
+ * The pinned roadmap: the camera tracks a fluid running down a pipeline and
+ * each station's card flies in as it arrives.
+ *
+ * `showHeading` is off on the standalone /journey page, where the page's own
+ * hero already carries the same words directly above the pinned frame.
+ */
+export function JourneyChapter({ showHeading = true }: { showHeading?: boolean } = {}) {
   const isNarrow = useMediaQuery("(max-width: 767px)");
   const reduced = usePrefersReducedMotion();
 
@@ -178,7 +186,7 @@ export function JourneyChapter() {
       tl.to(headRef.current, { autoAlpha: 1, duration: 0.25 }, 0);
 
       // The intro clears out of the way as the first station approaches.
-      if (headerRef.current) {
+      if (showHeading && headerRef.current) {
         tl.to(
           headerRef.current,
           {
@@ -342,7 +350,7 @@ export function JourneyChapter() {
       window.removeEventListener("load", refresh);
       ctx.revert();
     };
-  }, [layout, reduced]);
+  }, [layout, reduced, showHeading]);
 
   // ---- reduced motion: the same content, simply stacked -------------------
   if (reduced) {
@@ -352,7 +360,7 @@ export function JourneyChapter() {
         className="relative border-y border-stone-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_38%,var(--c-canvas)_100%)] text-stone-900"
       >
         <div className="mx-auto w-[min(760px,92vw)] py-24 text-center">
-          <JourneyHeading />
+          {showHeading ? <JourneyHeading /> : null}
           <ol className="mt-12 space-y-8 text-left">
             {stations.map((s) => (
               <li key={s.id} className="flex gap-4">
@@ -550,12 +558,14 @@ export function JourneyChapter() {
         )}
 
         {/* Intro — an overlay, so it costs the camera no height */}
-        <div
-          ref={headerRef}
-          className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-white via-white/95 to-transparent px-5 pb-14 pt-[max(5rem,11svh)] text-center"
-        >
-          <JourneyHeading />
-        </div>
+        {showHeading ? (
+          <div
+            ref={headerRef}
+            className="pointer-events-none absolute inset-x-0 top-0 z-20 bg-gradient-to-b from-white via-white/95 to-transparent px-5 pb-14 pt-[max(5rem,11svh)] text-center"
+          >
+            <JourneyHeading />
+          </div>
+        ) : null}
 
         {/* Progress rail */}
         <div className="pointer-events-none absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2">
@@ -579,38 +589,5 @@ export function JourneyChapter() {
         </div>
       </div>
     </section>
-  );
-}
-
-function JourneyHeading() {
-  return (
-    <div className="mx-auto max-w-2xl">
-      <div className="hidden inline-flex items-center gap-2 rounded-[var(--r-pill)] border border-stone-200 bg-stone-50 px-3.5 py-1 text-[11px] font-medium uppercase tracking-wider text-stone-600">
-        <span className="size-1.5 rounded-full bg-accent" />
-        Example of a Connected journey
-      </div>
-      <h2 className="display mt-4 text-[clamp(1.7rem,3.4vw,2.7rem)] leading-tight text-stone-950">
-        Let&rsquo;s follow one enquiry, from the moment it arrives.
-      </h2>
-      <p className="mx-auto mt-3 max-w-lg text-[0.85rem] leading-relaxed text-stone-500 sm:text-sm">
-        Nothing here is exotic. It&rsquo;s the same enquiry you already get —
-        connected into a clean pipeline so nobody has to hold it in their head.
-      </p>
-    </div>
-  );
-}
-
-function JourneyOutro({ className = "" }: { className?: string }) {
-  return (
-    <p
-      className={`mx-auto max-w-2xl text-center leading-relaxed text-stone-800 sm:text-base ${className}`}
-    >
-      No new team members. No twelve new subscriptions. Just the tools you
-      already pay for,{" "}
-      <em className="display font-semibold italic text-stone-950 underline decoration-accent/60 decoration-2 underline-offset-4">
-        finally talking to each other
-      </em>
-      .
-    </p>
   );
 }

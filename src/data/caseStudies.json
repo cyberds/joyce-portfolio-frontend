@@ -1,234 +1,277 @@
 {
   "caseStudies": [
     {
-      "slug": "riverside-dental-enquiries",
-      "cardHeading": "Every enquiry answered in under a minute",
-      "title": "One inbox, one calendar, zero missed enquiries",
-      "client": "Riverside Dental Practice",
-      "clientType": "Private dental practice, 3 sites",
-      "industry": "Healthcare",
-      "year": "2025",
-      "accent": "#f59e0b",
-      "video": "/videos/case-studies/riverside-dental.mp4",
-      "poster": "/videos/case-studies/riverside-dental.jpg",
-      "duration": "1:24",
-      "services": ["Automation", "Integration", "AI drafting"],
-      "summary": "New patient enquiries arrived across three websites, two inboxes and a phone line. We connected them into a single pipeline that acknowledges, qualifies and books — before reception has opened the door.",
+      "slug": "client-onboarding-automation",
+      "cardHeading": "Onboarding that runs itself, from the first hello",
+      "title": "Client onboarding that runs in the background",
+      "client": "Management Consultancy Firm",
+      "clientType": "Management consultancy (UK)",
+      "industry": "Consulting",
+      "year": "2023",
+      "accent": "#df0f57",
+      "duration": "3:12",
+      "demoVideo": "https://www.loom.com/share/db7d4d8029384e93909be4ae785911d8?sid=6b68ed23-1285-4f84-985f-ac814f144bed",
+      "testimonialVideo": null,
+      "poster": "/images/projects/onboarding-and-operations.avif",
+      "services": ["Process automation", "Systems integration", "Onboarding design"],
+      "summary": "Contracts chased by hand, the same emails retyped, forms going missing. We designed an onboarding flow that runs quietly in the background, so every new client feels supported from the very first hello.",
+      "intro": "Welcoming new clients should feel exciting, not exhausting. If you have ever found yourself chasing contracts, retyping the same emails, or worrying something slipped through the cracks, you are not alone. This is where automation steps in.",
       "metrics": [
-        { "value": "48s", "label": "Median first response" },
-        { "value": "3.1x", "label": "Enquiries converted to bookings" },
-        { "value": "9 hrs", "label": "Reception time saved weekly" }
+        { "value": "80%", "label": "Fewer manual onboarding tasks" },
+        { "value": "10+ hrs", "label": "Staff time saved every week" },
+        { "value": "0", "label": "Lost emails or missing documents" }
       ],
-      "challenge": "Riverside had grown from one practice to three in eighteen months, and each site had inherited its own way of handling new patients. Enquiries landed in a shared inbox, a website form that emailed a personal address, and a phone line that went to voicemail after 5pm. Nobody could say how many enquiries came in last month, and the practice manager was spending most of Monday reconstructing what had happened over the weekend.",
+      "challenge": "Onboarding new clients was messy: manual contracts, emails back and forth, missing forms, and wasted staff hours. It slowed down growth and frustrated both staff and clients.",
       "approach": [
         {
-          "title": "One front door",
-          "body": "Every route in — three website forms, two inboxes and the out-of-hours voicemail — now writes to a single intake record. Voicemail is transcribed automatically so a phone enquiry looks exactly like a web one."
+          "title": "One form, every detail captured",
+          "body": "A HubSpot form collects client details instantly, so nothing has to be asked for twice and nothing arrives half-filled."
         },
         {
-          "title": "An acknowledgement that sounds like them",
-          "body": "A reply goes out within a minute in the practice's own tone, confirming what was asked and attaching the right next step. Drafts are generated against a tight brief and a library of the manager's own past replies."
+          "title": "A folder waiting before anyone asks",
+          "body": "A Google Drive folder is created automatically for each new client, structured the same way every time."
         },
         {
-          "title": "Booking without the back-and-forth",
-          "body": "The reply carries a link to live availability filtered by treatment type and clinician. The slot lands in the practice management system and the patient's calendar at the same time."
+          "title": "A board that already knows the steps",
+          "body": "Trello boards are duplicated from a template so the onboarding sequence is laid out and assigned before the kickoff call."
         },
         {
-          "title": "A Monday that starts with a number",
-          "body": "A Friday digest reports volume by site, source and treatment, and flags any enquiry that has gone quiet for more than 48 hours."
+          "title": "Contracts drafted, ready for review",
+          "body": "BoldSign contracts are drafted automatically from the intake details and held for a human to check and send. The tool removes the typing, not the judgement."
+        },
+        {
+          "title": "A welcome that sounds personal",
+          "body": "A personalised Gmail welcome email goes out with no staff effort, carrying the right next step for that client."
         }
       ],
-      "stack": ["Make", "Twilio", "Airtable", "Cal.com", "Claude API"],
-      "outcome": "Within the first month the practice moved from a median first response of just under seven hours to 48 seconds, and tripled the share of enquiries that turned into a booked appointment. Reception recovered roughly a day a week.",
-      "quote": {
-        "text": "We didn't buy anything new. Joyce just made the things we already paid for talk to each other, and suddenly Monday morning wasn't a fire drill.",
-        "name": "Priya Nandra",
-        "role": "Practice Manager, Riverside Dental"
-      }
-    },
-    {
-      "slug": "halloway-quote-builder",
-      "cardHeading": "Quotes that used to take a day, out in nine minutes",
-      "title": "A quote builder that reads the drawings",
-      "client": "Halloway Joinery",
-      "clientType": "Bespoke joinery, 14 staff",
-      "industry": "Construction & trades",
-      "year": "2025",
-      "accent": "#a855f7",
-      "video": "/videos/case-studies/halloway-quote-builder.mp4",
-      "poster": "/videos/case-studies/halloway-quote-builder.jpg",
-      "duration": "1:51",
-      "services": ["Internal tooling", "AI extraction", "Engineering"],
-      "summary": "Every quote meant one director reading a PDF drawing pack by hand and rebuilding a spreadsheet from scratch. We built the tool that reads the pack, prices it against their real rates, and hands back an editable draft.",
-      "metrics": [
-        { "value": "9 min", "label": "Average quote turnaround" },
-        { "value": "94%", "label": "Line items needing no edit" },
-        { "value": "2.4x", "label": "Quotes issued per week" }
-      ],
-      "challenge": "Halloway lost work to slower, worse joiners simply because they quoted later. Pricing a job meant the managing director sitting down with a PDF drawing pack, counting units by hand, and rebuilding last month's spreadsheet with this month's timber prices. It took the best part of a day, it only happened in the evenings, and the estimate quality depended entirely on how tired he was.",
-      "approach": [
+      "stack": ["HubSpot", "Google Drive", "Trello", "BoldSign", "Gmail", "Zapier"],
+      "outcome": "Manual onboarding tasks dropped by 80% and the team recovered more than ten hours a week. No more lost emails or missing documents, and clients were onboarded faster with a noticeably smoother experience.",
+      "whyItMatters": "First impressions matter. Automating your client onboarding ensures clients start their journey with you smoothly and confidently from day one.",
+      "screenshots": [
         {
-          "title": "Read the pack, not the summary",
-          "body": "Drawing packs are parsed page by page, pulling schedules, dimensions and finish specifications into a structured item list with a confidence score and a link back to the source page for anything uncertain."
-        },
-        {
-          "title": "Their rates, not generic ones",
-          "body": "Fifteen years of completed jobs became the pricing model: material rates, wastage assumptions, and the labour hours the workshop actually books rather than the ones the old spreadsheet assumed."
-        },
-        {
-          "title": "A draft, never a decision",
-          "body": "The output is an editable quote with every line traceable to a drawing reference. Nothing is sent without a human pressing send — the tool removes the typing, not the judgement."
-        },
-        {
-          "title": "Learning from the edits",
-          "body": "Every correction is logged. Lines that get edited repeatedly surface in a monthly review so the underlying rates get better rather than staying wrong."
+          "src": "/images/projects/onboarding-and-operations.avif",
+          "alt": "The onboarding and operations automation board",
+          "caption": "The onboarding flow, end to end"
         }
       ],
-      "stack": ["Next.js", "Claude API", "Postgres", "Vercel", "Xero"],
-      "outcome": "Quotes now go out the same morning the pack lands, averaging nine minutes of director time instead of most of a day. Halloway more than doubled the number of quotes issued per week without adding an estimator.",
-      "quote": {
-        "text": "I stopped losing jobs to people who weren't better than us, just faster. That's the whole thing, really.",
-        "name": "Tom Halloway",
-        "role": "Managing Director, Halloway Joinery"
-      }
+      "subProjects": [],
+      "quote": null
     },
     {
-      "slug": "northgate-onboarding",
-      "cardHeading": "Client onboarding, from three weeks to three days",
-      "title": "Onboarding that runs itself while you sleep",
-      "client": "Northgate Financial Planning",
-      "clientType": "Independent financial advice firm",
+      "slug": "calendar-and-bookings-automation",
+      "cardHeading": "Booking a call, down from eight steps to two",
+      "title": "Calendars that work for you, not against you",
+      "client": "Ms. M and a renewable energy consultant",
+      "clientType": "Entrepreneur and consultant (UK)",
       "industry": "Professional services",
-      "year": "2024",
-      "accent": "#06b6d4",
-      "video": "/videos/case-studies/northgate-onboarding.mp4",
-      "poster": "/videos/case-studies/northgate-onboarding.jpg",
-      "duration": "1:38",
-      "services": ["Process automation", "Compliance workflow", "Integration"],
-      "summary": "Fourteen documents, four systems and a compliance checklist held in one person's head. We turned onboarding into a tracked sequence that chases itself and leaves an audit trail nobody has to assemble.",
+      "year": "2023",
+      "accent": "#ef8000",
+      "duration": null,
+      "demoVideo": null,
+      "testimonialVideo": null,
+      "poster": "/images/projects/meeting-booking.avif",
+      "services": ["Calendar automation", "Booking systems", "Integrations"],
+      "summary": "Two clients, one problem: calendars running the person instead of the other way around. We built booking and sync systems that removed the back-and-forth entirely.",
+      "intro": "Tired of endless back-and-forth just to book a call? With automation, your calendar works for you — syncing schedules, sending reminders, and giving clients a simple way to book. No more juggling, just more time to show up prepared and in control.",
       "metrics": [
-        { "value": "3 days", "label": "Median time to onboarded" },
-        { "value": "100%", "label": "Files audit-complete" },
-        { "value": "0", "label": "Manual chase emails" }
+        { "value": "8 → 2", "label": "Steps to book a meeting" },
+        { "value": "2", "label": "Calendars merged into one planner" },
+        { "value": "0", "label": "Double bookings since launch" }
       ],
-      "challenge": "Onboarding a new client at Northgate took roughly three weeks, most of it waiting. Fact-finds were emailed as attachments and came back incomplete. ID verification lived in a separate portal nobody remembered to check. The compliance file was assembled at the end, from memory, by whoever had the time — which made annual review season genuinely stressful.",
-      "approach": [
+      "challenge": null,
+      "approach": [],
+      "stack": ["HubSpot", "Zoom", "Reclaim.ai", "Outlook", "Gmail", "Zapier"],
+      "outcome": null,
+      "whyItMatters": "When your schedule runs you instead of the other way around, growth feels impossible. A smooth booking system makes you look professional, and calendar automation helps you reclaim your time and headspace.",
+      "screenshots": [
         {
-          "title": "One sequence, not fourteen emails",
-          "body": "A single tracked onboarding record drives everything. The client sees one link that always shows what is done, what is outstanding, and what happens next."
-        },
-        {
-          "title": "Chasing without nagging",
-          "body": "Reminders escalate on a schedule the firm set, and stop the instant a document arrives. Advisers are pulled in only when something genuinely needs a human."
-        },
-        {
-          "title": "The compliance file builds as you go",
-          "body": "Identity checks, source-of-funds evidence and suitability notes file themselves against the right client record with timestamps, so the audit trail exists before anyone asks for it."
-        },
-        {
-          "title": "Nothing new to learn",
-          "body": "Advisers kept working in the CRM they already used. The sequence writes into it rather than replacing it."
+          "src": "/images/projects/meeting-booking.avif",
+          "alt": "The meeting booking page connected to a live calendar",
+          "caption": "The booking page clients see"
         }
       ],
-      "stack": ["Zapier", "DocuSign", "Intelliflo", "Airtable", "Slack"],
-      "outcome": "Onboarding now completes in a median of three days, every file is audit-complete at the point of completion, and no adviser has written a chase email since launch.",
+      "subProjects": [
+        {
+          "label": "Project 1",
+          "title": "Meeting bookings",
+          "client": "Ms. M — Entrepreneur (UK)",
+          "challenge": "Booking client meetings was painful: too many emails back and forth, wasted time, and unnecessary steps.",
+          "approach": [
+            {
+              "title": "A booking page on her own calendar",
+              "body": "A HubSpot booking page connected straight to her live availability, so clients only ever see slots she can actually take."
+            },
+            {
+              "title": "Zoom links generated instantly",
+              "body": "Zoom is integrated into the flow, so the meeting link exists the moment the slot is taken."
+            },
+            {
+              "title": "Confirmations and reminders on rails",
+              "body": "Zapier sends the confirmation and the reminders, so nobody has to remember to nudge."
+            }
+          ],
+          "outcome": "Booking dropped from eight steps to two. Clients booked instantly with no email chase, and meetings were scheduled with reminders attached."
+        },
+        {
+          "label": "Project 2",
+          "title": "Calendar sync and automation",
+          "client": "Renewable Energy Consultant (UK)",
+          "challenge": "Managing multiple projects meant juggling several calendars. Important tasks slipped through, double bookings happened, and stress levels ran high.",
+          "approach": [
+            {
+              "title": "One planner, every calendar",
+              "body": "Outlook and Gmail calendars were integrated into a single unified planner using Reclaim.ai."
+            },
+            {
+              "title": "Priorities that defend themselves",
+              "body": "Priorities were synced and reminders automated so clashes are prevented rather than discovered."
+            },
+            {
+              "title": "Tasks aligned across tools",
+              "body": "Zapier connects the planner to the rest of the stack, so a change in one place is a change everywhere."
+            }
+          ],
+          "outcome": "No more double bookings or missed meetings, clearer focus on high-priority deliverables, and far greater peace of mind."
+        }
+      ],
+      "quote": null
+    },
+    {
+      "slug": "email-and-sales-funnel-automation",
+      "cardHeading": "A 4x email list, built from a Gmail contact list",
+      "title": "From 50 contacts in Gmail to an automated sales funnel",
+      "client": "Kathy",
+      "clientType": "Leadership & mindset coach (USA)",
+      "industry": "Coaching",
+      "year": "Sept 2021 — Feb 2023",
+      "accent": "#9c5f70",
+      "duration": null,
+      "demoVideo": null,
+      "testimonialVideo": "https://drive.google.com/file/d/1Idf_xZDAIs0dQIH7oPVFG0KN2KIQIad2/view",
+      "poster": null,
+      "services": ["Email marketing", "Sales funnel", "Automation"],
+      "summary": "Kathy was sending every email by hand to 50+ contacts in Gmail, with no list and no system for growth. We built the funnel that grew the list four times over in nine months.",
+      "intro": null,
+      "metrics": [
+        { "value": "4x", "label": "Email list growth in 9 months" },
+        { "value": "18 mths", "label": "Of consistent weekly newsletters" },
+        { "value": "0", "label": "Manual follow-ups remaining" }
+      ],
+      "challenge": "Manually sending emails to 50+ contacts on Gmail, with no email list and no system for growth. Every message was a fresh piece of work, and nothing compounded.",
+      "approach": [
+        {
+          "title": "A funnel with something to give",
+          "body": "An automated sales funnel built around lead magnets and nurturing sequences, so a new subscriber is welcomed and warmed without anyone pressing send."
+        },
+        {
+          "title": "A weekly rhythm that holds",
+          "body": "Weekly newsletters and workflows set up to engage new subscribers from the moment they arrive."
+        },
+        {
+          "title": "Follow-ups off the to-do list",
+          "body": "Manual follow-ups were removed entirely, so client engagement got faster rather than more effortful."
+        }
+      ],
+      "stack": ["Mailchimp", "ActiveCampaign", "GoHighLevel", "Zapier"],
+      "outcome": "The email list grew four times over in nine months, engagement stayed consistent through the newsletters, and conversions rose for both the workshops and the coaching programmes.",
+      "whyItMatters": "For many coaches and consultants, the biggest block to growth is not only a lack of leads — it is the manual bottleneck between a lead finding you and them becoming a client. Automation turns that journey into a smooth, scalable process.",
+      "screenshots": [],
+      "subProjects": [],
       "quote": {
-        "text": "Annual review season used to be three weeks of archaeology. Now the file is just already right.",
-        "name": "Deborah Ashworth",
-        "role": "Compliance Director, Northgate Financial Planning"
+        "text": "Joyce transformed my email strategy and elevated my business in just nine months. She has an intuitive talent for crafting emails that authentically capture my voice, making every message feel personal and professional.",
+        "name": "Kathy Mela",
+        "role": "Leadership Coach, USA"
       }
     },
     {
-      "slug": "sable-stock-sync",
-      "cardHeading": "One stock figure, true across every channel",
-      "title": "Selling in four places without overselling in any",
-      "client": "Sable & Fern",
-      "clientType": "Independent homeware retailer",
-      "industry": "Retail & e-commerce",
-      "year": "2024",
-      "accent": "#10b981",
-      "video": "/videos/case-studies/sable-stock-sync.mp4",
-      "poster": "/videos/case-studies/sable-stock-sync.jpg",
-      "duration": "1:12",
-      "services": ["Integration", "Operations automation", "Reporting"],
-      "summary": "A shop floor, a website, a marketplace and a pop-up stall, all quietly disagreeing about how many of something existed. We made one number true everywhere and gave the owner a Monday report she trusts.",
+      "slug": "coaching-business-system-setup",
+      "cardHeading": "Scalable foundations for a growing coaching business",
+      "title": "One system for the courses, the list and the admin",
+      "client": "Abi",
+      "clientType": "Business coach (UK)",
+      "industry": "Coaching",
+      "year": "June 2021 — Sept 2021",
+      "accent": "#2f7d5c",
+      "duration": null,
+      "demoVideo": null,
+      "testimonialVideo": "https://drive.google.com/file/d/1Thcp5ASMbityv3kU2QsHnSjbcnbUTNHH/view",
+      "poster": null,
+      "services": ["Systems setup", "Course platform", "Email list build"],
+      "summary": "Admin was piling up and the digital coaching programmes were scattered across tools. We centralised the lot and built the email list from zero.",
+      "intro": null,
       "metrics": [
-        { "value": "97%", "label": "Fewer oversell incidents" },
-        { "value": "6 hrs", "label": "Weekly stock admin removed" },
-        { "value": "12 min", "label": "To close the books each week" }
+        { "value": "1", "label": "System holding every programme" },
+        { "value": "0 → live", "label": "Email list built from scratch" },
+        { "value": "3 mths", "label": "From scattered tools to scalable" }
       ],
-      "challenge": "Sable & Fern sold the same stock through a physical shop, a Shopify store, a marketplace listing and seasonal pop-ups. Each channel kept its own count, and reconciliation was a Sunday-evening spreadsheet job. Overselling a one-off ceramic piece meant an apologetic refund email and a customer who did not come back.",
+      "challenge": "Admin tasks were piling up, and the digital coaching programmes were not organised under one system. A growing business needed scalable foundations rather than another tool.",
       "approach": [
         {
-          "title": "A single source of truth",
-          "body": "Stock levels live in one place. Every channel reads from and writes back to it within seconds of a sale, so the shop floor and the website can never drift apart."
+          "title": "Courses in one place",
+          "body": "Kajabi was implemented to centralise course management, so every digital programme lives in one structure instead of several."
         },
         {
-          "title": "Rules for the awkward cases",
-          "body": "One-off and low-stock items reserve on add-to-basket and release on timeout. Pop-up sales are captured offline and reconciled the moment the stall reconnects."
+          "title": "A list built from zero",
+          "body": "GetResponse was set up and the email list built from nothing, ready to nurture clients rather than just collect addresses."
         },
         {
-          "title": "Purchase orders that suggest themselves",
-          "body": "Reorder points are calculated from actual sell-through per line rather than a flat threshold, and draft purchase orders arrive already filled in."
-        },
-        {
-          "title": "A Monday report worth reading",
-          "body": "One page: what sold, what is running out, what has not moved in ninety days, and what it is costing to hold."
+          "title": "Workflows behind the offers",
+          "body": "Zapier automations connect the pieces so the coaching offers are supported by workflows rather than by memory."
         }
       ],
-      "stack": ["Shopify", "Make", "Google Sheets", "Square", "Notion"],
-      "outcome": "Overselling has effectively stopped, six hours of weekly reconciliation disappeared, and the weekly close now takes twelve minutes instead of an evening.",
-      "quote": {
-        "text": "I used to dread Sunday nights. Now the number is just right, and I can spend that time buying things people actually want.",
-        "name": "Marianne Okoye",
-        "role": "Founder, Sable & Fern"
-      }
+      "stack": ["GetResponse", "Kajabi", "Zapier"],
+      "outcome": "Digital programmes were structured for growth, a new email list was set up and ready to nurture clients, and considerably more time was freed for coaching instead of admin.",
+      "whyItMatters": "Growth is not a tooling problem, it is a foundations problem. Get the system right early and every new programme you launch costs a fraction of the effort of the last one.",
+      "screenshots": [],
+      "subProjects": [],
+      "quote": null
     },
     {
-      "slug": "brightpath-ai-training",
-      "cardHeading": "A team that actually uses the tools it was given",
-      "title": "From 'I'm not sure about all this AI' to daily use",
-      "client": "Brightpath Care Group",
-      "clientType": "Domiciliary care provider, 120 staff",
-      "industry": "Health & social care",
-      "year": "2025",
-      "accent": "#eab308",
-      "video": "/videos/case-studies/brightpath-ai-training.mp4",
-      "poster": "/videos/case-studies/brightpath-ai-training.jpg",
-      "duration": "2:06",
-      "services": ["Team training", "Responsible use policy", "Enablement"],
-      "summary": "Brightpath had bought licences nobody was using. We ran the training that turned scepticism into a set of concrete, safe, everyday habits — and wrote the policy that let people relax.",
+      "slug": "social-media-marketing-automation",
+      "cardHeading": "Consistent posting across every brand, without the grind",
+      "title": "Content scheduling that keeps every brand visible",
+      "client": "Myleen",
+      "clientType": "Brand manager / OBM (USA)",
+      "industry": "Marketing",
+      "year": "Jan 2023 — March 2023",
+      "accent": "#c07a11",
+      "duration": null,
+      "demoVideo": null,
+      "testimonialVideo": null,
+      "poster": null,
+      "services": ["Content automation", "Scheduling", "Team workflows"],
+      "summary": "Myleen manages several brands at once. Posting by hand across Instagram and Facebook was slow and inconsistent, so we built the system that keeps the rhythm without sacrificing brand quality.",
+      "intro": null,
       "metrics": [
-        { "value": "78%", "label": "Weekly active use at 90 days" },
-        { "value": "4.7/5", "label": "Confidence after training" },
-        { "value": "5 hrs", "label": "Saved per manager, weekly" }
+        { "value": "Hours", "label": "Of repetitive work saved weekly" },
+        { "value": "Multi", "label": "Brands posting on one rhythm" },
+        { "value": "1", "label": "Board keeping the team aligned" }
       ],
-      "challenge": "Brightpath had rolled out AI licences across its office and management staff and seen almost no uptake. The reasons were reasonable: nobody knew what was safe to type into it given the sensitivity of care records, nobody had seen it do anything relevant to their actual job, and a general anxiety that it was there to replace them.",
+      "challenge": "Myleen manages multiple brands and clients as an Online Business Manager. Posting content manually across Instagram, Facebook, and other channels was time-consuming and inconsistent. She needed a way to simplify content creation and scheduling without sacrificing brand quality.",
       "approach": [
         {
-          "title": "Start with the fear, not the features",
-          "body": "The first session addressed what the tools do and do not do, what happens to what you type, and where the line sits for care data. Confidence came from clarity, not enthusiasm."
+          "title": "Copy variations, generated not typed",
+          "body": "HelloWoofy's smart content tools generate copy variations, so one idea becomes a week of posts instead of one."
         },
         {
-          "title": "Their work, not generic examples",
-          "body": "Every exercise used real Brightpath tasks: rota conflict letters, CQC evidence summaries, family update emails, supervision note drafting."
+          "title": "Scheduled well ahead",
+          "body": "Posts are scheduled across multiple social channels in advance, so a busy week never becomes a silent one."
         },
         {
-          "title": "A policy people could actually follow",
-          "body": "A one-page responsible use policy — three green lanes, three red lines, and who to ask — written to be read once and remembered."
+          "title": "A board the team can see",
+          "body": "Trello content planning boards were integrated so her team stays aligned on what is going out and when."
         },
         {
-          "title": "Champions, then a check-in",
-          "body": "Six champions were trained more deeply and given a running channel. A structured check-in at sixty days caught the teams that had quietly stopped."
+          "title": "A rhythm that builds presence",
+          "body": "A consistent posting cadence was established to build her clients' online presence over time rather than in bursts."
         }
       ],
-      "stack": ["Claude", "Microsoft 365 Copilot", "Custom prompt library"],
-      "outcome": "Ninety days after training, 78% of trained staff were using the tools weekly against a baseline near zero, and registered managers reported recovering around five hours a week from documentation.",
-      "quote": {
-        "text": "The difference was that Joyce trained us on our job, not on the software. Nobody left that room thinking it was going to replace them.",
-        "name": "Ade Fashola",
-        "role": "Operations Director, Brightpath Care Group"
-      }
+      "stack": ["HelloWoofy", "Trello", "Instagram", "Facebook"],
+      "outcome": "Hours of repetitive work were saved each week, brand visibility stayed consistent across every client, and Myleen's time was freed for higher-value strategic work.",
+      "whyItMatters": "For many business managers, posting is just one task in a sea of responsibilities. Automation removes the grunt work and ensures consistency, so you can focus on growth rather than chasing the clock.",
+      "screenshots": [],
+      "subProjects": [],
+      "quote": null
     }
   ]
 }

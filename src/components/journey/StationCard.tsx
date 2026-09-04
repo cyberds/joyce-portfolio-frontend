@@ -138,3 +138,85 @@ export function StationCard({
     </div>
   );
 }
+
+/**
+ * The same station, laid out horizontally.
+ *
+ * The cascading variant stacks its cards on top of one another as the page
+ * scrolls, so every card has to read at a glance while only its top edge is
+ * still uncovered: the index and the tag live on a coloured left rail that
+ * stays visible under the card above it, and the before/after pair sits in two
+ * columns rather than stacked, which keeps the card short enough that several
+ * can overlap without the stack running off a laptop screen.
+ */
+export function StationCardWide({ station }: { station: Station }) {
+  return (
+    <div
+      className="grid overflow-hidden rounded-[var(--r-lg)] bg-white shadow-[0_2px_10px_-2px_rgba(36,19,25,0.07),0_28px_60px_-30px_rgba(36,19,25,0.32)] ring-1 ring-black/[0.06] sm:grid-cols-[8.5rem_1fr] lg:grid-cols-[11rem_1fr]"
+      style={{ borderTop: `3px solid ${station.color}` }}
+    >
+      {/* Left rail — the part that stays readable once the next card lands. */}
+      <div
+        className="flex items-center gap-3 px-5 py-4 sm:flex-col sm:items-start sm:justify-center sm:gap-4 sm:px-6 sm:py-8"
+        style={{
+          backgroundColor: `${station.color}0f`,
+          borderRight: `1px solid ${station.color}1f`,
+        }}
+      >
+        <span
+          className="flex size-9 shrink-0 items-center justify-center rounded-[var(--r-sm)] text-white sm:size-11"
+          style={{ backgroundColor: station.color }}
+        >
+          <StationGlyph type={station.icon} size={19} />
+        </span>
+        <div className="min-w-0">
+          <div className="font-mono text-[0.7rem] text-stone-400">
+            {station.index}/06
+          </div>
+          <div
+            className="mt-0.5 text-[0.72rem] font-semibold uppercase leading-tight tracking-wider"
+            style={{ color: station.color }}
+          >
+            {station.tag}
+          </div>
+        </div>
+      </div>
+
+      <div className="p-5 sm:p-7 lg:p-8">
+        <h3 className="display text-[clamp(1.1rem,2.1vw,1.45rem)] font-medium leading-snug text-stone-900">
+          {station.title}
+        </h3>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          <div className="rounded-[var(--r-sm)] border border-stone-100 bg-stone-50 p-3.5 text-[0.82rem] leading-relaxed text-stone-500">
+            <div className="mb-1 flex items-center gap-1.5 text-[0.62rem] font-semibold uppercase tracking-wider text-stone-400">
+              <span className="size-1 rounded-full bg-stone-400" />
+              Normally
+            </div>
+            {station.before}
+          </div>
+
+          <div
+            className="rounded-[var(--r-sm)] border p-3.5 text-[0.82rem] leading-relaxed text-stone-900"
+            style={{
+              backgroundColor: `${station.color}0f`,
+              borderColor: `${station.color}2e`,
+            }}
+          >
+            <div
+              className="mb-1 flex items-center gap-1.5 text-[0.62rem] font-semibold uppercase tracking-wider"
+              style={{ color: station.color }}
+            >
+              <span
+                className="size-1 rounded-full"
+                style={{ backgroundColor: station.color }}
+              />
+              With Automation
+            </div>
+            {station.after}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

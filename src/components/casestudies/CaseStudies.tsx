@@ -60,7 +60,6 @@ export function CaseStudies() {
   // Reasons to hold the autoplay, tracked in refs so the ticker can read them
   // without the interval being torn down and restarted on every change.
   const hovering = useRef(false);
-  const videoPlaying = useRef(false);
   const onScreen = useRef(false);
   const quietUntil = useRef(0);
 
@@ -237,7 +236,6 @@ export function CaseStudies() {
     const tick = window.setInterval(() => {
       if (
         hovering.current ||
-        videoPlaying.current ||
         !onScreen.current ||
         document.hidden ||
         Date.now() < quietUntil.current
@@ -360,13 +358,7 @@ export function CaseStudies() {
               data-card
               className="w-[min(86vw,760px)] shrink-0 snap-start md:w-[min(72vw,860px)]"
             >
-              <CaseStudyCard
-                study={study}
-                decorative={set !== 1}
-                onPlayingChange={(playing) => {
-                  videoPlaying.current = playing;
-                }}
-              />
+              <CaseStudyCard study={study} decorative={set !== 1} />
             </div>
           )),
         )}

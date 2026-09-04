@@ -50,18 +50,26 @@ export default function CaseStudiesIndex() {
                       background: `radial-gradient(120% 100% at 30% 0%, ${study.accent}55, transparent 62%), linear-gradient(160deg, ${study.accent}22, #140c10 70%)`,
                     }}
                   >
-                    <video
-                      className="h-full w-full object-cover"
-                      src={study.video}
-                      poster={study.poster}
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
-                    />
-                    <span className="absolute bottom-4 right-4 rounded-[var(--r-pill)] bg-black/50 px-3 py-1 font-mono text-[0.72rem] text-white/75 backdrop-blur-md">
-                      {study.duration}
-                    </span>
+                    {/*
+                      Poster art, not video: the demos live on Loom, Drive and
+                      YouTube now, none of which can autoplay silently in a
+                      card. The play happens on the detail page.
+                    */}
+                    {study.poster ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={study.poster}
+                        alt=""
+                        aria-hidden
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    ) : null}
+                    {study.duration ? (
+                      <span className="absolute bottom-4 right-4 rounded-[var(--r-pill)] bg-black/50 px-3 py-1 font-mono text-[0.72rem] text-white/75 backdrop-blur-md">
+                        {study.duration}
+                      </span>
+                    ) : null}
                   </div>
 
                   <div className="flex flex-1 flex-col justify-between gap-6 p-7">

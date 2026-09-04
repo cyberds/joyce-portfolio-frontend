@@ -19,11 +19,11 @@ if (typeof window !== "undefined") {
 
 /** Root-relative, because the footer also runs on /about and /case-studies. */
 const siteLinks = [
-  { label: "Sound familiar?", href: "/#familiar" },
-  { label: "How it works", href: "/#journey" },
+  { label: "How it works", href: "/journey" },
   { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "What we help with", href: "/#help" },
+  { label: "Shop", href: "/shop" },
 ];
 
 /** The label is what you read; `value` is what the tooltip reveals. */
@@ -97,7 +97,7 @@ export function Footer() {
             back the time to run your business.
           </p>
           <Link
-            href="/#talk"
+            href="https://wa.me/447436836888"
             className="mt-6 inline-flex items-center gap-2 text-[0.88rem] font-medium text-ink transition-transform duration-200 hover:translate-x-1"
           >
             Talk to Joyce
@@ -144,7 +144,7 @@ export function Footer() {
                         }
                         className="group/link inline-flex items-center gap-2.5 text-[0.92rem] text-ink-muted transition-colors hover:text-ink focus-visible:text-ink"
                       >
-                        <Icon className="shrink-0 text-ink-faint transition-colors duration-300 group-hover/link:text-accent" />
+                        <Icon className="shrink-0 text-accent transition-colors duration-300 group-hover/link:text-accent" />
                         {contact.label}
                       </a>
                     )}

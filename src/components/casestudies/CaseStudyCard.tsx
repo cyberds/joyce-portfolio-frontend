@@ -1,38 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import type { CaseStudy } from "@/lib/caseStudies";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
-function PlayGlyph({ playing }: { playing: boolean }) {
-  return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-      {playing ? (
-        <>
-          <rect x="7" y="5" width="3.6" height="14" rx="1.2" />
-          <rect x="13.4" y="5" width="3.6" height="14" rx="1.2" />
-        </>
-      ) : (
-        <path d="M8.4 5.2a1 1 0 0 1 1.53-.85l8.4 5.3a1 1 0 0 1 0 1.7l-8.4 5.3a1 1 0 0 1-1.53-.85Z" />
-      )}
-    </svg>
-  );
-}
-
 /**
- * One card: the video, a play control, a short heading and the way through to
- * the write-up. Deliberately almost wordless — the detail page carries the
- * client, the problem and the numbers.
+ * One card: the poster art, a short heading and the way through to the
+ * write-up. Deliberately almost wordless — the detail page carries the client,
+ * the problem and the numbers.
+ *
+ * The demos are hosted on Loom, Google Drive and YouTube, none of which can be
+ * autoplayed silently inside a card, so playback belongs to the detail page.
+ * The card shows the frame and the runtime, and gets out of the way.
  */
 export function CaseStudyCard({
   study,
-  onPlayingChange,
   decorative = false,
 }: {
   study: CaseStudy;
-  /** Lets the carousel hold its autoplay while a demo is actually playing. */
-  onPlayingChange?: (playing: boolean) => void;
   /**
    * One of the carousel's cloned copies. It stays clickable — it points at the
    * same study — but leaves the tab order and the accessibility tree, so the
@@ -41,40 +26,11 @@ export function CaseStudyCard({
   decorative?: boolean;
 }) {
   const tab = decorative ? -1 : undefined;
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [hasVideo, setHasVideo] = useState(true);
-
-  // Never leave a card playing once it has been scrolled past.
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting && !el.paused) {
-          el.pause();
-        }
-      },
-      { threshold: 0.4 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const toggle = () => {
-    const el = videoRef.current;
-    if (!el) return;
-    if (el.paused) {
-      void el.play().catch(() => setHasVideo(false));
-    } else {
-      el.pause();
-    }
-  };
 
   return (
     <article
       aria-hidden={decorative || undefined}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[var(--r-lg)] bg-deep text-deep-ink shadow-[0_30px_80px_-50px_rgba(36,19,25,0.8)]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[var(--r-lg)] text-deep-ink shadow-[0_30px_80px_-50px_rgba(36,19,25,0.8)]"
       style={{ backgroundColor: "#140c10" }}
     >
       {/* Media */}
@@ -87,54 +43,40 @@ export function CaseStudyCard({
           }}
         />
 
-        {hasVideo ? (
-          <video
-            ref={videoRef}
-            className="relative h-full w-full object-cover"
-            src={study.video}
-            poster={study.poster}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onPlay={() => {
-              setPlaying(true);
-              onPlayingChange?.(true);
-            }}
-            onPause={() => {
-              setPlaying(false);
-              onPlayingChange?.(false);
-            }}
-            onEnded={() => onPlayingChange?.(false)}
-            onError={() => setHasVideo(false)}
+        {study.poster ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={study.poster}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            className="relative h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
         ) : null}
 
-        {/* Scrim so the control and duration stay legible over any frame */}
+        {/* Scrim so the label and duration stay legible over any frame */}
         <div
           aria-hidden
           className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/20"
         />
 
-        <button
-          type="button"
-          onClick={toggle}
-          tabIndex={tab}
-          aria-label={`${playing ? "Pause" : "Play"} the ${study.client} demo`}
-          className="absolute bottom-4 left-4 flex items-center gap-2.5 rounded-[var(--r-pill)] border border-white/20 bg-black/45 py-2 pl-2 pr-4 text-[0.82rem] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-black/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
+        <span className="absolute bottom-4 left-4 flex items-center gap-2.5 rounded-[var(--r-pill)] border border-white/20 bg-black/45 py-2 pl-2 pr-4 text-[0.82rem] font-medium text-white backdrop-blur-md">
           <span
             className="flex size-9 items-center justify-center rounded-full text-black transition-transform duration-300 group-hover:scale-105"
             style={{ backgroundColor: study.accent }}
           >
-            <PlayGlyph playing={playing} />
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+              <path d="M8.4 5.2a1 1 0 0 1 1.53-.85l8.4 5.3a1 1 0 0 1 0 1.7l-8.4 5.3a1 1 0 0 1-1.53-.85Z" />
+            </svg>
           </span>
-          {playing ? "Pause" : "Watch the demo"}
-        </button>
-
-        <span className="absolute bottom-6 right-5 font-mono text-[0.72rem] text-white/60">
-          {study.duration}
+          {study.demoVideo ? "Watch the demo" : "Read the story"}
         </span>
+
+        {study.duration ? (
+          <span className="absolute bottom-6 right-5 font-mono text-[0.72rem] text-white/60">
+            {study.duration}
+          </span>
+        ) : null}
       </div>
 
       {/* Words — as few as the card can get away with */}

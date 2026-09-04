@@ -44,7 +44,7 @@ const chapters = [
 const capabilities = [
   {
     title: "AI-driven inbox filtering",
-    body: "Mail sorted, triaged and drafted against your own tone, so what reaches you is what actually needs you.",
+    body: "Mail sorted, triaged and drafted with your own tone, so what reaches you is what actually needs you.",
   },
   {
     title: "CRM integrations",

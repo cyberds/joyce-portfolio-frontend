@@ -5,12 +5,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { easeCurve } from "@/design/tokens";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
+import { CartButton } from "@/components/shop/CartButton";
 
 const links = [
   // { label: "Sound familiar?", href: "/#familiar" },
   // { label: "How it works", href: "/#journey" },
   { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
+  { label: "Shop", href: "/shop" },
   { label: "What we help with", href: "/#help" },
 ];
 
@@ -81,6 +83,7 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <CartButton onDark={onDark} />
           <Link
             href="https://wa.me/447436836888"
             className={`rounded-[var(--r-pill)] px-4 py-2.5 !text-[10px] !md:text-[0.86rem] font-medium transition-transform duration-300 hover:-translate-y-0.5 ${
@@ -123,6 +126,13 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/account"
+            onClick={() => setOpen(false)}
+            className="rounded-[var(--r-md)] px-4 py-3 text-[0.95rem] text-ink-muted transition-colors hover:bg-surface hover:text-ink"
+          >
+            My orders
+          </Link>
         </motion.nav>
       ) : null}
     </motion.header>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { fontClassNames } from "@/design/fonts";
 import { brandCssVariables } from "@/design/tokens";
 import { Chatbot } from "@/components/ui/Chatbot";
+import { Providers } from "@/components/shop/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,8 +28,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        {children}
-        <Chatbot />
+        <Providers>
+          {children}
+          <Chatbot />
+        </Providers>
       </body>
     </html>
   );
