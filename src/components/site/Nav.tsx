@@ -9,11 +9,11 @@ import { CartButton } from "@/components/shop/CartButton";
 
 const links = [
   // { label: "Sound familiar?", href: "/#familiar" },
-  // { label: "How it works", href: "/#journey" },
   { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "Shop", href: "/shop" },
-  { label: "What we help with", href: "/#help" },
+  { label: "Sample", href: "/journey" },
+  // { label: "What we help with", href: "/#help" },
 ];
 
 export function Nav() {

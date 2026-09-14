@@ -1,18 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 import { easeCurve } from "@/design/tokens";
 
 /**
- * The single entrance used site-wide: a short rise, once, when the element is
- * genuinely on screen. One motion signature everywhere is what stops a page
- * feeling assembled from parts.
+ * The single entrance used site-wide, matching the landing page's motion:
+ * a rise out of a soft blur as the element arrives, and the same blur back
+ * out as it leaves the screen in either direction, so exits mirror entrances.
  */
 export function Reveal({
   children,
   delay = 0,
-  y = 18,
+  y = 28,
   className,
   as = "div",
 }: {
@@ -22,13 +22,20 @@ export function Reveal({
   className?: string;
   as?: "div" | "li" | "span" | "p";
 }) {
+  const reduced = useReducedMotion();
   const Tag = motion[as];
+
+  if (reduced) {
+    const Plain = as;
+    return <Plain className={className}>{children}</Plain>;
+  }
+
   return (
     <Tag
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.35, margin: "0px 0px -8% 0px" }}
-      transition={{ duration: 0.75, delay, ease: easeCurve }}
+      initial={{ opacity: 0, y, filter: "blur(12px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: false, amount: 0.2, margin: "0px 0px -6% 0px" }}
+      transition={{ duration: 0.9, delay, ease: easeCurve }}
       className={className}
     >
       {children}

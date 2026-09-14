@@ -32,8 +32,19 @@
   --radius-lg: var(--r-lg);
   --radius-xl: var(--r-xl);
 
-  --font-display: var(--font-display), "Century Gothic", ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), Georgia, ui-serif, serif;
+  --font-body: var(--font-body), Georgia, ui-serif, serif;
+}
+
+/* Landing-page bands: solid white, alternating with a 10% grey. */
+.band-white {
+  position: relative;
+  background: #ffffff;
+}
+
+.band-grey {
+  position: relative;
+  background: #e6e6e6;
 }
 
 html {
@@ -41,34 +52,19 @@ html {
 }
 
 body {
-  background: var(--c-canvas);
+  background: #ffffff;
   color: var(--c-ink);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-body), Georgia, serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 /* ---- Surfaces -------------------------------------------------------- */
 
-/* The paper: warm wash plus the faint architectural grid behind everything. */
+/* The paper: solid white, site-wide. Grey bands (.band-grey) alternate on top. */
 .paper {
   position: relative;
-  background:
-    radial-gradient(120% 80% at 50% -10%, #ffffff 0%, transparent 60%),
-    linear-gradient(180deg, var(--c-canvas) 0%, var(--c-canvas-deep) 100%);
-}
-
-.paper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, var(--c-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--c-grid) 1px, transparent 1px);
-  background-size: 96px 96px;
-  mask-image: radial-gradient(100% 65% at 50% 30%, #000 10%, transparent 80%);
-  opacity: 0.55;
-  pointer-events: none;
+  background: #ffffff;
 }
 
 .glass {
@@ -105,9 +101,9 @@ body {
 /* ---- Type ------------------------------------------------------------ */
 
 .display {
-  font-family: var(--font-display), "Century Gothic", ui-sans-serif, sans-serif;
+  font-family: var(--font-display), Georgia, ui-serif, serif;
   font-weight: 400;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.01em;
   line-height: 1.08;
 }
 
@@ -126,6 +122,11 @@ body {
   background-position: 0 0.82em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+/* On the black hero the underline is a translucent raspberry instead. */
+.marked.hero-mark {
+  background-image: linear-gradient(rgba(223, 15, 87, 0.55), rgba(223, 15, 87, 0.55));
 }
 
 /* Nav flips to light-on-dark while the dark chapter is under it. */

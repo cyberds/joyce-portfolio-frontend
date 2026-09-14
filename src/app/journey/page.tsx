@@ -26,7 +26,7 @@ export default function JourneyPage() {
     <main className="relative overflow-x-clip">
       <Nav />
 
-      <div className="paper">
+      <div className="band-grey">
         <section className="relative z-10 mx-auto shell pb-24 pt-36 md:pt-44">
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-ink-faint">

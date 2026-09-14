@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowRightIcon, LocationIcon } from "@/components/ui/icons";
+import { ArrowRightIcon } from "@/components/ui/icons";
+import { AboutHero } from "@/components/about/AboutHero";
+import { AboutGoal } from "@/components/about/AboutGoal";
 
 export const metadata: Metadata = {
   title: "About Joyce Wadawasina — workflow automation specialist",
@@ -68,101 +69,17 @@ const capabilities = [
   },
 ];
 
-const credentials = [
-  { value: "MSc", label: "Logistics & Supply Chain Management" },
-  { value: "BSc", label: "Business Administration" },
-  { value: "10+", label: "years in business operations" },
-  { value: "4", label: "years of executive support" },
-];
-
-const numbers = [
-  { value: "300+", label: "businesses served" },
-  { value: "12k", label: "hours of business time saved" },
-  { value: "10+", label: "years across operations" },
-];
-
 export default function AboutPage() {
   return (
     <main className="relative overflow-x-clip">
       <Nav />
 
+      {/* Full-height hero; its credentials strip hangs half over the edge. */}
+      <AboutHero />
+
       <div className="paper">
-        {/* ---- Who ---- */}
-        <section className="relative z-10 mx-auto shell pt-36 md:pt-44">
-          <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
-              <Reveal>
-                <p className="eyebrow flex items-center gap-3 text-ink-faint">
-                  <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-                  About Joyce
-                </p>
-              </Reveal>
-              <Reveal delay={0.06}>
-                <h1 className="display mt-6 max-w-[18ch] text-balance text-[clamp(2.4rem,5.2vw,4rem)] text-ink">
-                  I spent ten years doing the work.{" "}
-                  <em className="italic">
-                    <span className="marked">Now I automate it.</span>
-                  </em>
-                </h1>
-              </Reveal>
-              <Reveal delay={0.12}>
-                <p className="mt-7 max-w-[34rem] text-[1.05rem] leading-[1.75] text-ink-muted">
-                  I&rsquo;m Joyce Wadawasina — a workflow automation specialist
-                  in Falkirk, Scotland. I help ambitious professionals free up
-                  their schedules, get rid of the repetitive work, and put their
-                  hours back into the things that actually move the business.
-                </p>
-              </Reveal>
-              <Reveal delay={0.18}>
-                <p className="mt-5 flex items-center gap-2.5 text-[0.9rem] text-ink-faint">
-                  <LocationIcon className="shrink-0 text-accent" />
-                  Falkirk, Scotland, United Kingdom
-                </p>
-              </Reveal>
-            </div>
-
-            <Reveal delay={0.1}>
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute inset-[-8%] rounded-[var(--r-xl)] bg-[radial-gradient(60%_60%_at_55%_45%,rgba(223,15,87,0.14),transparent_72%)]"
-                />
-                <div className="relative aspect-[434/476] w-full overflow-hidden rounded-[var(--r-xl)] border border-hairline bg-[linear-gradient(180deg,#ffffff,var(--c-canvas-deep))]">
-                  <Image
-                    src="/images/joyce-native-sitting.png"
-                    alt="Joyce Wadawasina"
-                    fill
-                    sizes="(max-width: 1024px) 92vw, 32rem"
-                    className="object-contain object-bottom"
-                    priority
-                  />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* ---- Credentials strip ---- */}
-          <ul className="mt-20 grid gap-px overflow-hidden rounded-[var(--r-lg)] border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
-            {credentials.map((item, i) => (
-              <Reveal
-                as="li"
-                key={item.label}
-                delay={i * 0.06}
-                className="bg-surface p-7"
-              >
-                <p className="display text-[clamp(1.9rem,3vw,2.4rem)] leading-none text-ink">
-                  {item.value}
-                </p>
-                <p className="mt-3 text-[0.86rem] leading-[1.5] text-ink-muted">
-                  {item.label}
-                </p>
-              </Reveal>
-            ))}
-          </ul>
-        </section>
-
-        {/* ---- The story ---- */}
-        <section className="relative z-10 mx-auto mt-28 shell md:mt-36">
+        {/* ---- The story ---- (top padding clears the overlapping strip) */}
+        <section className="relative z-10 mx-auto shell pt-36 md:pt-40">
           <div className="grid gap-14 lg:grid-cols-[0.3fr_0.7fr]">
             <Reveal>
               <div className="lg:sticky lg:top-28">
@@ -234,47 +151,7 @@ export default function AboutPage() {
         </section>
 
         {/* ---- The point of it ---- */}
-        <section className="relative z-10 mx-auto mt-28 shell md:mt-36">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[var(--r-xl)] bg-deep text-deep-ink">
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-[radial-gradient(70%_90%_at_80%_20%,rgba(223,15,87,0.26),transparent_62%)]"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-[0.14] [background-image:linear-gradient(to_right,rgba(243,239,233,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgba(243,239,233,0.5)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:radial-gradient(80%_70%_at_30%_40%,#000,transparent_75%)]"
-              />
-
-              <div className="relative grid gap-12 p-9 md:grid-cols-[1.1fr_0.9fr] md:p-14 lg:p-16">
-                <div className="max-w-[32rem]">
-                  <p className="eyebrow text-deep-muted">The goal</p>
-                  <p className="display mt-6 text-[clamp(1.6rem,3.2vw,2.4rem)] leading-[1.25]">
-                    Free up the schedule. Kill the repetitive work. Put the hours
-                    back into{" "}
-                    <em className="italic text-accent">
-                      what actually moves the needle
-                    </em>
-                    .
-                  </p>
-                </div>
-
-                <dl className="hidden grid grid-cols-3 gap-6 self-end md:grid-cols-1 md:gap-8">
-                  {numbers.map((item) => (
-                    <div key={item.label}>
-                      <dt className="display text-[clamp(1.6rem,2.6vw,2.1rem)] leading-none">
-                        {item.value}
-                      </dt>
-                      <dd className="mt-2 text-[0.8rem] leading-[1.45] text-deep-muted">
-                        {item.label}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
-          </Reveal>
-        </section>
+        <AboutGoal />
 
         {/* ---- Onward ---- */}
         <section className="relative z-10 mx-auto mt-24 shell pb-24 md:pb-32">

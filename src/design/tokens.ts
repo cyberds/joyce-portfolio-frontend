@@ -12,11 +12,11 @@
  */
 
 export const colors = {
-  // Light surfaces — soft cream paper, not screen-grey
-  canvas: "#fdf8f2",
-  canvasDeep: "#f6ebdd",
+  // Light surfaces — solid white with neutral greys (the 10% grey is canvasDeep)
+  canvas: "#f5f5f5",
+  canvasDeep: "#e6e6e6",
   surface: "#ffffff",
-  grid: "#efe2d2",
+  grid: "#ececec",
 
   // Ink — deep plum-black (from the plum family, warmed)
   ink: "#241319",

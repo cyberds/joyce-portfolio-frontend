@@ -1,23 +1,21 @@
-import { Poiret_One, Montserrat } from "next/font/google";
+import { Playfair_Display, Fraunces } from "next/font/google";
 
 /**
- * Two voices, deliberately: a thin art-deco geometric display face for the
- * things Joyce would actually say out loud, and Montserrat for everything
- * structural. next/font needs literal options, so the loaders live here and
- * globals.css maps them onto Tailwind's font utilities.
- *
- * Poiret One ships a single 400 weight with no true italic — `.display.italic`
- * renders as a synthetic oblique, which is the intended treatment here.
+ * Two serif voices for a quieter, more luxurious feel: Playfair Display for
+ * headings and Fraunces for running text. next/font needs literal options, so
+ * the loaders live here and globals.css maps them onto Tailwind's font
+ * utilities.
  */
-export const displayFont = Poiret_One({
+export const displayFont = Playfair_Display({
   subsets: ["latin"],
-  weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
 
-export const bodyFont = Montserrat({
+export const bodyFont = Fraunces({
   subsets: ["latin"],
+  style: ["normal", "italic"],
   variable: "--font-body",
   display: "swap",
 });

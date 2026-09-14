@@ -70,8 +70,15 @@ export function Close() {
       const actions = gsap.utils.toArray<HTMLElement>(".close-action", copy);
 
       // Everything starts hidden so nothing flashes before the entrance runs.
-      gsap.set(card, { autoAlpha: 0, y: 44, scale: 0.97 });
-      gsap.set(words, { yPercent: 115 });
+      gsap.set(card, {
+        autoAlpha: 0,
+        y: 80,
+        scale: 0.9,
+        rotateX: 12,
+        transformPerspective: 1200,
+        transformOrigin: "50% 100%",
+      });
+      gsap.set(words, { yPercent: 120, rotate: 8 });
       gsap.set([para, ...pills, ...actions], { autoAlpha: 0, y: 18 });
       // She is clipped to the card's top edge, then grows past it — that rise
       // above the line is the whole trick, so it has to be the last beat.
@@ -100,12 +107,13 @@ export function Close() {
         autoAlpha: 1,
         y: 0,
         scale: 1,
-        duration: 0.9,
-        ease: "power2.out",
+        rotateX: 0,
+        duration: 1.2,
+        ease: "expo.out",
       })
         .to(
           words,
-          { yPercent: 0, duration: 0.85, stagger: 0.055, ease: "power3.out" },
+          { yPercent: 0, rotate: 0, duration: 1, stagger: 0.07, ease: "power4.out" },
           0.15,
         )
         .to(para, { autoAlpha: 1, y: 0, duration: 0.7 }, 0.5)
@@ -261,7 +269,7 @@ export function Close() {
                 shoulders stand clear of it. The overhang is a fixed length
                 rather than a percentage so it cannot drift when the copy
                 reflows and the card gets taller. Nothing above her clips. */}
-            <div className="hidden md:block relative mx-auto mt-12 aspect-[381/584] w-[min(16rem,76%)] lg:absolute lg:bottom-0 lg:right-[3%] lg:mx-0 lg:mt-0 lg:h-full lg:w-auto lg:max-w-[42%] xl:h-[calc(100%+8.5rem)] xl:max-w-[46%]">
+            <div className="hidden md:block relative mx-auto mt-12 aspect-[381/584] w-[min(16rem,76%)] lg:absolute lg:bottom-0 lg:right-[8%] lg:mx-0 lg:mt-0 lg:h-full lg:w-auto lg:max-w-[42%] xl:h-[calc(100%+8.5rem)] xl:max-w-[46%]">
               <div ref={parallaxRef} className="relative h-full w-[400px] md:w-full">
                 <div className="relative h-full w-full">
                   {/* Halo behind her head, sold as depth rather than a glow. */}
@@ -275,11 +283,11 @@ export function Close() {
                     className="relative h-full w-full md:w-[600px] [mask-image:linear-gradient(to_bottom,#000_92%,transparent_100%)]"
                   >
                     <Image
-                      src="/images/joyce-native-full.png"
+                      src="/images/Joyce website Photo edits.png"
                       alt="Joyce Wadawasina"
                       fill
                       sizes="(max-width: 1023px) 78vw, 44vw"
-                      className="object-contain object-bottom"
+                      className="object-contain object-bottom md:mr-[4rem]"
                       priority={false}
                     />
                   </div>

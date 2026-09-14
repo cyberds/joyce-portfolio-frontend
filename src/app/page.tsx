@@ -13,25 +13,38 @@ import { Footer } from "@/components/site/Footer";
  * One scroll, in the order a conversation would go: their world, the moment of
  * recognition, what it looks like when it works, who they'd be speaking to,
  * what we actually do, and how to start.
+ *
+ * Bands alternate solid white and 10% grey; the hero and journey are dark.
  */
 export default function Home() {
   return (
-    <main className="relative overflow-x-clip">
+    <main className="relative overflow-x-clip bg-white">
       <Nav />
 
-      <div className="paper">
-        <Hero />
+      <Hero />
+
+      <div className="band-white">
         <Recognition />
       </div>
 
       <JourneySection />
 
-      <div className="paper">
+      <div className="band-white">
         <CaseStudies />
+      </div>
+      <div className="band-grey">
         <MeetJoyce />
+      </div>
+      <div className="band-white pt-28 md:pt-36">
         <Services />
+      </div>
+      <div className="band-white pt-16">
         <Close />
+      </div>
+      <div className="band-grey">
         <Testimonials />
+      </div>
+      <div className="band-white">
         <Footer />
       </div>
     </main>

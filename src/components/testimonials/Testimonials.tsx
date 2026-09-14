@@ -57,15 +57,9 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative z-10 mx-auto shell pb-24 md:pb-32"
+      className="relative z-10 mx-auto shell pt-10 pb-24 md:pb-32"
     >
       <div className="max-w-[44rem]">
-        <Reveal>
-          <p className="eyebrow flex items-center gap-3 text-ink-faint">
-            <span className="h-px w-8 bg-ink-faint/60" aria-hidden />
-            In their words
-          </p>
-        </Reveal>
         <Reveal delay={0.06}>
           <h2 className="display mt-6 text-[clamp(2.1rem,4.4vw,3.4rem)] text-ink">
             The People I&rsquo;ve{" "}
