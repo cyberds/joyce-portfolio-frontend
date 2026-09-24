@@ -15,6 +15,7 @@ const openers = [
   "“Our bookings are a mess.”",
   "“We keep losing enquiries.”",
   "“I do the same admin every Monday.”",
+  "“We want to use AI, but safely.”",
 ];
 
 /**
@@ -221,9 +222,11 @@ export function Close() {
 
               <p className="close-para mt-5 max-w-[30rem] text-[0.95rem] leading-[1.7] text-deep-muted">
                 You don&rsquo;t need a plan, or the right vocabulary.
-                Tell me what&rsquo;s taking too long and we&rsquo;ll work out
-                together whether there&rsquo;s a simpler way. If there
-                isn&rsquo;t, I&rsquo;ll tell you that too.
+                Tell me what&rsquo;s taking too long, where your team&rsquo;s
+                time is going, or what you&rsquo;d like AI to take off your
+                plate. We&rsquo;ll work out together what&rsquo;s worth
+                changing — and if the honest answer is &ldquo;nothing
+                yet&rdquo;, I&rsquo;ll tell you that too.
               </p>
 
               <ul className="mt-6 flex flex-wrap gap-2">

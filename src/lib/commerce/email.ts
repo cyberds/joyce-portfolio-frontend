@@ -98,7 +98,7 @@ function shell(title: string, body: string) {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #ecdde3;border-radius:16px;overflow:hidden;">
         <tr><td style="padding:28px 32px 18px;border-bottom:1px solid #ecdde3;">
           <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#df0f57;vertical-align:middle;"></span>
-          <span style="font-size:15px;letter-spacing:.02em;vertical-align:middle;padding-left:8px;">Joyce Workflow Automation</span>
+          <span style="font-size:15px;letter-spacing:.02em;vertical-align:middle;padding-left:8px;">Joyce Wadawasina</span>
         </td></tr>
         <tr><td style="padding:28px 32px 32px;">
           <h1 style="margin:0 0 16px;font-size:22px;font-weight:400;line-height:1.25;">${escapeHtml(title)}</h1>

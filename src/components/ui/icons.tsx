@@ -70,6 +70,15 @@ export function PeopleIcon({ className }: IconProps) {
   );
 }
 
+export function ShieldIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 40 40" width="34" height="34" className={className} {...base}>
+      <path d="M20 6.5 8.5 11v8.5c0 7 4.9 12.2 11.5 14 6.6-1.8 11.5-7 11.5-14V11L20 6.5Z" />
+      <path d="m14.5 20 4 4 7-8" />
+    </svg>
+  );
+}
+
 export function BuildIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 40 40" width="34" height="34" className={className} {...base}>

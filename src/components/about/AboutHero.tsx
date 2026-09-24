@@ -106,14 +106,14 @@ export function AboutHero() {
         <h1 className="display max-w-[80%] text-balance text-[clamp(2.4rem,min(5.4vw,8svh),4.6rem)] leading-[1.05] text-white">
           <Words text="I spent ten years doing the work." />{" "}
           <em className="italic">
-            <Words text="Now I automate it." wordClass="ah-mark hero-mark marked" />
+            <Words text="Now I help businesses do it better." wordClass="ah-mark hero-mark marked" />
           </em>
         </h1>
         <p className="ah-fade mt-7 max-w-[36rem] text-[clamp(0.95rem,2.1svh,1.08rem)] leading-[1.75] text-white/70">
-          I&rsquo;m Joyce Wadawasina — a workflow automation specialist in
-          Falkirk, Scotland. I help ambitious professionals free up their
-          schedules, get rid of the repetitive work, and put their hours back
-          into the things that actually move the business.
+          I&rsquo;m Joyce Wadawasina — an automation and AI consultant based in
+          Falkirk, Scotland. With my team, I help companies and business owners
+          work more efficiently, reduce repetitive workload and adopt AI safely,
+          so their hours go into the things that actually move the business.
         </p>
         <p className="ah-fade mt-5 flex items-center gap-2.5 text-[0.88rem] text-white/55">
           <LocationIcon className="shrink-0 text-accent" />

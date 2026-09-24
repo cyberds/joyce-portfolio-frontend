@@ -63,7 +63,7 @@ export function Nav() {
           className="flex items-center gap-2.5 rounded-[var(--r-pill)] py-1.5 pl-3 pr-4"
         >
           <span className="size-2 rounded-full bg-accent" aria-hidden />
-          <span className="display text-[1.1rem] leading-none">Joyce Workflow Automation</span>
+          <span className="display text-[1.1rem] leading-none">Joyce Wadawasina</span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">

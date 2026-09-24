@@ -6,9 +6,9 @@ import { Providers } from "@/components/shop/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Joyce Wadawasina — AI & automation, explained simply",
+  title: "Joyce Wadawasina — Automation & AI consultant",
   description:
-    "Your business is growing. Your workload doesn't have to grow with it. Joyce turns repetitive, manual processes into simpler systems that give you back time to run your business.",
+    "Joyce and her team help businesses work more efficiently: finding where time and labour are lost, reducing repetitive workload, bringing AI into the way you work safely, training your people and building the systems that keep it all running.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",

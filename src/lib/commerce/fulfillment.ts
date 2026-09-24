@@ -20,7 +20,8 @@ import {
   orderConfirmationEmail,
   sendEmail,
 } from "./email";
-import { commerceEnv } from "./env";
+import { commerceEnv, hasStripe } from "./env";
+import { getStripe } from "./stripe";
 
 /** URL-safe, 32 chars of entropy — not guessable, not tied to the order id. */
 export function generateDownloadToken() {
@@ -154,6 +155,37 @@ export async function fulfillOrder(session: Stripe.Checkout.Session) {
   }
 
   return { handled: true as const, orderNumber: order.orderNumber };
+}
+
+/**
+ * Best-effort fallback for the success page: the webhook is still the only
+ * thing that is *trusted* to fulfil an order (see the webhook route's
+ * comment), but a shopper can land on `/shop/success` before it has arrived —
+ * a slow delivery, a webhook that isn't configured yet, or Stripe retrying in
+ * the background. Rather than show that shopper a "still confirming" page
+ * for no reason, ask Stripe directly whether this specific session is paid,
+ * and run the same idempotent `fulfillOrder` if so.
+ *
+ * This does not replace the webhook: it only ever runs for the one session
+ * the shopper is looking at, so it does nothing for a shopper who never comes
+ * back (closed the tab, lost connection), for delayed payment methods that
+ * settle after this page has rendered, or for refunds and expired sessions.
+ * Those still depend on the webhook being configured.
+ */
+export async function reconcileCheckoutSession(sessionId: string) {
+  if (!hasStripe() || !sessionId) return;
+
+  try {
+    const stripe = getStripe();
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    if (session.payment_status === "paid") {
+      await fulfillOrder(session);
+    }
+  } catch (error) {
+    // Swallow it: the page falls back to whatever the webhook has already
+    // recorded, and the webhook (or a retry of it) remains the safety net.
+    console.error("[stripe] success-page reconciliation failed", error);
+  }
 }
 
 /** `payment_intent.payment_failed` / expired session: release the pending order. */

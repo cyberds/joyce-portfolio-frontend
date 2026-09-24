@@ -5,6 +5,7 @@ import { Footer } from "@/components/site/Footer";
 import { ClearCartOnSuccess } from "@/components/shop/ClearCartOnSuccess";
 import { CheckIcon, DownloadIcon } from "@/components/shop/icons";
 import { getOrderByStripeSession } from "@/lib/commerce/orders";
+import { reconcileCheckoutSession } from "@/lib/commerce/fulfillment";
 import { formatMoney } from "@/lib/commerce/money";
 
 export const metadata: Metadata = {
@@ -17,11 +18,14 @@ export const dynamic = "force-dynamic";
 /**
  * The page Stripe returns the shopper to.
  *
- * It reads the order and shows it, but it grants nothing: the order only
- * becomes `paid`, and download tokens only exist, once the Stripe webhook has
- * run. A shopper who arrives before the webhook has landed sees the "still
- * confirming" state rather than a wrong one, so the two possible truths are
- * both handled honestly.
+ * The order only becomes `paid`, and download tokens only exist, once
+ * something has fulfilled it — normally the Stripe webhook. Since this page
+ * already knows the one session the shopper is looking at, it also asks
+ * Stripe about that session directly and fulfils it here if the webhook
+ * hasn't landed yet (see `reconcileCheckoutSession`), so a shopper isn't
+ * stuck on "still confirming" while a slow or unconfigured webhook catches
+ * up. Either way, nothing here is *trusted*: the order's status still comes
+ * from the database afterwards, never from the URL.
  */
 export default async function SuccessPage({
   searchParams,
@@ -29,6 +33,7 @@ export default async function SuccessPage({
   searchParams: Promise<{ session_id?: string }>;
 }) {
   const { session_id: sessionId } = await searchParams;
+  if (sessionId) await reconcileCheckoutSession(sessionId);
   const order = sessionId ? await getOrderByStripeSession(sessionId) : null;
 
   const confirmed = order?.status === "paid";

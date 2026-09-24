@@ -41,7 +41,7 @@ function searchKnowledgeBase(query: string, rawText: string): string {
   if (q.includes("pipeline") || q.includes("journey") || q.includes("6 step") || q.includes("six step") || q.includes("steps") || q.includes("how it works") || q.includes("process")) {
     return `Joyce connects your business through a **6-Stage Customer Pipeline**:
 
-1. **Capture**: Inquiries across websites, inboxes, WhatsApp, and voicemails are instantly captured into one central queue.
+1. **Capture**: Enquiries across websites, inboxes, WhatsApp, and voicemails are instantly captured into one central queue.
 2. **Acknowledge**: A warm, human-toned response is automatically sent within 60 seconds with next steps.
 3. **Booking**: Live calendar availability is shared directly, eliminating back-and-forth email tag.
 4. **Unified CRM**: Contact details, history, and requirements automatically populate a unified customer profile.
@@ -62,11 +62,12 @@ function searchKnowledgeBase(query: string, rawText: string): string {
 
   // Services check
   if (q.includes("service") || q.includes("training") || q.includes("consult") || q.includes("software") || q.includes("build") || q.includes("offer") || q.includes("what do you do")) {
-    return `Joyce offers 3 core services:
+    return `Joyce and her team work across four areas:
 
-1. **AI & Automation Consultancy**: Process mapping, workflow audits, and building automated pipelines between your existing tools.
-2. **AI Team Training**: Hands-on practical workshops, prompt engineering, and responsible AI workplace policies.
-3. **Software Engineering & Custom Tools**: Bespoke web applications, automated quoting engines, client portals, and brand design.`;
+1. **Efficiency & Automation Consultancy**: Reviewing how your business runs, finding where time and labour are lost, and recommending better ways to work — including automation.
+2. **AI Adoption & Integration**: Helping you move into AI safely — choosing the right tools, setting guardrails for data and responsible use, and integrating AI into your existing workflows.
+3. **AI Team Training**: Practical workshops built around your team's real work, so new tools are used with confidence.
+4. **Systems, Software & Branding**: Automations, integrations, internal tools, websites and brand design.`;
   }
 
   // About Joyce / Bio check
@@ -75,14 +76,14 @@ function searchKnowledgeBase(query: string, rawText: string): string {
 - **10+ years** of operations, procurement, customer service, and project leadership experience.
 - **300+ businesses** served.
 - **11,000+ hours** of business time saved.
-Her philosophy is simple: you don't need to arrive knowing what should be automated—just tell her what's taking too long!`;
+She works as an automation and AI consultant, helping businesses reduce repetitive workload, lower labour overhead and adopt AI safely. You don't need to arrive knowing what to change — just tell her what's taking too long!`;
   }
 
   // Fallback answer based on llms.txt context
-  return `Joyce specializes in helping growing businesses replace manual administrative drudgery with seamless AI and automation systems.
+  return `Joyce is an automation and AI consultant. She and her team help businesses work more efficiently, reduce repetitive workload and move into AI safely.
 
 You can ask me about:
-- **Our 3 Core Services** (Consultancy, Team Training, Custom Software)
+- **Our 4 Service Areas** (Efficiency Consultancy, AI Adoption, Team Training, Systems & Software)
 - **The 6-Step Automated Pipeline**
 - **Client Case Studies** (Healthcare, Construction, Retail, Finance)
 - **Booking a 20-minute discovery call** with Joyce.

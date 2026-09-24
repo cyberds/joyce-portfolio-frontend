@@ -117,7 +117,7 @@ export function MeetJoyce() {
             </span>
           </div>
           <p className="text-[0.78rem] font-semibold uppercase tracking-[0.02em] text-black">
-            AI &amp; Automation
+            Automation &amp; AI Consulting
           </p>
         </div>
 
@@ -127,20 +127,22 @@ export function MeetJoyce() {
           {/* Copy */}
           <div className="flex flex-col">
             <h2 className="mj-copy display text-[clamp(2.1rem,min(3.6vw,7svh),3.5rem)] font-bold leading-[1.02] tracking-[-0.02em] text-black">
-              Not Sure What
+              Not Sure Where
               <br />
-              To Automate?
+              To Start?
             </h2>
 
             <p className="mj-copy mt-[clamp(1rem,3svh,2rem)] max-w-[34rem] text-[clamp(0.9rem,1.9svh,0.98rem)] leading-[1.5] text-black/85">
               You don&rsquo;t need to know which AI tool you need or what&rsquo;s
-              wrong with your process. Just tell me what&rsquo;s frustrating you,
+              wrong with your process. Tell me what&rsquo;s frustrating you,
               what&rsquo;s taking too long, or what your team keeps doing
-              manually.
+              manually — I&rsquo;ll help you see where the real gains are.
               <br />
               <br />
-              My goal is to make it feel simple and coordinate the right solution
-              with my team.
+              I bring more than ten years of running operations to the
+              conversation. From there, my team and I design the right
+              solution, bring AI in safely where it belongs, train your people
+              and stay until it&rsquo;s working.
             </p>
 
             <div className="mj-copy mt-10 lg:mt-auto">

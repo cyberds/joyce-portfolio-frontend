@@ -14,7 +14,7 @@ const WHITE = "#f5faf7";
 const ACCENT = "#df0f57";
 
 const lines: { text: string; accent?: boolean }[] = [
-  { text: "Free up the schedule. Kill the repetitive work. Put the hours back into" },
+  { text: "Cut the repetitive work. Lower the overhead. Bring AI in safely. Put the hours back into" },
   { text: "what actually moves the needle", accent: true },
   { text: "." },
 ];

@@ -8,9 +8,9 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { AboutGoal } from "@/components/about/AboutGoal";
 
 export const metadata: Metadata = {
-  title: "About Joyce Wadawasina — workflow automation specialist",
+  title: "About Joyce Wadawasina — automation & AI consultant",
   description:
-    "MSc in Logistics and Supply Chain Management, ten years in business operations, four years of executive support to CEOs and coaches — and now the person who automates the work she used to do by hand.",
+    "MSc in Logistics and Supply Chain Management, ten years in business operations, four years of executive support to CEOs and coaches — and now an automation and AI consultant helping businesses work more efficiently.",
 };
 
 /** The three chapters, in the order they actually happened. */
@@ -33,16 +33,29 @@ const chapters = [
   },
   {
     period: "Now",
-    title: "Automating the work I used to do by hand",
+    title: "Helping businesses run better",
     body: [
-      "So that's what I build. As a workflow automation specialist I take email management, administrative workflows and project coordination and put smart systems underneath them — the same jobs I used to do manually, running on their own.",
-      "Every build is tailored. I'm not selling a platform, and I have no interest in adding to the pile of subscriptions you're already paying for. Most of the time the answer is connecting things you already own.",
+      "Today I work as an automation and AI consultant, with a team behind me. We help companies and business owners see where their time, money and labour are going, then find better ways to run the business — cutting repetitive work, lowering overhead and getting more from the people they already have.",
+      "More and more, that means helping businesses move into AI safely: deciding where it genuinely belongs, integrating it into the way the team already works, training people to use it with confidence and building the systems that keep everything efficient.",
+      "Every engagement is tailored. I'm not selling a platform, and I have no interest in adding to the pile of subscriptions you're already paying for. Often the best answer is a better process, or connecting things you already own.",
     ],
   },
 ];
 
-/** The specifics, so nobody has to guess what "automation" means here. */
+/** The specifics, so nobody has to guess what "consulting" means here. */
 const capabilities = [
+  {
+    title: "Operations & efficiency reviews",
+    body: "A clear look at how work moves through your business, where it stalls, and what it’s really costing you in time and labour.",
+  },
+  {
+    title: "AI adoption roadmaps",
+    body: "Where AI genuinely fits, which tools to use, and the guardrails for data and responsible use — before anyone signs up for anything.",
+  },
+  {
+    title: "Team AI training",
+    body: "Practical sessions built around your team’s real work, so people use the new tools with confidence rather than avoiding them.",
+  },
   {
     title: "AI-driven inbox filtering",
     body: "Mail sorted, triaged and drafted with your own tone, so what reaches you is what actually needs you.",
@@ -126,7 +139,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="display mt-6 text-[clamp(2rem,4vw,3rem)] text-ink">
-                What &ldquo;automation&rdquo; actually means when I say it.
+                What working with us actually covers.
               </h2>
             </Reveal>
           </div>
@@ -159,7 +172,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6 border-t border-hairline pt-10 sm:flex-row sm:items-end sm:justify-between">
               <p className="display max-w-[26rem] text-[clamp(1.5rem,3vw,2.1rem)] leading-tight text-ink">
                 Tell me what&rsquo;s taking too long. That&rsquo;s the whole
-                brief.
+                brief — we&rsquo;ll take it from there.
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link

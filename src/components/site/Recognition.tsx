@@ -28,8 +28,8 @@ const moments = [
     then: "The same emails, forms, reminders and documents are being created manually every week.",
   },
   {
-    said: "I haven't posted all week.",
-    then: "Serving clients took priority again and marketing disappeared from the list.",
+    said: "Should we be using AI for this?",
+    then: "Everyone says so, but nobody's sure where it fits, what it costs or whether it's safe.",
   },
   {
     said: "Surely there's an easier way to do this?",
@@ -73,7 +73,7 @@ export function Recognition() {
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: "+=220%",
+            end: "+=260%",
             pin: true,
             scrub: 0.8,
             anticipatePin: 1,
@@ -92,19 +92,23 @@ export function Recognition() {
           );
         });
 
-        tl.fromTo(closing, { autoAlpha: 0, y: 40, filter: "blur(12px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1 }, ">-0.3")
-          .to({}, { duration: 1.4 }) // hold, so it can be read
-          .to(closing, { autoAlpha: 0, y: 40, filter: "blur(12px)", duration: 0.8, ease: "power2.in" });
+        tl.to({}, { duration: 1.2 }); // a beat to read the cards
 
+        // The cards leave first, and the closing line takes their place in the
+        // middle of the pinned frame. It used to sit below the grid, which is
+        // taller than the viewport on most laptops, so it was never on screen.
         cards.forEach((card, i) => {
           tl.to(
             card,
             { autoAlpha: 0, ...angles[i], scale: 0.7, filter: "blur(10px)", duration: 1, ease: "power2.in" },
-            `>-${i === 0 ? 0.4 : 0.75}`,
+            `>-${i === 0 ? 0 : 0.75}`,
           );
         });
 
-        tl.to(heading, { autoAlpha: 0, y: -50, filter: "blur(20px)", duration: 1, ease: "power2.in" }, ">-0.6")
+        tl.fromTo(closing, { autoAlpha: 0, y: 40, filter: "blur(12px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 1 }, ">-0.3")
+          .to({}, { duration: 1.4 }) // hold, so it can be read
+          .to(closing, { autoAlpha: 0, y: -40, filter: "blur(12px)", duration: 0.8, ease: "power2.in" })
+          .to(heading, { autoAlpha: 0, y: -50, filter: "blur(20px)", duration: 1, ease: "power2.in" }, "<")
           .to(rule, { scaleX: 0, duration: 0.6, ease: "power2.in" }, "<");
       });
 
@@ -169,11 +173,15 @@ export function Recognition() {
         ))}
       </ul>
 
-      <p className="rc-close mx-auto mt-[clamp(2rem,6svh,4rem)] max-w-[42rem] text-center text-[clamp(1.1rem,2vw,1.45rem)] leading-[1.5] text-ink">
+      {/* On desktop this overlays the grid's spot, since the cards have left by
+          the time it appears; below lg it stays in the normal flow. */}
+      <div className="lg:pointer-events-none lg:absolute lg:inset-x-0 lg:top-[calc(50%+3rem)] lg:flex lg:-translate-y-1/2 lg:justify-center">
+      <p className="rc-close mx-auto mt-[clamp(2rem,6svh,4rem)] max-w-[42rem] text-center text-[clamp(1.1rem,2vw,1.45rem)] leading-[1.5] text-ink lg:mt-0 lg:px-6 lg:text-[clamp(1.5rem,2.4vw,2rem)]">
         You don&rsquo;t necessarily need more people or more software.
-        Sometimes you just need a better way of{" "}
-        <em className="display italic">connecting what you already have</em>.
+        Sometimes you need someone to look at how the work really flows and{" "}
+        <em className="display italic">find a better way to run it</em>.
       </p>
+      </div>
     </section>
   );
 }

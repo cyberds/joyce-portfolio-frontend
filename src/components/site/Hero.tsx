@@ -241,10 +241,11 @@ export function Hero() {
               </h1>
 
               <p className="hero-para mt-[clamp(1rem,2.6svh,1.75rem)] max-w-[30rem] text-[clamp(0.92rem,2svh,1.05rem)] leading-[1.7] text-white/65">
-                If you&rsquo;re spending too much time on admin, chasing emails,
-                following up with clients or doing things you know shouldn&rsquo;t
-                take this much effort — there may be a simpler way.{" "}
-                <span className="text-white">I can help you find it.</span>
+                I&rsquo;m an automation and AI consultant. With my team, I help
+                businesses find where time and effort are being lost, cut the
+                repetitive workload, and bring AI into the way they work —
+                safely, and with their people on board.{" "}
+                <span className="text-white">More done, without more overhead.</span>
               </p>
 
               <div className="mt-[clamp(1.25rem,3.4svh,2.25rem)] flex flex-wrap items-center gap-3">
@@ -253,7 +254,7 @@ export function Hero() {
                     href="#help"
                     className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-white px-6 py-3.5 text-[0.92rem] font-medium text-black transition-transform duration-300 hover:-translate-y-0.5"
                   >
-                    See what we can help with
+                    See how we help
                     <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                 </span>

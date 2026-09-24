@@ -22,7 +22,7 @@ const siteLinks = [
   { label: "How it works", href: "/journey" },
   { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
-  { label: "What we help with", href: "/#help" },
+  { label: "How we help", href: "/#help" },
   { label: "Shop", href: "/shop" },
 ];
 
@@ -93,8 +93,8 @@ export function Footer() {
       <div className="mx-auto grid shell gap-12 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-[26rem]">
           <p className="text-[0.96rem] leading-[1.7] text-ink-muted">
-            AI and automation, explained simply. Simpler systems that give you
-            back the time to run your business.
+            Automation and AI consultancy for businesses that want to work
+            more efficiently, reduce repetitive workload and adopt AI safely.
           </p>
           <Link
             href="https://wa.me/447436836888"
@@ -174,7 +174,7 @@ export function Footer() {
           reserved.
         </p>
         <p>
-          Business automation · AI training · Software engineering &amp; branding
+          Efficiency consultancy · AI adoption &amp; training · Systems &amp; software
         </p>
       </div>
     </footer>
