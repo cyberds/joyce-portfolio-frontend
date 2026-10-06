@@ -1,6 +1,15 @@
 {
   "testimonials": [
     {
+      "id": "abi-eghagara",
+      "quote": "When I first launched my business, I was overwhelmed with managing all the tasks on my own. That’s when I reached out to Joyce for help. Her expertise in copywriting and email automations completely transformed my business. She not only created engaging copy but also streamlined my client communications, bringing in quality leads and turning them into clients. Joyce’s support has significantly boosted my productivity and efficiency, allowing me to focus on growing my business. I highly recommend her services!",
+      "name": "Abi Eghagara",
+      "role": "Sales Coach & Data Expert",
+      "location": "UK",
+      "photo": "/images/testimonials/abi-eghagara.avif",
+      "featured": false
+    },
+    {
       "id": "kathy-mela",
       "quote": "Joyce transformed my email strategy and elevated my business in just nine months! She has an intuitive talent for crafting emails that authentically capture my voice, making every message feel personal and professional.",
       "name": "Kathy Mela",
@@ -16,15 +25,6 @@
       "role": "Project Manager, PMP Certified",
       "location": null,
       "photo": null,
-      "featured": false
-    },
-    {
-      "id": "abi-eghagara",
-      "quote": "When I first launched my business, I was overwhelmed with managing all the tasks on my own. That’s when I reached out to Joyce for help. Her expertise in copywriting and email automations completely transformed my business. She not only created engaging copy but also streamlined my client communications, bringing in quality leads and turning them into clients. Joyce’s support has significantly boosted my productivity and efficiency, allowing me to focus on growing my business. I highly recommend her services!",
-      "name": "Abi Eghagara",
-      "role": "Sales Coach & Data Expert",
-      "location": "UK",
-      "photo": "/images/testimonials/abi-eghagara.avif",
       "featured": false
     },
     {

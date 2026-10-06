@@ -231,7 +231,7 @@ export function Hero() {
         <div ref={contentRef} className="relative mx-auto h-full shell">
           <div className="relative z-10 flex h-full flex-col justify-start pt-[clamp(6rem,15svh,9rem)] md:justify-center md:pt-16">
             <div className="max-w-[38rem] md:max-w-[46%]">
-              <h1 className="display text-balance text-[clamp(2rem,min(5vw,7.2svh),4.4rem)] leading-[1.05] text-white">
+              <h1 className="display text-balance text-[clamp(1rem,min(5vw,7.2svh),2.4rem)] leading-[1.05] text-white">
                 <Words text="Your business is growing." />{" "}
                 <Words text="Your workload" />{" "}
                 <em className="italic">

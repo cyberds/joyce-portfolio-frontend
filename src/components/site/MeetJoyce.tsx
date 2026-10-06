@@ -133,16 +133,15 @@ export function MeetJoyce() {
             </h2>
 
             <p className="mj-copy mt-[clamp(1rem,3svh,2rem)] max-w-[34rem] text-[clamp(0.9rem,1.9svh,0.98rem)] leading-[1.5] text-black/85">
-              You don&rsquo;t need to know which AI tool you need or what&rsquo;s
-              wrong with your process. Tell me what&rsquo;s frustrating you,
+              Tell me what&rsquo;s frustrating you,
               what&rsquo;s taking too long, or what your team keeps doing
-              manually — I&rsquo;ll help you see where the real gains are.
+              manually, I&rsquo;ll help you see where the solutions are.
               <br />
               <br />
               I bring more than ten years of running operations to the
               conversation. From there, my team and I design the right
-              solution, bring AI in safely where it belongs, train your people
-              and stay until it&rsquo;s working.
+              solutions, train your people on the systems,
+              and we stay until it&rsquo;s working.
             </p>
 
             <div className="mj-copy mt-10 lg:mt-auto">
@@ -191,10 +190,10 @@ export function MeetJoyce() {
               <g className="mj-tile">
                 <rect x="0" y="0" width="136" height="155" rx={R} fill="#7b6cf6" />
                 <foreignObject x="0" y="0" width="136" height="155">
-                  <div className="flex h-full flex-col justify-center px-[18px] text-white">
+                  <div className="flex h-full flex-col justify-center px-[13px] text-white">
                     <p className="text-[37px] font-medium leading-none tracking-[-0.02em]">10+</p>
-                    <p className="mt-[10px] text-[12px] leading-[1.3] text-white/90">
-                      Years across operations, procurement and customer service
+                    <p className="mt-[10px] text-[10px] leading-[1.3] text-white/90">
+                      Years across operations, procurement and customer satisfaction, helping businesses run better and faster.
                     </p>
                   </div>
                 </foreignObject>

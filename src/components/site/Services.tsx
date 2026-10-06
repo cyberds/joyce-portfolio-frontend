@@ -18,8 +18,8 @@ const areas = [
     kicker: "Find a better way",
     title: "Efficiency & automation consultancy",
     icon: CompassIcon,
-    body: "We look at how your business actually runs — who does what, where work waits, and what gets done by hand every week — then show you where time, cost and effort can come out. Sometimes that’s automation, sometimes it’s AI, and sometimes it’s simply a better way of organising the work.",
-    goodFor: "I know we could work smarter. I just don’t know where to start.",
+    body: "We look at how your business actually runs — who does what, what work is repitetive, what is done manually and what takes up most of your time every week — then help. you simplify it through automation to make work easier and give you back more hours in your day. So if you've thought:",
+    goodFor: "I know we could work smarter. I just don't know where to start.",
     cta: "Start with a review",
   },
   {
@@ -27,7 +27,7 @@ const areas = [
     kicker: "Move into AI safely",
     title: "AI adoption & integration",
     icon: ShieldIcon,
-    body: "Bringing AI into a business shouldn’t mean guesswork or risk. We help you decide where it genuinely belongs, choose the right tools, set sensible rules for data and responsible use, and integrate it into the workflows your team already follows — so it becomes part of how you work, not another experiment.",
+    body: "Bringing AI into a business shouldn’t mean guesswork or risk. We help you decide where it genuinely belongs, choose the right tools, set sensible rules for data and responsible use, and integrate it into the workflows your team already follows — so it becomes part of how you work, not another experiment. So if you've said:",
     goodFor: "We know AI could help us. We just want to get it right.",
     cta: "Plan your AI transition",
   },
@@ -36,8 +36,8 @@ const areas = [
     kicker: "Help your people feel ready",
     title: "AI team training",
     icon: PeopleIcon,
-    body: "New tools only pay off when people use them with confidence. We deliver practical, human-friendly training built around your team’s real jobs: everyday AI use, prompting, productivity and responsible use — so adoption sticks after we’ve gone.",
-    goodFor: "I’m not sure about all this AI stuff… → Okay. I can actually use this.",
+    body: "New tools only pay off when people use them with confidence. We deliver practical, human-friendly training built around your team’s real jobs: everyday AI use, prompting, productivity and responsible use — so adoption sticks after implementation. So if you've said:",
+    goodFor: "I’m not sure about all this AI stuff…",
     cta: "See what training covers",
   },
   {
@@ -153,8 +153,7 @@ export function Services() {
         </h2>
         <p className="sv-intro mt-6 text-[1.02rem] leading-[1.75] text-ink-muted">
           That&rsquo;s completely fine — working that out is our job. We help
-          businesses and business owners run more efficiently, lower their
-          labour overhead and get more from the hours they already have. The
+          businesses and business owners run more efficiently, reduce repetitive manual work, and get more from the hours they already have. The
           work falls into four areas, and most clients use more than one.
         </p>
       </div>
@@ -203,7 +202,7 @@ export function Services() {
         </Reveal>
         <Reveal delay={0.06}>
           <h3 className="display mt-5 max-w-[40rem] text-[clamp(1.6rem,3vw,2.3rem)] leading-tight text-ink">
-            Advice first. Then we stay to make it{" "}
+            We listen first. Then we stay to make it{" "}
             <em className="italic">actually work</em>.
           </h3>
         </Reveal>

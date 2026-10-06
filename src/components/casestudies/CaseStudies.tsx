@@ -276,8 +276,7 @@ export function CaseStudies() {
           <Reveal delay={0.12}>
             <p className="mt-6 text-[1.02rem] leading-[1.75] text-ink-muted">
               Short demos of automations we&rsquo;ve built for real businesses.
-              The write-up behind each one has the client, the problem and what
-              actually changed.
+              Each project has the clients, the problems and what we actually changed
             </p>
           </Reveal>
         </div>

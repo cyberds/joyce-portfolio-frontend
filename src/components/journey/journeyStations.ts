@@ -59,7 +59,7 @@ export const stations: Station[] = [
     title: "Everything lands in one place",
     before: "Normally it's fragmented across WhatsApp threads, email tabs, and a scattered folder.",
     after:
-      "Their company info, interaction logs, and requirements sync into one unified record ready before your call.",
+      "Client info, interaction logs, and needs sync into one unified record ready before your call.",
     color: "#06b6d4", // Electric Cyan
     glowColor: "rgba(6, 182, 212, 0.4)",
     icon: "database",
@@ -69,7 +69,7 @@ export const stations: Station[] = [
     index: "05",
     tag: "Automated Nurture",
     title: "The follow-up actually happens",
-    before: "Normally leads go silent and nobody has the bandwidth to chase them consistently.",
+    before: "Normally leads go silent and there's not enough time to chase them consistently.",
     after:
       "Quotes, check-ins, and reminders trigger like clockwork, automatically pausing the moment a reply arrives.",
     color: "#10b981", // Emerald / Apple
