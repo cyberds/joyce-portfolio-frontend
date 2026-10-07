@@ -4,6 +4,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { CaseStudyCard } from "@/components/casestudies/CaseStudyCard";
 import { caseStudies } from "@/lib/caseStudies";
 
 export const metadata: Metadata = {
@@ -40,57 +41,7 @@ export default function CaseStudiesIndex() {
           <ul className="mt-16 grid gap-6 md:grid-cols-2">
             {caseStudies.map((study, i) => (
               <Reveal as="li" key={study.slug} delay={(i % 2) * 0.08}>
-                <Link
-                  href={`/case-studies/${study.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[var(--r-lg)] border border-hairline bg-surface transition-colors duration-500 hover:bg-canvas"
-                >
-                  <div
-                    className="relative aspect-[16/10] w-full overflow-hidden"
-                    style={{
-                      background: `radial-gradient(120% 100% at 30% 0%, ${study.accent}55, transparent 62%), linear-gradient(160deg, ${study.accent}22, #140c10 70%)`,
-                    }}
-                  >
-                    {/*
-                      Poster art, not video: the demos live on Loom, Drive and
-                      YouTube now, none of which can autoplay silently in a
-                      card. The play happens on the detail page.
-                    */}
-                    {study.poster ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={study.poster}
-                        alt=""
-                        aria-hidden
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                    ) : null}
-                    {study.duration ? (
-                      <span className="absolute bottom-4 right-4 rounded-[var(--r-pill)] bg-black/50 px-3 py-1 font-mono text-[0.72rem] text-white/75 backdrop-blur-md">
-                        {study.duration}
-                      </span>
-                    ) : null}
-                  </div>
-
-                  <div className="flex flex-1 flex-col justify-between gap-6 p-7">
-                    <div>
-                      <p className="eyebrow flex items-center gap-2.5 text-ink-faint">
-                        <span
-                          className="size-1.5 rounded-full"
-                          style={{ backgroundColor: study.accent }}
-                        />
-                        {study.client}
-                      </p>
-                      <h2 className="display mt-4 text-[1.5rem] leading-[1.2] text-ink">
-                        {study.cardHeading}
-                      </h2>
-                    </div>
-                    <span className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-accent">
-                      View Project
-                      <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </Link>
+                <CaseStudyCard study={study} headingLevel="h2" />
               </Reveal>
             ))}
           </ul>

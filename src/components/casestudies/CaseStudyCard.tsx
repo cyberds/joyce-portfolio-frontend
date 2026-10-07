@@ -5,15 +5,18 @@ import type { CaseStudy } from "@/lib/caseStudies";
 import { ArrowRightIcon } from "@/components/ui/icons";
 
 /**
- * One card: a heading and the way through to the write-up, on a wash of the
+ * One card, shared by the landing-page carousel and the index: a heading and the way through to the write-up, on a wash of the
  * study's accent. No media — the detail page carries the client, the problem
  * and any video.
  */
 export function CaseStudyCard({
   study,
   decorative = false,
+  headingLevel: Heading = "h3",
 }: {
   study: CaseStudy;
+  /** `h2` on the index, where the cards sit directly under the page title. */
+  headingLevel?: "h2" | "h3";
   /**
    * One of the carousel's cloned copies. It stays clickable — it points at the
    * same study — but leaves the tab order and the accessibility tree, so the
@@ -31,9 +34,9 @@ export function CaseStudyCard({
         background: `radial-gradient(120% 100% at 30% 0%, ${study.accent}55, transparent 62%), linear-gradient(160deg, ${study.accent}22, #140c10 70%), #140c10`,
       }}
     >
-      <h3 className="display max-w-[22ch] text-[clamp(1.6rem,3.4vw,2.6rem)] leading-[1.12] text-white">
+      <Heading className="display max-w-[22ch] text-[clamp(1.6rem,3.4vw,2.6rem)] leading-[1.12] text-white">
         {study.cardHeading}
-      </h3>
+      </Heading>
 
       <Link
         href={`/case-studies/${study.slug}`}

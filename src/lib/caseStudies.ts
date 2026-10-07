@@ -14,15 +14,8 @@ export type CaseStudy = {
   /** Short line on the carousel card. Keep it to one clause. */
   cardHeading: string;
   client: string;
-  industry: string;
   /** Hex, used for the card wash and the nav dot. */
   accent: string;
-  /** Runtime of the demo, shown on the card. Omit if unknown. */
-  duration?: string | null;
-  /** Only decides the card's label: "Watch the demo" or "Read the story". */
-  demoVideo?: string | null;
-  /** Card art. */
-  poster?: string | null;
 };
 
 export const caseStudies = (data as { caseStudies: CaseStudy[] }).caseStudies;
