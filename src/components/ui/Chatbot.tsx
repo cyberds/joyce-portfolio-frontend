@@ -33,7 +33,7 @@ function searchKnowledgeBase(query: string, rawText: string): string {
   if (q.includes("contact") || q.includes("whatsapp") || q.includes("email") || q.includes("book") || q.includes("call") || q.includes("reach") || q.includes("hire") || q.includes("pricing") || q.includes("price") || q.includes("cost") || q.includes("start")) {
     return `You can get in touch with Joyce directly:
 - **WhatsApp**: [Message on WhatsApp](https://wa.me/447436836888) (+44 7436 836888)
-- **Email**: [hello@joycewadawasina.com](mailto:hello@joycewadawasina.com)
+- **Email**: [admin@joycewadawasina.com](mailto:admin@joycewadawasina.com)
 - **Consultation**: Book a free 20-minute discovery call to discuss what’s taking too long in your business.`;
   }
 
@@ -166,7 +166,7 @@ export function Chatbot() {
       const data = await res.json();
       const botAnswer =
         data?.reply ||
-        "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [hello@joycewadawasina.com](mailto:hello@joycewadawasina.com).";
+        "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [admin@joycewadawasina.com](mailto:admin@joycewadawasina.com).";
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -180,7 +180,7 @@ export function Chatbot() {
       const fallbackMessage: Message = {
         id: (Date.now() + 1).toString(),
         sender: "bot",
-        text: "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [hello@joycewadawasina.com](mailto:hello@joycewadawasina.com).",
+        text: "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [admin@joycewadawasina.com](mailto:admin@joycewadawasina.com).",
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       };
       setMessages((prev) => [...prev, fallbackMessage]);

@@ -247,7 +247,7 @@ export function Close() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <span className="close-action inline-block">
                   <a
-                    href="mailto:hello@joycewadawasina.com?subject=Something%20is%20taking%20too%20long"
+                    href="mailto:admin@joycewadawasina.com?subject=Something%20is%20taking%20too%20long"
                     className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-deep-ink px-6 py-3.5 text-[0.92rem] font-medium text-deep transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     Send Joyce a sentence

@@ -5,49 +5,37 @@ import gsap from "gsap";
 import {
   ArrowRightIcon,
   BuildIcon,
-  CompassIcon,
   PeopleIcon,
-  ShieldIcon,
 } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 
-const areas = [
+const services = [
   {
-    id: "consultancy",
-    kicker: "Find a better way",
-    title: "Efficiency & automation consultancy",
-    icon: CompassIcon,
-    body: "We look at how your business actually runs — who does what, what work is repitetive, what is done manually and what takes up most of your time every week — then help. you simplify it through automation to make work easier and give you back more hours in your day. So if you've thought:",
-    goodFor: "I know we could work smarter. I just don't know where to start.",
-    cta: "Start with a review",
-  },
-  {
-    id: "ai-adoption",
-    kicker: "Move into AI safely",
-    title: "AI adoption & integration",
-    icon: ShieldIcon,
-    body: "Bringing AI into a business shouldn’t mean guesswork or risk. We help you decide where it genuinely belongs, choose the right tools, set sensible rules for data and responsible use, and integrate it into the workflows your team already follows — so it becomes part of how you work, not another experiment. So if you've said:",
-    goodFor: "We know AI could help us. We just want to get it right.",
-    cta: "Plan your AI transition",
-  },
-  {
-    id: "training",
-    kicker: "Help your people feel ready",
-    title: "AI team training",
-    icon: PeopleIcon,
-    body: "New tools only pay off when people use them with confidence. We deliver practical, human-friendly training built around your team’s real jobs: everyday AI use, prompting, productivity and responsible use — so adoption sticks after implementation. So if you've said:",
-    goodFor: "I’m not sure about all this AI stuff…",
-    cta: "See what training covers",
-  },
-  {
-    id: "build",
-    kicker: "Build it properly",
-    title: "Systems, software & branding",
+    id: "workflow-automation",
+    kicker: "Service 01 — Workflow automation",
+    title: "Make the everyday work easier.",
     icon: BuildIcon,
-    body: "Where the better way needs building, we build it: the automations that run your admin, the integrations between the systems you already pay for, the internal tool that replaces the spreadsheet, and the website and brand that make it all look like one business.",
-    goodFor: "We’ve outgrown the workaround. We need the real thing.",
-    cta: "See what we build",
+    body: [
+      "If you or your team are spending too much time sending the same emails, chasing information, updating spreadsheets, managing bookings or moving information from one system to another, we look at what’s happening and find a better way to do it.",
+      "Then my team and I build the workflows that connect the moving pieces and take repetitive work off your plate.",
+    ],
+    outcome: "Less manual work. Fewer things to remember. More time for the work that actually needs you.",
+    cta: "See what we can automate",
+    href: "#solutions",
+  },
+  {
+    id: "ai-training",
+    kicker: "Service 02 — AI team training & adoption",
+    title: "Help your team actually feel comfortable with AI.",
+    icon: PeopleIcon,
+    body: [
+      "You may know AI could help your business, but introducing it to a team is another matter. Where do you start? What should people use it for? What shouldn’t they use it for? And how do you make sure it actually makes their work easier rather than becoming another tool nobody uses?",
+      "We make AI practical and relevant to the work your people already do — helping teams understand it, build confidence and learn useful ways to work smarter with it.",
+    ],
+    outcome: "Less confusion. More confidence. AI that makes sense in the real working day.",
+    cta: "Explore AI team training",
+    href: "#talk",
   },
 ];
 
@@ -146,48 +134,62 @@ export function Services() {
           <span className="sv-eyebrow">How we help</span>
         </p>
         <h2 className="display mt-6 text-[clamp(2.1rem,4.4vw,3.4rem)] text-ink">
-          <Words text="Sometimes you don’t know what you need. You just know" />{" "}
+          <Words text="How we help you" />{" "}
           <em className="italic">
-            <Words text="the current way isn’t working." />
+            <Words text="work smarter" />
           </em>
         </h2>
         <p className="sv-intro mt-6 text-[1.02rem] leading-[1.75] text-ink-muted">
-          That&rsquo;s completely fine — working that out is our job. We help
-          businesses and business owners run more efficiently, reduce repetitive manual work, and get more from the hours they already have. The
-          work falls into four areas, and most clients use more than one.
+          You don&rsquo;t need to know which automation tool you need or where
+          AI fits into your business. Start with what&rsquo;s taking too much
+          time, what keeps being repeated, or what you wish worked a little
+          better.
+        </p>
+        <p className="hidden sv-intro mt-4 text-[1.02rem] leading-[1.75] text-ink">
+          We help in two ways.
         </p>
       </div>
 
-      <ul className="mt-16 grid gap-4 md:grid-cols-2">
-        {areas.map((area) => {
-          const Icon = area.icon;
+      <ul className="mt-14 grid gap-4 md:grid-cols-2">
+        {services.map((service) => {
+          const Icon = service.icon;
           return (
             <li
-              key={area.id}
-              className="sv-card group flex flex-col rounded-[var(--r-lg)] border border-black/5 bg-white p-8 transition-shadow duration-500 hover:shadow-[0_30px_60px_-36px_rgba(0,0,0,0.35)] md:p-10"
+              key={service.id}
+              id={service.id}
+              className="sv-card h-fit group flex flex-col rounded-[var(--r-lg)] border border-black/5 bg-white p-8 transition-shadow duration-500 hover:shadow-[0_30px_60px_-36px_rgba(0,0,0,0.35)] md:p-10"
             >
               <span className="sv-icon inline-block w-fit">
                 <Icon className="text-accent" />
               </span>
-              <p className="sv-inner eyebrow mt-8 text-ink-faint">{area.kicker}</p>
+              <p className="sv-inner eyebrow mt-8 text-ink-faint">{service.kicker}</p>
               <h3 className="sv-inner display mt-3 text-[1.8rem] leading-[1.15] text-ink">
-                {area.title}
+                {service.title}
               </h3>
-              <p className="sv-inner mt-5 flex-1 text-[0.95rem] leading-[1.7] text-ink-muted">
-                {area.body}
-              </p>
+              <div className="flex-1">
+                {service.body.map((para) => (
+                  <p
+                    key={para}
+                    className="sv-inner mt-5 text-[0.95rem] leading-[1.7] text-ink-muted"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
 
               <p className="sv-inner mt-7 border-l-2 border-accent/40 pl-4 text-[0.92rem] leading-[1.55] text-ink italic">
-                &ldquo;{area.goodFor}&rdquo;
+                {service.outcome}
               </p>
 
-              <a
-                href="#talk"
-                className="sv-inner mt-auto flex items-center gap-2 pt-9 text-[0.88rem] font-medium text-ink"
-              >
-                {area.cta}
-                <ArrowRightIcon className="text-accent transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              <span className="sv-inner mt-auto inline-block pt-9">
+                <a
+                  href={service.href}
+                  className="inline-flex items-center gap-2 rounded-[var(--r-pill)] bg-ink px-6 py-3.5 text-[0.9rem] font-medium text-white transition-transform duration-300 hover:-translate-y-0.5"
+                >
+                  {service.cta}
+                  <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+              </span>
             </li>
           );
         })}
@@ -224,6 +226,26 @@ export function Services() {
             </Reveal>
           ))}
         </ol>
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="https://wa.me/447436836888"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-[var(--r-pill)] bg-ink px-6 py-3.5 text-[0.9rem] font-medium text-white transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              Talk to Joyce
+              <ArrowRightIcon />
+            </a>
+            <a
+              href="/journey"
+              className="inline-flex items-center gap-2 rounded-[var(--r-pill)] border border-hairline px-6 py-3.5 text-[0.9rem] font-medium text-ink transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              See a demo automation journey
+              <ArrowRightIcon />
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
 const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/joyce-wadawasina/", icon: LinkedInIcon },
   { name: "WhatsApp", href: "https://wa.me/447436836888", icon: WhatsAppIcon },
-  { name: "Email", href: "mailto:hello@joycewadawasina.com", icon: MailIcon },
+  { name: "Email", href: "mailto:admin@joycewadawasina.com", icon: MailIcon },
 ];
 
 /** Per-word masks so each word can swing up from below its own baseline. */
@@ -205,7 +205,7 @@ export function Hero() {
       <section
         id="top"
         ref={panelRef}
-        className="dark-zone relative h-[100svh] min-h-[36rem] w-full origin-[50%_85%] overflow-hidden bg-black text-white will-change-transform"
+        className="dark-zone relative flex h-[100svh] min-h-[36rem] w-full origin-[50%_85%] flex-col overflow-hidden bg-black text-white will-change-transform md:block"
       >
         <canvas
           ref={canvasRef}
@@ -216,7 +216,7 @@ export function Hero() {
         {/* Portrait: large, anchored to the section's right and bottom edges. */}
         <div
           ref={portraitRef}
-          className="absolute bottom-0 right-0 md:right-20 h-[48svh] w-full md:h-full md:w-[42vw]"
+          className="relative order-2 min-h-[12rem] w-full flex-1 md:absolute md:bottom-0 md:right-20 md:order-none md:h-full md:min-h-0 md:w-[42vw] md:flex-none"
         >
           <Image
             src="/images/joyce-hero.png"
@@ -228,8 +228,8 @@ export function Hero() {
           />
         </div>
 
-        <div ref={contentRef} className="relative mx-auto h-full shell">
-          <div className="relative z-10 flex h-full flex-col justify-start pt-[clamp(6rem,15svh,9rem)] md:justify-center md:pt-16">
+        <div ref={contentRef} className="relative order-1 mx-auto shell md:h-full">
+          <div className="relative z-10 flex flex-col justify-start pt-[clamp(6rem,12svh,8rem)] md:h-full md:justify-center md:pt-16">
             <div className="max-w-[38rem] md:max-w-[46%]">
               <h1 className="display text-balance text-[clamp(1rem,min(5vw,7.2svh),2.4rem)] leading-[1.05] text-white">
                 <Words text="Your business is growing." />{" "}
@@ -240,18 +240,18 @@ export function Hero() {
                 <Words text="grow with it." />
               </h1>
 
-              <p className="hero-para mt-[clamp(1rem,2.6svh,1.75rem)] max-w-[30rem] text-[clamp(0.92rem,2svh,1.05rem)] leading-[1.7] text-white/65">
+              <p className="hero-para mt-[clamp(1rem,2.6svh,1.75rem)] max-w-[30rem] text-[clamp(0.85rem,2svh,1.05rem)] leading-[1.6] md:leading-[1.7] text-white/65">
                 If you&rsquo;re spending too much time on admin, chasing emails,
                 following up with clients or doing things you know shouldn&rsquo;t
                 take this much effort — there may be a simpler way.{" "}
                 <span className="text-white">I can help you find it.</span>
               </p>
 
-              <div className="mt-[clamp(1.25rem,3.4svh,2.25rem)] flex flex-wrap items-center gap-3">
+              <div className="mt-[clamp(1rem,2.4svh,2.25rem)] flex flex-wrap items-center gap-2 min-[360px]:gap-2.5 sm:gap-3">
                 <span className="hero-action inline-block">
                   <a
                     href="#help"
-                    className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-white px-6 py-3.5 text-[0.92rem] font-medium text-black transition-transform duration-300 hover:-translate-y-0.5"
+                    className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-white whitespace-nowrap px-3.5 py-2.5 text-[0.8rem] font-medium text-black min-[360px]:px-5 min-[360px]:py-3 min-[360px]:text-[0.88rem] sm:px-6 sm:py-3.5 sm:text-[0.92rem] transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     See how we help
                     <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -260,7 +260,7 @@ export function Hero() {
                 <span className="hero-action inline-block">
                   <a
                     href="#talk"
-                    className="block rounded-[var(--r-pill)] border border-white/25 bg-black/30 px-6 py-3.5 text-[0.92rem] font-medium text-white backdrop-blur-sm transition-colors duration-300 hover:border-white/60"
+                    className="block rounded-[var(--r-pill)] border border-white/25 bg-black/30 whitespace-nowrap px-3.5 py-2.5 text-[0.8rem] font-medium text-white min-[360px]:px-5 min-[360px]:py-3 min-[360px]:text-[0.88rem] sm:px-6 sm:py-3.5 sm:text-[0.92rem] backdrop-blur-sm transition-colors duration-300 hover:border-white/60"
                   >
                     Talk to Joyce
                   </a>
@@ -281,7 +281,7 @@ export function Hero() {
         </div>
 
         {/* Floating socials on the right edge: glass tabs that stretch left on hover. */}
-        <ul className="absolute right-0 top-1/2 z-20 flex -translate-y-1/2 flex-col items-end gap-2">
+        <ul className="absolute bottom-[clamp(6rem,17svh,9rem)] right-0 z-20 flex flex-col items-end gap-2 md:bottom-auto md:top-1/2 md:-translate-y-1/2">
           {socials.map(({ name, href, icon: Icon }) => (
             <li key={name} className="hero-social">
               <a
@@ -289,12 +289,12 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Click to open ${name}`}
-                className="group flex h-12 items-center rounded-l-2xl border border-r-0 border-white/20 bg-white/10 text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-colors duration-300 hover:bg-white/20"
+                className="group flex h-11 items-center rounded-l-2xl md:h-12 border border-r-0 border-white/20 bg-white/10 text-white shadow-[0_10px_30px_-12px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-colors duration-300 hover:bg-white/20"
               >
                 <span className="grid max-w-0 overflow-hidden whitespace-nowrap text-[0.82rem] opacity-0 transition-[max-width,opacity,padding] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-w-[12rem] group-hover:pl-4 group-hover:opacity-100 group-focus-visible:max-w-[12rem] group-focus-visible:pl-4 group-focus-visible:opacity-100">
                   Click to open {name}
                 </span>
-                <span className="flex size-12 shrink-0 items-center justify-center">
+                <span className="flex size-11 shrink-0 md:size-12 items-center justify-center">
                   <Icon className="size-5" />
                 </span>
               </a>

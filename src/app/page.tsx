@@ -5,6 +5,7 @@ import { JourneySection } from "@/components/journey/JourneySection";
 import { CaseStudies } from "@/components/casestudies/CaseStudies";
 import { MeetJoyce } from "@/components/site/MeetJoyce";
 import { Services } from "@/components/site/Services";
+import { Solutions } from "@/components/site/Solutions";
 import { Close } from "@/components/site/Close";
 import { Testimonials } from "@/components/testimonials/Testimonials";
 import { Footer } from "@/components/site/Footer";
@@ -37,6 +38,9 @@ export default function Home() {
       </div>
       <div className="band-white pt-28 md:pt-36">
         <Services />
+      </div>
+      <div className="band-white pt-4 md:pt-36">
+        <Solutions />
       </div>
       <div className="band-white pt-16">
         <Close />

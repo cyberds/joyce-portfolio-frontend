@@ -3,275 +3,52 @@
     {
       "slug": "client-onboarding-automation",
       "cardHeading": "Onboarding that runs itself, from the first hello",
-      "title": "Client onboarding that runs in the background",
       "client": "Management Consultancy Firm",
-      "clientType": "Management consultancy (UK)",
       "industry": "Consulting",
-      "year": "2023",
       "accent": "#df0f57",
       "duration": "3:12",
       "demoVideo": "https://www.loom.com/share/db7d4d8029384e93909be4ae785911d8?sid=6b68ed23-1285-4f84-985f-ac814f144bed",
-      "testimonialVideo": null,
-      "poster": "/images/projects/onboarding-and-operations.avif",
-      "services": ["Process automation", "Systems integration", "Onboarding design"],
-      "summary": "Contracts chased by hand, the same emails retyped, forms going missing. We designed an onboarding flow that runs quietly in the background, so every new client feels supported from the very first hello.",
-      "intro": "Welcoming new clients should feel exciting, not exhausting. If you have ever found yourself chasing contracts, retyping the same emails, or worrying something slipped through the cracks, you are not alone. This is where automation steps in.",
-      "metrics": [
-        { "value": "80%", "label": "Fewer manual onboarding tasks" },
-        { "value": "10+ hrs", "label": "Staff time saved every week" },
-        { "value": "0", "label": "Lost emails or missing documents" }
-      ],
-      "challenge": "Onboarding new clients was messy: manual contracts, emails back and forth, missing forms, and wasted staff hours. It slowed down growth and frustrated both staff and clients.",
-      "approach": [
-        {
-          "title": "One form, every detail captured",
-          "body": "A HubSpot form collects client details instantly, so nothing has to be asked for twice and nothing arrives half-filled."
-        },
-        {
-          "title": "A folder waiting before anyone asks",
-          "body": "A Google Drive folder is created automatically for each new client, structured the same way every time."
-        },
-        {
-          "title": "A board that already knows the steps",
-          "body": "Trello boards are duplicated from a template so the onboarding sequence is laid out and assigned before the kickoff call."
-        },
-        {
-          "title": "Contracts drafted, ready for review",
-          "body": "BoldSign contracts are drafted automatically from the intake details and held for a human to check and send. The tool removes the typing, not the judgement."
-        },
-        {
-          "title": "A welcome that sounds personal",
-          "body": "A personalised Gmail welcome email goes out with no staff effort, carrying the right next step for that client."
-        }
-      ],
-      "stack": ["HubSpot", "Google Drive", "Trello", "BoldSign", "Gmail", "Zapier"],
-      "outcome": "Manual onboarding tasks dropped by 80% and the team recovered more than ten hours a week. No more lost emails or missing documents, and clients were onboarded faster with a noticeably smoother experience.",
-      "whyItMatters": "First impressions matter. Automating your client onboarding ensures clients start their journey with you smoothly and confidently from day one.",
-      "screenshots": [
-        {
-          "src": "/images/projects/onboarding-and-operations.avif",
-          "alt": "The onboarding and operations automation board",
-          "caption": "The onboarding flow, end to end"
-        }
-      ],
-      "subProjects": [],
-      "quote": null
+      "poster": "/images/projects/onboarding-and-operations.avif"
     },
     {
       "slug": "calendar-and-bookings-automation",
       "cardHeading": "Booking a call, down from eight steps to two",
-      "title": "Calendars that work for you, not against you",
       "client": "Ms. M and a renewable energy consultant",
-      "clientType": "Entrepreneur and consultant (UK)",
       "industry": "Professional services",
-      "year": "2023",
       "accent": "#ef8000",
       "duration": null,
       "demoVideo": null,
-      "testimonialVideo": null,
-      "poster": "/images/projects/meeting-booking.avif",
-      "services": ["Calendar automation", "Booking systems", "Integrations"],
-      "summary": "Two clients, one problem: calendars running the person instead of the other way around. We built booking and sync systems that removed the back-and-forth entirely.",
-      "intro": "Tired of endless back-and-forth just to book a call? With automation, your calendar works for you — syncing schedules, sending reminders, and giving clients a simple way to book. No more juggling, just more time to show up prepared and in control.",
-      "metrics": [
-        { "value": "8 → 2", "label": "Steps to book a meeting" },
-        { "value": "2", "label": "Calendars merged into one planner" },
-        { "value": "0", "label": "Double bookings since launch" }
-      ],
-      "challenge": null,
-      "approach": [],
-      "stack": ["HubSpot", "Zoom", "Reclaim.ai", "Outlook", "Gmail", "Zapier"],
-      "outcome": null,
-      "whyItMatters": "When your schedule runs you instead of the other way around, growth feels impossible. A smooth booking system makes you look professional, and calendar automation helps you reclaim your time and headspace.",
-      "screenshots": [
-        {
-          "src": "/images/projects/meeting-booking.avif",
-          "alt": "The meeting booking page connected to a live calendar",
-          "caption": "The booking page clients see"
-        }
-      ],
-      "subProjects": [
-        {
-          "label": "Project 1",
-          "title": "Meeting bookings",
-          "client": "Ms. M — Entrepreneur (UK)",
-          "challenge": "Booking client meetings was painful: too many emails back and forth, wasted time, and unnecessary steps.",
-          "approach": [
-            {
-              "title": "A booking page on her own calendar",
-              "body": "A HubSpot booking page connected straight to her live availability, so clients only ever see slots she can actually take."
-            },
-            {
-              "title": "Zoom links generated instantly",
-              "body": "Zoom is integrated into the flow, so the meeting link exists the moment the slot is taken."
-            },
-            {
-              "title": "Confirmations and reminders on rails",
-              "body": "Zapier sends the confirmation and the reminders, so nobody has to remember to nudge."
-            }
-          ],
-          "outcome": "Booking dropped from eight steps to two. Clients booked instantly with no email chase, and meetings were scheduled with reminders attached."
-        },
-        {
-          "label": "Project 2",
-          "title": "Calendar sync and automation",
-          "client": "Renewable Energy Consultant (UK)",
-          "challenge": "Managing multiple projects meant juggling several calendars. Important tasks slipped through, double bookings happened, and stress levels ran high.",
-          "approach": [
-            {
-              "title": "One planner, every calendar",
-              "body": "Outlook and Gmail calendars were integrated into a single unified planner using Reclaim.ai."
-            },
-            {
-              "title": "Priorities that defend themselves",
-              "body": "Priorities were synced and reminders automated so clashes are prevented rather than discovered."
-            },
-            {
-              "title": "Tasks aligned across tools",
-              "body": "Zapier connects the planner to the rest of the stack, so a change in one place is a change everywhere."
-            }
-          ],
-          "outcome": "No more double bookings or missed meetings, clearer focus on high-priority deliverables, and far greater peace of mind."
-        }
-      ],
-      "quote": null
+      "poster": "/images/projects/meeting-booking.avif"
     },
     {
       "slug": "email-and-sales-funnel-automation",
       "cardHeading": "A 4x email list, built from a Gmail contact list",
-      "title": "From 50 contacts in Gmail to an automated sales funnel",
       "client": "Kathy",
-      "clientType": "Leadership & mindset coach (USA)",
       "industry": "Coaching",
-      "year": "Sept 2021 — Feb 2023",
       "accent": "#9c5f70",
       "duration": null,
       "demoVideo": null,
-      "testimonialVideo": "https://drive.google.com/file/d/1Idf_xZDAIs0dQIH7oPVFG0KN2KIQIad2/view",
-      "poster": null,
-      "services": ["Email marketing", "Sales funnel", "Automation"],
-      "summary": "Kathy was sending every email by hand to 50+ contacts in Gmail, with no list and no system for growth. We built the funnel that grew the list four times over in nine months.",
-      "intro": null,
-      "metrics": [
-        { "value": "4x", "label": "Email list growth in 9 months" },
-        { "value": "18 mths", "label": "Of consistent weekly newsletters" },
-        { "value": "0", "label": "Manual follow-ups remaining" }
-      ],
-      "challenge": "Manually sending emails to 50+ contacts on Gmail, with no email list and no system for growth. Every message was a fresh piece of work, and nothing compounded.",
-      "approach": [
-        {
-          "title": "A funnel with something to give",
-          "body": "An automated sales funnel built around lead magnets and nurturing sequences, so a new subscriber is welcomed and warmed without anyone pressing send."
-        },
-        {
-          "title": "A weekly rhythm that holds",
-          "body": "Weekly newsletters and workflows set up to engage new subscribers from the moment they arrive."
-        },
-        {
-          "title": "Follow-ups off the to-do list",
-          "body": "Manual follow-ups were removed entirely, so client engagement got faster rather than more effortful."
-        }
-      ],
-      "stack": ["Mailchimp", "ActiveCampaign", "GoHighLevel", "Zapier"],
-      "outcome": "The email list grew four times over in nine months, engagement stayed consistent through the newsletters, and conversions rose for both the workshops and the coaching programmes.",
-      "whyItMatters": "For many coaches and consultants, the biggest block to growth is not only a lack of leads — it is the manual bottleneck between a lead finding you and them becoming a client. Automation turns that journey into a smooth, scalable process.",
-      "screenshots": [],
-      "subProjects": [],
-      "quote": {
-        "text": "Joyce transformed my email strategy and elevated my business in just nine months. She has an intuitive talent for crafting emails that authentically capture my voice, making every message feel personal and professional.",
-        "name": "Kathy Mela",
-        "role": "Leadership Coach, USA"
-      }
+      "poster": null
     },
     {
       "slug": "coaching-business-system-setup",
       "cardHeading": "Scalable foundations for a growing coaching business",
-      "title": "One system for the courses, the list and the admin",
       "client": "Abi",
-      "clientType": "Business coach (UK)",
       "industry": "Coaching",
-      "year": "June 2021 — Sept 2021",
       "accent": "#2f7d5c",
       "duration": null,
       "demoVideo": null,
-      "testimonialVideo": "https://drive.google.com/file/d/1Thcp5ASMbityv3kU2QsHnSjbcnbUTNHH/view",
-      "poster": null,
-      "services": ["Systems setup", "Course platform", "Email list build"],
-      "summary": "Admin was piling up and the digital coaching programmes were scattered across tools. We centralised the lot and built the email list from zero.",
-      "intro": null,
-      "metrics": [
-        { "value": "1", "label": "System holding every programme" },
-        { "value": "0 → live", "label": "Email list built from scratch" },
-        { "value": "3 mths", "label": "From scattered tools to scalable" }
-      ],
-      "challenge": "Admin tasks were piling up, and the digital coaching programmes were not organised under one system. A growing business needed scalable foundations rather than another tool.",
-      "approach": [
-        {
-          "title": "Courses in one place",
-          "body": "Kajabi was implemented to centralise course management, so every digital programme lives in one structure instead of several."
-        },
-        {
-          "title": "A list built from zero",
-          "body": "GetResponse was set up and the email list built from nothing, ready to nurture clients rather than just collect addresses."
-        },
-        {
-          "title": "Workflows behind the offers",
-          "body": "Zapier automations connect the pieces so the coaching offers are supported by workflows rather than by memory."
-        }
-      ],
-      "stack": ["GetResponse", "Kajabi", "Zapier"],
-      "outcome": "Digital programmes were structured for growth, a new email list was set up and ready to nurture clients, and considerably more time was freed for coaching instead of admin.",
-      "whyItMatters": "Growth is not a tooling problem, it is a foundations problem. Get the system right early and every new programme you launch costs a fraction of the effort of the last one.",
-      "screenshots": [],
-      "subProjects": [],
-      "quote": null
+      "poster": null
     },
     {
       "slug": "social-media-marketing-automation",
       "cardHeading": "Consistent posting across every brand, without the grind",
-      "title": "Content scheduling that keeps every brand visible",
       "client": "Myleen",
-      "clientType": "Brand manager / OBM (USA)",
       "industry": "Marketing",
-      "year": "Jan 2023 — March 2023",
       "accent": "#c07a11",
       "duration": null,
       "demoVideo": null,
-      "testimonialVideo": null,
-      "poster": null,
-      "services": ["Content automation", "Scheduling", "Team workflows"],
-      "summary": "Myleen manages several brands at once. Posting by hand across Instagram and Facebook was slow and inconsistent, so we built the system that keeps the rhythm without sacrificing brand quality.",
-      "intro": null,
-      "metrics": [
-        { "value": "Hours", "label": "Of repetitive work saved weekly" },
-        { "value": "Multi", "label": "Brands posting on one rhythm" },
-        { "value": "1", "label": "Board keeping the team aligned" }
-      ],
-      "challenge": "Myleen manages multiple brands and clients as an Online Business Manager. Posting content manually across Instagram, Facebook, and other channels was time-consuming and inconsistent. She needed a way to simplify content creation and scheduling without sacrificing brand quality.",
-      "approach": [
-        {
-          "title": "Copy variations, generated not typed",
-          "body": "HelloWoofy's smart content tools generate copy variations, so one idea becomes a week of posts instead of one."
-        },
-        {
-          "title": "Scheduled well ahead",
-          "body": "Posts are scheduled across multiple social channels in advance, so a busy week never becomes a silent one."
-        },
-        {
-          "title": "A board the team can see",
-          "body": "Trello content planning boards were integrated so her team stays aligned on what is going out and when."
-        },
-        {
-          "title": "A rhythm that builds presence",
-          "body": "A consistent posting cadence was established to build her clients' online presence over time rather than in bursts."
-        }
-      ],
-      "stack": ["HelloWoofy", "Trello", "Instagram", "Facebook"],
-      "outcome": "Hours of repetitive work were saved each week, brand visibility stayed consistent across every client, and Myleen's time was freed for higher-value strategic work.",
-      "whyItMatters": "For many business managers, posting is just one task in a sea of responsibilities. Automation removes the grunt work and ensures consistency, so you can focus on growth rather than chasing the clock.",
-      "screenshots": [],
-      "subProjects": [],
-      "quote": null
+      "poster": null
     }
   ]
 }

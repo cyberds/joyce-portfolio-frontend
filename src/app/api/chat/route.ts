@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const HIGH_TRAFFIC_MESSAGE =
-  "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [hello@joycewadawasina.com](mailto:hello@joycewadawasina.com).";
+  "We're currently experiencing unusually high traffic and couldn't process your request right now. Please try again in a moment, or feel free to reach out directly to Joyce on [WhatsApp](https://wa.me/447436836888) (+44 7436 836888) or by email at [admin@joycewadawasina.com](mailto:admin@joycewadawasina.com).";
 
 export async function POST(req: NextRequest) {
   try {
@@ -45,7 +45,7 @@ ${knowledgeBase}
 GUIDELINES FOR YOUR RESPONSES:
 1. Ground your answers strictly on the knowledge base provided above.
 2. Tone: Warm, pragmatic, conversational, concise, professional, and clear (matching Joyce's style).
-3. If a user asks how to start or contact Joyce, always provide her WhatsApp: [Message on WhatsApp](https://wa.me/447436836888) (+44 7436 836888) and Email: [hello@joycewadawasina.com](mailto:hello@joycewadawasina.com).
+3. If a user asks how to start or contact Joyce, always provide her WhatsApp: [Message on WhatsApp](https://wa.me/447436836888) (+44 7436 836888) and Email: [admin@joycewadawasina.com](mailto:admin@joycewadawasina.com).
 4. Use crisp markdown formatting (bullet points, bold highlights, markdown links). Keep responses concise and easy to read.
 5. If the user asks something outside the scope of Joyce's services or operations automation, politely guide them back to what Joyce helps with.`;
 

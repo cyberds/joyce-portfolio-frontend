@@ -103,7 +103,7 @@ export default function JourneyPage() {
 
                 <div className="mt-9 flex flex-wrap items-center gap-3">
                   <a
-                    href="mailto:hello@joycewadawasina.com?subject=My%20enquiry%20journey"
+                    href="mailto:admin@joycewadawasina.com?subject=My%20enquiry%20journey"
                     className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-deep-ink px-6 py-3.5 text-[0.92rem] font-medium text-deep transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     Map my journey

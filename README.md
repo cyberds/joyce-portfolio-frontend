@@ -108,8 +108,9 @@ visitors get the same six cards, simply stacked, with no pin at all.
 
 ## Case studies
 
-`src/data/caseStudies.json` is the single source. `src/lib/caseStudies.ts` types
-it and exposes `caseStudies` / `getCaseStudy`. Three things read it:
+`src/data/caseStudies.json` is the list of studies — only what a card needs
+(slug, heading, client, accent, poster). `src/lib/caseStudies.ts` types it and
+exposes `caseStudies`. The carousel, the index and the nav read it:
 
 - `components/casestudies/CaseStudies.tsx` — the landing-page carousel:
   autoplaying, and endless in both directions. Native scroll-snap still does the
@@ -135,12 +136,15 @@ it and exposes `caseStudies` / `getCaseStudy`. Three things read it:
   There is also a pause button, because content that moves on its own has to be
   stoppable.
 - `app/case-studies/page.tsx` — the index.
-- `app/case-studies/[slug]/page.tsx` — the write-up, statically generated per
-  slug via `generateStaticParams`.
 
-Adding a study means adding one object to the JSON. Demo videos live in
-`public/videos/case-studies/` — see the README there for filenames; a missing
-file degrades to the study's accent gradient rather than a broken frame.
+The write-ups are not data. Each is a hand-built page at
+`app/case-studies/<slug>/page.tsx` with its own layout and copy, following the
+same arc: the problem, how it was fixed, the benefits, the CTA. They share only
+`StudyShell` / `StudyHeader` / `BuiltWith` (`components/casestudies/StudyShell.tsx`),
+`StudyCta` and `VideoEmbed`.
+
+Adding a study means adding one object to the JSON and one page in a folder
+named after its `slug`.
 
 ## Testimonials
 

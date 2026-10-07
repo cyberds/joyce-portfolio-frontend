@@ -102,6 +102,8 @@ export default async function ShopPage({ searchParams }: Search) {
           ) : (
             <>
               {/* ---- Filters ---- */}
+              {/* TEMP: filters hidden — remove `false &&` to restore */}
+              {false && (
               <Reveal delay={0.15}>
                 <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-y border-hairline py-4">
                   <div className="flex flex-wrap items-center gap-1.5">
@@ -168,6 +170,7 @@ export default async function ShopPage({ searchParams }: Search) {
                   </div>
                 </div>
               </Reveal>
+              )}
 
               {/* ---- Grid ---- */}
               {products.length === 0 ? (

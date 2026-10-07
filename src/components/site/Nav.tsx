@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { caseStudies } from "@/lib/caseStudies";
 import { motion } from "framer-motion";
 import { easeCurve } from "@/design/tokens";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
@@ -12,9 +13,175 @@ const links = [
   { label: "Our Projects", href: "/case-studies" },
   { label: "About Joyce", href: "/about" },
   { label: "Shop", href: "/shop" },
-  { label: "Sample", href: "/journey" },
   // { label: "What we help with", href: "/#help" },
 ];
+
+const PROJECTS_HREF = "/case-studies";
+
+function Chevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+      fill="none"
+      aria-hidden
+      className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+    >
+      <path d="M2 3.75 5 6.75l3-3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** Desktop: opens on hover or keyboard focus. The panel sits flush under the
+    trigger (padding, not margin) so the pointer never crosses a dead gap. */
+function ProjectsDropdown({ label, onDark }: { label: string; onDark: boolean }) {
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const show = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
+  const hide = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  useEffect(() => () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  }, []);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onFocus={show}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) hide();
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") setOpen(false);
+      }}
+    >
+      <Link
+        href={PROJECTS_HREF}
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={() => setOpen(false)}
+        className={`flex items-center gap-1.5 rounded-[var(--r-pill)] px-3.5 py-2 text-[0.86rem] transition-colors ${
+          onDark ? "text-deep-muted hover:text-deep-ink" : "text-ink-muted hover:text-ink"
+        }`}
+      >
+        {label}
+        <Chevron open={open} />
+      </Link>
+
+      <div
+        className={`absolute left-1/2 top-full w-[22rem] -translate-x-1/2 pt-3 ${
+          open ? "" : "pointer-events-none"
+        }`}
+      >
+        {/* Fade the panel itself: opacity on a wrapper would cut the panel
+            off from the page behind it and kill the blur mid-transition. */}
+        <div
+          className={`glass-menu rounded-[var(--r-sm)] p-1.5 transition-[opacity,translate] duration-200 ${
+            onDark ? "glass-menu-dark" : ""
+          } ${open ? "translate-y-0 opacity-100" : "-translate-y-1 opacity-0"}`}
+        >
+          {caseStudies.map((study) => (
+            <Link
+              key={study.slug}
+              href={`/case-studies/${study.slug}`}
+              onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
+              className={`group flex items-start gap-3 rounded-[var(--r-sm)] px-3 py-2.5 transition-colors ${
+                onDark ? "hover:bg-white/10" : "hover:bg-white/60"
+              }`}
+            >
+              <span
+                className="mt-1.5 size-2 shrink-0 rounded-full"
+                style={{ backgroundColor: study.accent }}
+                aria-hidden
+              />
+              <span className="min-w-0">
+                <span
+                  className={`block text-[0.88rem] leading-snug ${onDark ? "text-deep-ink" : "text-ink"}`}
+                >
+                  {study.cardHeading}
+                </span>
+                <span
+                  className={`block text-[0.75rem] ${onDark ? "text-deep-muted" : "text-ink-faint"}`}
+                >
+                  {study.client}
+                </span>
+              </span>
+            </Link>
+          ))}
+          <Link
+            href={PROJECTS_HREF}
+            onClick={() => setOpen(false)}
+            tabIndex={open ? 0 : -1}
+            className={`mt-1 block rounded-[var(--r-sm)] px-3 py-2.5 text-[0.82rem] font-medium transition-colors ${
+              onDark ? "text-deep-ink hover:bg-white/10" : "text-ink hover:bg-white/60"
+            }`}
+          >
+            View all projects →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** Mobile: tap the chevron to expand; the label itself still navigates. */
+function MobileProjects({ label, onNavigate }: { label: string; onNavigate: () => void }) {
+  const [open, setOpen] = useState(false);
+  const rowClass =
+    "rounded-[var(--r-md)] px-4 py-3 text-[0.95rem] text-ink-muted transition-colors hover:bg-surface hover:text-ink";
+
+  return (
+    <div>
+      <div className="flex items-center">
+        <Link href={PROJECTS_HREF} onClick={onNavigate} className={`${rowClass} flex-1`}>
+          {label}
+        </Link>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Hide projects" : "Show projects"}
+          aria-expanded={open}
+          className="flex size-11 shrink-0 items-center justify-center rounded-[var(--r-md)] text-ink-muted hover:bg-surface hover:text-ink"
+        >
+          <Chevron open={open} />
+        </button>
+      </div>
+      {open ? (
+        <div className="mb-1 ml-4 flex max-h-[50vh] flex-col overflow-y-auto border-l border-hairline pl-2">
+          {caseStudies.map((study) => (
+            <Link
+              key={study.slug}
+              href={`/case-studies/${study.slug}`}
+              onClick={onNavigate}
+              className="flex items-start gap-3 rounded-[var(--r-md)] px-3 py-2.5 hover:bg-surface"
+            >
+              <span
+                className="mt-1.5 size-2 shrink-0 rounded-full"
+                style={{ backgroundColor: study.accent }}
+                aria-hidden
+              />
+              <span className="min-w-0">
+                <span className="block text-[0.9rem] leading-snug text-ink">{study.cardHeading}</span>
+                <span className="block text-[0.75rem] text-ink-faint">{study.client}</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,10 +221,20 @@ export function Nav() {
           animating its width when the viewport resizes. */}
       <div className="shell mt-3">
         <div
-          className={`flex w-full items-center justify-between rounded-[var(--r-pill)] border px-2 py-2 transition-colors duration-500 ${
-            scrolled ? "glass" : "border-transparent"
-          } ${onDark ? "nav-dark" : ""}`}
+          className={`relative isolate flex w-full items-center justify-between rounded-[var(--r-pill)] border border-transparent px-2 py-2 ${
+            onDark ? "text-deep-ink" : ""
+          }`}
         >
+          {/* The bar's glass lives on its own layer, not on the pill. A
+              backdrop-filter on the pill would make it the backdrop root for
+              everything inside, and the dropdown's own blur would then have
+              nothing behind it to blur. */}
+          <div
+            aria-hidden
+            className={`absolute -inset-px -z-10 rounded-[var(--r-pill)] border transition-colors duration-500 ${
+              scrolled ? "glass" : "border-transparent"
+            } ${onDark ? "nav-dark" : ""}`}
+          />
         <Link
           href="/"
           className="flex items-center gap-2.5 rounded-[var(--r-pill)] py-1.5 pl-3 pr-4"
@@ -67,7 +244,10 @@ export function Nav() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {links.map((link) => (
+          {links.map((link) =>
+            link.href === PROJECTS_HREF ? (
+              <ProjectsDropdown key={link.href} label={link.label} onDark={onDark} />
+            ) : (
             <Link
               key={link.href}
               href={link.href}
@@ -79,7 +259,8 @@ export function Nav() {
             >
               {link.label}
             </Link>
-          ))}
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -116,16 +297,24 @@ export function Nav() {
           transition={{ duration: 0.35, ease: easeCurve }}
           className="glass mx-auto mt-2 flex shell flex-col rounded-[var(--r-lg)] p-2 lg:hidden"
         >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-[var(--r-md)] px-4 py-3 text-[0.95rem] text-ink-muted transition-colors hover:bg-surface hover:text-ink"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href === PROJECTS_HREF ? (
+              <MobileProjects
+                key={link.href}
+                label={link.label}
+                onNavigate={() => setOpen(false)}
+              />
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-[var(--r-md)] px-4 py-3 text-[0.95rem] text-ink-muted transition-colors hover:bg-surface hover:text-ink"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <Link
             href="/account"
             onClick={() => setOpen(false)}

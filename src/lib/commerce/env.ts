@@ -38,7 +38,7 @@ export const commerceEnv = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
   ).replace(/\/$/, ""),
 
-  supportEmail: process.env.SUPPORT_EMAIL ?? "hello@joycewadawasina.com",
+  supportEmail: process.env.SUPPORT_EMAIL ?? "admin@joycewadawasina.com",
 } as const;
 
 /** Required for the storefront to render products at all. */
