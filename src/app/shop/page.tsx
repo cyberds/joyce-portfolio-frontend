@@ -86,8 +86,8 @@ export default async function ShopPage({ searchParams }: Search) {
 
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-[52ch] text-[1.02rem] leading-relaxed text-ink-muted">
-              Templates, toolkits and playbooks built from the work Joyce does with
-              clients. Downloads arrive the moment you pay; physical goods ship
+              Templates, toolkits and playbooks built from Joyce&rsquo;s life lessons
+              and work. Downloads arrive the moment you pay; physical goods ship
               within a few working days.
             </p>
           </Reveal>

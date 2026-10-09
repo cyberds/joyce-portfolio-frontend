@@ -20,7 +20,7 @@ if (typeof window !== "undefined") {
 const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/joyce-wadawasina/", icon: LinkedInIcon },
   { name: "WhatsApp", href: "https://wa.me/447436836888", icon: WhatsAppIcon },
-  { name: "Email", href: "mailto:admin@joycewadawasina.com", icon: MailIcon },
+  { name: "Email", href: "mailto:jwadawasina@alhericonsultancy.com", icon: MailIcon },
 ];
 
 /** Per-word masks so each word can swing up from below its own baseline. */

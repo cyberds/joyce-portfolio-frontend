@@ -30,8 +30,8 @@ const siteLinks = [
 const contacts = [
   {
     label: "Email",
-    value: "admin@joycewadawasina.com",
-    href: "mailto:admin@joycewadawasina.com",
+    value: "jwadawasina@alhericonsultancy.com",
+    href: "mailto:jwadawasina@alhericonsultancy.com",
     icon: MailIcon,
     external: false,
   },

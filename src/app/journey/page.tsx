@@ -41,9 +41,13 @@ export default function JourneyPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-7 max-w-[38rem] text-[1.08rem] leading-[1.75] text-ink-muted">
-              Six moments where work normally leaks — and what each one looks
-              like once the tools you already pay for are talking to each other.
-              Scroll, and follow it from the moment it arrives.
+              Imagine a new client enquiry coming in, and instead of manually
+              sending emails, updating records, arranging meetings and following
+              up, your systems take care of the next steps.
+            </p>
+            <p className="mt-4 max-w-[38rem] text-[1.08rem] leading-[1.75] text-ink-muted">
+              That&rsquo;s what happens when the tools you already use start
+              working together.
             </p>
           </Reveal>
 
@@ -103,14 +107,16 @@ export default function JourneyPage() {
 
                 <div className="mt-9 flex flex-wrap items-center gap-3">
                   <a
-                    href="mailto:admin@joycewadawasina.com?subject=My%20enquiry%20journey"
+                    href="mailto:jwadawasina@alhericonsultancy.com?subject=My%20enquiry%20journey"
                     className="group flex items-center gap-2 rounded-[var(--r-pill)] bg-deep-ink px-6 py-3.5 text-[0.92rem] font-medium text-deep transition-transform duration-300 hover:-translate-y-0.5"
                   >
                     Map my journey
                     <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                   <a
-                    href="https://wa.me/447436836888"
+                    href="https://meetings-eu1.hubspot.com/joyce-wadawasina"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded-[var(--r-pill)] border border-deep-ink/20 px-6 py-3.5 text-[0.92rem] font-medium text-deep-ink transition-colors duration-300 hover:border-deep-ink/50"
                   >
                     Book a 30-minute call

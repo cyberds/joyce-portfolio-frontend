@@ -9,7 +9,7 @@
 - **Track Record**: 300+ businesses served, 11,000+ hours of business time saved.
 - **Contact**: 
   - WhatsApp: https://wa.me/447436836888 (+44 7436 836888)
-  - Email: admin@joycewadawasina.com
+  - Email: jwadawasina@alhericonsultancy.com
   - Booking: 20-minute discovery call
 
 ---
@@ -137,4 +137,4 @@
 *A: Modern AI APIs (Claude, OpenAI), automation platforms (Make, Zapier, n8n), CRMs (HubSpot, Airtable, Salesforce), scheduling tools (Cal.com, Calendly), e-commerce (Shopify, Stripe), full-stack software (Next.js, React, Node.js, TypeScript, PostgreSQL, Vercel).*
 
 **Q: How do we get started?**
-*A: Start by sending a message on WhatsApp (https://wa.me/447436836888) or sending an email to admin@joycewadawasina.com to book a 20-minute introductory call.*
+*A: Start by sending a message on WhatsApp (https://wa.me/447436836888) or sending an email to jwadawasina@alhericonsultancy.com to book a 20-minute introductory call.*
