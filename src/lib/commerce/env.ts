@@ -9,6 +9,19 @@
  * setup checklist. The portfolio site keeps working either way.
  */
 
+/**
+ * Stripe rejects redirect URLs without a scheme, so a dashboard value like
+ * `joycewadawasina.com` (or one pasted with quotes/whitespace) would 500 every
+ * checkout. Tidy it into an absolute origin here.
+ */
+function normalizeSiteUrl(raw: string | undefined) {
+  let value = (raw ?? "").trim().replace(/^["']|["']$/g, "").trim();
+  if (!value) value = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "";
+  if (!value) return "http://localhost:3000";
+  if (!/^https?:\/\//i.test(value)) value = `https://${value}`;
+  return value.replace(/\/+$/, "");
+}
+
 export const commerceEnv = {
   mongodbUri: process.env.MONGODB_URI ?? "",
   mongodbDb: process.env.MONGODB_DB ?? "joyce_shop",
@@ -34,9 +47,7 @@ export const commerceEnv = {
     .filter(Boolean),
 
   currency: (process.env.NEXT_PUBLIC_STORE_CURRENCY ?? "GBP").toUpperCase(),
-  siteUrl: (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
-  ).replace(/\/$/, ""),
+  siteUrl: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
 
   supportEmail: process.env.SUPPORT_EMAIL ?? "jwadawasina@alhericonsultancy.com",
 } as const;
